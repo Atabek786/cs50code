@@ -3,5 +3,6 @@
 
 int main (void)
 {
-    string answer()
+    string answer=get_string("What's your name?" );
+    
 }
