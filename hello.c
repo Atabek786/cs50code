@@ -3,7 +3,15 @@
 
 int main (void)
 {
-    string answer=get_string("What's your name?" );
-    printf("hello, %s\n", answer);
+    char c = get_char("Do you agree? ");
+
+    if (c=='y' || c=='Y');
+    {
+        printf("Agreed\n");
+    }
+    else (c=='n' || c=='N');
+    {
+        printf("Not agree\n");
+    }
 
 }
