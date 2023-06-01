@@ -3,6 +3,7 @@
 
 int main (void)
 {
+    // Get size of grid
     int n;
     do
     {
@@ -10,6 +11,7 @@ int main (void)
     }
     while (n<1);
 
+    //Print grid of bri ks
     for (int r=0 ; r<n; r++)
     {
         for (int c=0; c<n; c++)
