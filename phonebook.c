@@ -3,8 +3,8 @@
 
 int main(void)
 {
-    int name("name: ")
+    string("Whats your name: ")
     {
-        printf("Your name is: ", name);
+        printf("Your name is: ", %s);
     }
 }
