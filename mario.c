@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main (void)
 {
-    const int n=5;
+    int n = get_int ("Size: ");
     for (int r=0 ; r<n; r++)
     {
         for (int c=0; c<n; c++)
