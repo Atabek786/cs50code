@@ -23,7 +23,7 @@ int main(void)
     {
         le = get_int ("Ending number of llams: ");
     }
-    while (l);
+    while (l <);
 
 
 }
