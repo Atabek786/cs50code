@@ -14,7 +14,16 @@ int main(void)
     int l;
     do
     {
-        l = get_int ("Number of llams: ");
+        l = get_int ("Starting number of llams: ");
     }
-    while (l < 11 || l > 12);
+    while (l < 0);
+
+    int le;
+    do
+    {
+        le = get_int ("Ending number of llams: ");
+    }
+    while (l);
+
+
 }
