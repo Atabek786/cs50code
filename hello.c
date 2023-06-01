@@ -3,15 +3,11 @@
 
 int main (void)
 {
-    char c = get_char("Do you agree? ");
-
-    if (c=='y' || c=='Y')
+    int i=0;
+    while (i<3)
     {
-        printf("Agreed\n");
-    }
-    else if (c=='n' || c=='N')
-    {
-        printf("Not agree\n");
+        printf("meow\n");
+        i++;
     }
 
 }
