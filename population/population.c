@@ -17,7 +17,7 @@ int main(void)
     int end;
     do
     {
-        end = get_end("End size: ");
+        end = get_int("End size: ");
     }
     while (end < start);
 
