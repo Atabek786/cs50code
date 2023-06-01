@@ -16,8 +16,13 @@ int main(void)
 
     printf("Enter your email: ");
 
+    scanf ("%c", &name);
     printf("Your name is %c", name);
+
+    scanf ("%i", &age);
     printf("Your age  is %i", age);
+
+    scanf ("%c", &email);
     printf("Your email is %c", email);
 
     return 0;
