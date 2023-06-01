@@ -19,9 +19,13 @@ int main(void)
     {
         end = get_end("End size: ");
     }
-    while (start < 0);
+    while (end < start);
 
     // TODO: Calculate number of years until we reach threshold
+
+    int years = 0;
+    start += start/12
+
 
     // TODO: Print number of years
 }
