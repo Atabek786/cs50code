@@ -3,8 +3,8 @@
 
 int main(void)
 {
-    string("Whats your name: ")
-    {
-        printf("Your name is: ", %s);
-    }
+    //Ask user for name, age and phone number
+
+    int n, a, pn;
+    int n
 }
