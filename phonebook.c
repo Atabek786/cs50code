@@ -3,5 +3,8 @@
 
 int main(void)
 {
-    
+    int name("name: ")
+    {
+        printf("Your name is: ", name);
+    }
 }
