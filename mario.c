@@ -2,9 +2,10 @@
 
 int main (void)
 {
-    for (int r=0 ; r<3; r++)
+    const int n=5;
+    for (int r=0 ; r<n; r++)
     {
-        for (int c=0; c<3; c++)
+        for (int c=0; c<n; c++)
         {
             printf("#");
         }
