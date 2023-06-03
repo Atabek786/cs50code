@@ -20,6 +20,7 @@ int main(void)
         {
             printf ("#");
         }
+        printf ("  ");
         printf ("\n");
     }
 
