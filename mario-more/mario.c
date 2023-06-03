@@ -14,9 +14,5 @@ int main(void)
     {
         printf ("       #   #\n");
     }
-    else if (height == 2)
-    {
-        printf ("       #   #
-                       ##   ##\n");
-    }
+
 }
