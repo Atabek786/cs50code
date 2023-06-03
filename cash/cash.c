@@ -55,7 +55,7 @@ int calculate_quarters(int cents)
         cents = cents - 25;
         quarters++;
     }
-    return 0;
+    return quarters;
 }
 
 int calculate_dimes(int cents)
@@ -66,7 +66,7 @@ int calculate_dimes(int cents)
         cents = cents - 10;
         dimes++;
     }
-    return 0;
+    return dimes;
 }
 
 int calculate_nickels(int cents)
@@ -77,7 +77,7 @@ int calculate_nickels(int cents)
         cents = cents - 5;
         nickels++;
     }
-    return 0;
+    return nickels;
 }
 
 int calculate_pennies(int cents)
@@ -88,6 +88,6 @@ int calculate_pennies(int cents)
         cents = cents - 1;
         pennies++;
     }
-    return 0;
+    return pennies;
 }
     printf ("Total amount of coints given: %i\n", coins);
