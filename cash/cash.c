@@ -90,4 +90,3 @@ int calculate_pennies(int cents)
     }
     return pennies;
 }
-    printf ("Total amount of coints given: %i\n", coins);
