@@ -3,5 +3,10 @@
 
 int main(void)
 {
-    string 
+    string height
+    do
+    {
+        height = get_string ("Height: "); 
+    }
+    while (height < 1 || height > 8) ;
 }
