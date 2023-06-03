@@ -10,6 +10,9 @@ int main(void)
     }
     while (height < 1 || height > 8) ;
 
-    for (int height)
-
+    if (height = 1)
+    {
+    printf ("       #   #\n");
+    }
+    else 
 }
