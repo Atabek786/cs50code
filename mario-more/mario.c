@@ -3,16 +3,16 @@
 
 int main(void)
 {
-    int height;
+    int height, row, cols, space ;
     do
     {
         height = get_int ("Height: ");
     }
     while (height < 1 || height > 8) ;
 
-    if (height == 1)
+    for (row = 0; row < height; row++)
     {
-        printf ("       #   #\n");
+        
     }
 
 }
