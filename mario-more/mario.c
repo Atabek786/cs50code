@@ -21,6 +21,10 @@ int main(void)
             printf ("#");
         }
         printf ("  ");
+        for (cols = 0; cols <= row; cols++)
+        {
+            printf ("#");
+        }
         printf ("\n");
     }
 
