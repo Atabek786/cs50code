@@ -35,7 +35,7 @@ int main(void)
     printf("%i\n", coins);
 }
 
-int get_float()
+int get_float(void)
 {
     float c;
     do
