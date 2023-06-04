@@ -9,5 +9,5 @@ int main (void)
     scores[i] = get_int ("Type your score: ");
 }
 
-    printf ("Your average score is %i", (scores[0] + scores[1] + scores[2] ) / 3);
+    printf ("Your average score is %i \n", (scores[0] + scores[1] + scores[2] ) / 3.00);
 }
