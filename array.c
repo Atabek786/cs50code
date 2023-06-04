@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+float average (int scores[]);
+
 int main (void)
 {
     int scores[3] ;
@@ -9,5 +11,5 @@ int main (void)
     scores[i] = get_int ("Type your score: ");
 }
 
-    printf ("Your average score is %i \n", (scores[0] + scores[1] + scores[2] ) / 3.00);
+    printf ("Your average score is %i \n", average (scores) );
 }
