@@ -1,15 +1,26 @@
 #include <cs50.h>
 #include <stdio.h>
 
-float average (int scores[]);
-
 int main (void)
 {
-    int scores[3] ;
-    for (int i = 0; i <3; i++)
-{
-    scores[i] = get_int ("Type your score: ");
-}
+    //Get the length from the user
+    int n;
+    do
+    {
+    n = get_int ("Size of array: ");
+    }
+    while (n < 1);
 
-    printf ("Your average score is %i \n", average (scores) );
+    //Declare our array
+    int array[n];
+
+    //Set the first value
+    array[0] = 1;
+    printf ("%i\n",array[0]);
+    for (int i = 1; i < n; i++)
+    {
+        //Make the current elemet twice the previous
+        array[i] = 2 * array[i - 1];
+        printf ("%i\n", array[i]);
+    }
 }
