@@ -12,12 +12,12 @@ int main (void)
         //Check if NOT alphabetical (i.e., "ba")
         if (word[i] > word[i + 1])
         {
-            printf ("No\n");
+            printf ("The words ARE NOT alphabetical\n");
             return 0;
         }
     }
 
-    printf ("Yes\n");
+    printf ("The words are alphabetical\n");
     return 0;
 
 }
