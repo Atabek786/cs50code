@@ -48,6 +48,7 @@ int compute_score(string word)
         return 0;
     }
     word = POITNS[] ;
-    isupper
+    isupper(word) = islower(word);
+    return 0
 
 }
