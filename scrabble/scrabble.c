@@ -39,6 +39,10 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    word = POINTS[] ;
+    for (int w = 0; w=>65 && w<=90; w++)
+    {
+        
+    }
+
 
 }
