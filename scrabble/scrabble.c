@@ -47,7 +47,7 @@ int compute_score(string word)
     {
         return 0;
     }
-    word = POINTS[w] ;
+    word = POINTS[26] ;
     isupper(word) = islower(word);
     return 0
 
