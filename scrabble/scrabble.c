@@ -39,7 +39,7 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    for (int w = 0; w=>65 && w<=90; w++)
+    for (word = 0; word=>65 && word<=90; w++)
     {
         
     }
