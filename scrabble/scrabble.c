@@ -21,17 +21,17 @@ int main(void)
     // TODO: Print the winner
     if (score1 > score2)
     {
-        printf ("Player 1 wins!\n");
+        printf("Player 1 wins!\n");
         return 0;
     }
     else if (score1 < score2)
     {
-        printf ("Player 2 wins!\n");
+        printf("Player 2 wins!\n");
         return 0;
     }
     else
     {
-        printf ("Tie!\n");
+        printf("Tie!\n");
         return 0;
     }
 }
@@ -46,7 +46,7 @@ int compute_score(string word)
     {
         //isupper && islower is the function in ctype.h, and checks whether a character in an uppercase or lowercase
 
-        
+
         if (isupper(word[i]))                                       //Other way to solve (word[i] > 65 && word [i] < 90)
         {
         score = score + POINTS[word[i] - 65];
