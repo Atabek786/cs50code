@@ -39,15 +39,15 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    for (word = 0; word>=65 && word<=90; w++)
+    for (int w = 0; w>=65 && w<=90; w++)
     {
         return 0;
     }
-    for (word = 0; word=>97 && word<=122; w++)
+    for (int wo = 0; wo>=97 && wo<=122; wo++)
     {
         return 0;
     }
-    word = POITNS[] ;
+    word = POINTS[w] ;
     isupper(word) = islower(word);
     return 0
 
