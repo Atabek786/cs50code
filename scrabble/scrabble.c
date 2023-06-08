@@ -24,7 +24,7 @@ int main(void)
         printf ("Player 1 wins!");
         return 0;
     }
-    if else (score1 < score2)
+    else if (score1 < score2)
     {
         printf ("Player 2 wins!");
         return 0;
@@ -39,7 +39,7 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    for (word = 0; word=>65 && word<=90; w++)
+    for (word = 0; word>=65 && word<=90; w++)
     {
         return 0;
     }
