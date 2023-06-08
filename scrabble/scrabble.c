@@ -41,8 +41,13 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     for (word = 0; word=>65 && word<=90; w++)
     {
-        
+        return 0;
     }
-
+    for (word = 0; word=>97 && word<=122; w++)
+    {
+        return 0;
+    }
+    word = POITNS[] ;
+    isupper
 
 }
