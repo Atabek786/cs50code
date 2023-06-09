@@ -13,6 +13,11 @@ int main(int argc, string argv[])
         printf ("error");
         return 0;
     }
-    string replace
+    string replace = GetStr ();
+    switch (replace)
+    {
+        case 1 :
+        printf ("")
+    }
 
 }
