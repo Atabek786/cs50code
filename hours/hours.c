@@ -30,6 +30,13 @@ float calc_hours(int hours[], int weeks, char output)
     int sum = 0;
     for (int i = 0; i < output; i++)
     {
-        sum += hours[weeks] 
+        sum += hours[weeks] ;
+        return 0;
+    }
+
+    int avg = 0;
+    for (int j = 0; j < output; j++)
+    {
+        avg = 
     }
 }
