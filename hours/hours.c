@@ -50,8 +50,9 @@ float calc_hours(int hours[], int weeks, char output)
         for (int j = 0; j < output; j++)
         {
             avg = sum / weeks ;
+            printf ("%f hours", avg);
         }
-    return avg;
+        return 0;
     }
 
 }
