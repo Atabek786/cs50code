@@ -13,12 +13,21 @@ int main(int argc, string argv[])
         printf ("error");
         return 0;
     }
-    int length = 0
+
     string replace = argv[];
-    switch (replace)
+    int length = 
+    switch(replace)
     {
-        case 1 :
-        printf ("")
+        case constant_1 :
+      // Code to be executed if expression == constant_1
+        break;
+
+        case constant_2 :
+      // Code to be executed if expression == constant_2;
+        break;
+
+        default : // the default case is optional
+      // Code to be executed if none of the cases match.
     }
 
 }
