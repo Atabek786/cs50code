@@ -29,21 +29,20 @@ int main(void)
 float calc_hours(int hours[], int weeks, char output)
 {
     int sum = 0;
-        for (int i = 0; i < weeks; i++)
-        {
-            sum += hours[i];
-        }
+    for (int i = 0; i < weeks; i++)
+    {
+        sum += hours[i];
+    }
     if (output == 'T')
     {
     return sum;
     }
-
-    else (output == 'A') ;
+    else if (output == 'A')
     {
         return (float) sum / weeks ;
     }
-    else (
-        return -1;
-    )
+    else {
+        return printf("error\n");
+    }
 
 }
