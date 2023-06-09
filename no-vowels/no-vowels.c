@@ -8,7 +8,7 @@
 
 int main(int argc, string argv[])
 {
-    if (argv[] = 0)
+    if (argv[] > argv[1])
     {
         printf ("error");
         return 0;
