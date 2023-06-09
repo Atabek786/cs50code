@@ -15,7 +15,7 @@ int main(int argc, string argv[])
     }
 
     string replace = argv[];
-    int length = 
+    int length = strlen(argv);
     switch(replace)
     {
         case constant_1 :
