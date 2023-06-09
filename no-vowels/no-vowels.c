@@ -8,5 +8,10 @@
 
 int main(int argc, string argv[])
 {
+    if (argv[] = 0)
+    {
+        printf ("error");
+        return 0;
+    }
     
 }
