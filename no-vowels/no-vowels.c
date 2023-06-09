@@ -8,13 +8,13 @@
 
 int main(int argc, string argv[])
 {
-    if (argv[] > argv[1])
+    if (argc > 2)
     {
         printf ("error");
         return 0;
     }
 
-    string replace = argv[];
+    string replace = argv[0];
     int length = strlen(argv);
     switch(replace)
     {
