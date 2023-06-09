@@ -27,10 +27,5 @@ int main(void)
 // TODO: complete the calc_hours function
 float calc_hours(int hours[], int weeks, char output)
 {
-    char output;
-    do
-    {
-        output = weeks / hours[weeks] ;
-    }
-    while (hours[weeks] < 24 && weeks < 7);
+    return 0;
 }
