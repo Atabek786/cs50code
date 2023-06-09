@@ -38,21 +38,12 @@ float calc_hours(int hours[], int weeks, char output)
     return sum;
     }
 
-    else
+    else (output == 'A') ;
     {
-        int sum = 0;
-        for (int i = 0; i < weeks; i++)
-        {
-            sum += hours[i]  ;
-        }
-
-        float avg = 0;
-        for (int j = 0; j < output; j++)
-        {
-            avg = sum / weeks ;
-            printf ("%.1f hours", avg);
-        }
-        return 0;
+        return (float) sum / weeks ;
     }
+    else (
+        return -1;
+    )
 
 }
