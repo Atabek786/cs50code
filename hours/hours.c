@@ -31,9 +31,9 @@ float calc_hours(int hours[], int weeks, char output)
     if (output == 'T')
     {
         int sum = 0;
-        for (int i = 0; i < output; i++)
+        for (int i = 0; i < weeks; i++)
         {
-            sum += hours[weeks] ;
+            sum = hours[i] +hours [] ;
         }
     return sum;
     }
