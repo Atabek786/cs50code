@@ -22,6 +22,8 @@ int main(int argc, string argv[])
 
     string result = replace (word);
 
+    printf ("%s\n", result);
+
 }
 
 string replace(string input)
@@ -31,7 +33,30 @@ string replace(string input)
   for(int i = 0; i < strlen(input); i++)
   {
     char c = tolower(input[i]);
-    printf("%c\n", input[i] );
+
+    switch (c)
+{
+    case 'a':
+        output[i] = '6';
+        break;
+
+    case 'e':
+        output[i] = '3';
+        break;
+
+    case 'i':
+        output[i] = '1';
+        break;
+
+    case 'o':
+        output[i] = '0';
+        break;
+
+    default:
+        output[i] = c;
+        break;
+}
+
   }
   return output;
 }
