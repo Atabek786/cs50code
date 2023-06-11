@@ -53,7 +53,7 @@ string replace(string input)
         break;
 
     default:
-        output[i] = c;
+        output[i] = input[i];
         break;
 }
 
