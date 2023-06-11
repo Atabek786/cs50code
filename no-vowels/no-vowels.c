@@ -4,7 +4,11 @@
 // Get practice with switch
 
 #include <cs50.h>
+#include <ctype.h>
+#include <string.h>
 #include <stdio.h>
+
+string replace(string input);
 
 int main(int argc, string argv[])
 {
@@ -14,20 +18,20 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    string replace = argv[0];
-    int length = strlen(argv);
-    switch(replace)
-    {
-        case constant_1 :
-      // Code to be executed if expression == constant_1
-        break;
+    string word = argv [1];
 
-        case constant_2 :
-      // Code to be executed if expression == constant_2;
-        break;
+    string result = replace (word);
 
-        default : // the default case is optional
-      // Code to be executed if none of the cases match.
-    }
+}
 
+string replace(string input)
+{
+  string output = input;
+
+  for(int i = 0; i < strlen(input); i++)
+  {
+    char c = tolower(input[i]);
+    printf("%c\n", input[i] );
+  }
+  return output;
 }
