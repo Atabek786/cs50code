@@ -27,10 +27,10 @@ bool valid(string password)
 {
     for (int i = 0; i <= strlen(password); i++)
     {
-    bool islower(lowercase[0]) = false;
-    bool isupper(uppercase[0]) = false;
-    bool isdigit(number[0]) = false;
-    bool ispunct(symbol[0]) = false;
+        bool lowercase = false;
+        bool uppercase = false;
+        bool number = false;
+        bool symbol = false;
 
     if (lowercase == true && uppercase == true && number == true && symbol == true)
     return true;
