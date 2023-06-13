@@ -48,9 +48,14 @@ bool valid(string password)
         {
             symbol = true;
         }
-        else
-        {
-            return false;
-        }
+    }
+
+    if (lowercase == true && uppercase == true && number == true && symbol == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
