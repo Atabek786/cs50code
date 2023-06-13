@@ -27,9 +27,10 @@ bool valid(string password)
     bool islower(lowercase) = false;
     bool isupper(uppercase) = false;
     bool isdigit(number) = false;
-    bool symbol = false;
+    bool ispunct(symbol) = false;
 
-
-    bool password
-    return false;
+    if (lowercase == true && uppercase)
+    else {
+        return false;
+    }
 }
