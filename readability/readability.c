@@ -26,5 +26,7 @@ int count_letters(string text)
         {
             letters++;
         }
+
+        
     }
 }
