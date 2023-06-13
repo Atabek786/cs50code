@@ -5,6 +5,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <
 
 bool valid(string password);
 
@@ -29,7 +30,10 @@ bool valid(string password)
     bool isdigit(number) = false;
     bool ispunct(symbol) = false;
 
-    if (lowercase == true && uppercase)
+    if (lowercase == true && uppercase == true && number == true && symbol == true)
+    {
+        return true;
+    }
     else {
         return false;
     }
