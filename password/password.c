@@ -25,8 +25,8 @@ int main(void)
 bool valid(string password)
 {
     bool islower(lowercase) = false;
-    bool uppercase = false;
-    bool number = false;
+    bool isupper(uppercase) = false;
+    bool isdigit(number) = false;
     bool symbol = false;
 
 
