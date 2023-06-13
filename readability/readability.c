@@ -17,7 +17,7 @@ int main(void)
             letters++;
         }
 
-        else if (text[i] = ' ')
+        else if (text[i] == ' ')
         {
             words++;
         }
@@ -26,5 +26,5 @@ int main(void)
             sentences++;
         }
     }
-    printf ("%s\n%i letters\n%i words\n%i sentences", text, letters, words, sentences);
+    printf ("%s\n%i letters\n%i words\n%i sentences\n", text, letters, words, sentences);
 }
