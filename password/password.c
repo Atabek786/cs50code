@@ -25,21 +25,32 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
+        bool lowercase[] = false;
+        bool uppercase[] = false;
+        bool number[] = false;
+        bool symbol[] = false;
+
     for (int i = 0; i <= strlen(password); i++)
     {
-        bool lowercase = false;
-        bool uppercase = false;
-        bool number = false;
-        bool symbol = false;
-
-    if (islower(lowercase) == true && isupper(uppercase) == true && isdigit(number) == true && ispunct(symbol) == true)
-    {
-    return true;
+        if (islower(lowercase[i]))
+        {
+            lowercase true;
+        }
+        if (isupper(uppercase[i]))
+        {
+            uppercase true;
+        }
+        if (isdigit(number[i]))
+        {
+            number true;
+        }
+        if (ispunct(symbol[i]))
+        {
+            symbol true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    else
-    {
-        return false;
-    }
-    }
-    return false;
 }
