@@ -26,5 +26,5 @@ int main(void)
             sentences++;
         }
     }
-    printf ("%s\n%i letters\n", text, letters);
+    printf ("%s\n%i letters\n%i words\n%i sentences", text, letters, words, sentences);
 }
