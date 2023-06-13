@@ -32,11 +32,13 @@ bool valid(string password)
         bool number = false;
         bool symbol = false;
 
-    if (lowercase == true && uppercase == true && number == true && symbol == true)
+    if (islower(lowercase) == true && isupper(uppercase) == true && isdigit(number) == true && ispunct(symbol) == true)
+    {
     return true;
     }
     else
     {
         return false;
+    }
     }
 }
