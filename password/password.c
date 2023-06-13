@@ -38,8 +38,8 @@ bool valid(string password)
     }
     bool symbol[]
     {
-        return 0;
+        return false;
     }
-    if ()
+    bool password
     return false;
 }
