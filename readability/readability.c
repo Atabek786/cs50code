@@ -18,6 +18,6 @@ int main(void)
         }
     }
 
-    for 
+    for ()
     printf ("%s\n%i letters\n", text, letters);
 }
