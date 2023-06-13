@@ -5,7 +5,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
-#include <
+#include <string.h>
 
 bool valid(string password);
 
@@ -25,16 +25,14 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
-    bool islower(lowercase) = false;
-    bool isupper(uppercase) = false;
-    bool isdigit(number) = false;
-    bool ispunct(symbol) = false;
+    for (int i = 0; i <= strlen(password); i++)
+    {
+    bool islower(lowercase[0]) = false;
+    bool isupper(uppercase[0]) = false;
+    bool isdigit(number[0]) = false;
+    bool ispunct(symbol[0]) = false;
 
     if (lowercase == true && uppercase == true && number == true && symbol == true)
-    {
-        return true;
-    }
-    else {
-        return false;
+
     }
 }
