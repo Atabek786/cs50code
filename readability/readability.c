@@ -14,8 +14,6 @@ int main(void)
     printf ("%s\n", text);
 
     letters = count_letters(text);
-    printf ("%i\n", letters);
-
 }
 int count_letters(string text)
 {
@@ -26,7 +24,7 @@ int count_letters(string text)
         {
             letters++;
         }
-
-        
+        printf("%i letters\n", letters);
     }
+    return 0;
 }
