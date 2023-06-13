@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 int main(void)
 {
@@ -26,5 +27,8 @@ int main(void)
             sentences++;
         }
     }
+    float index;
+    index = 0.0588 * letters - 0.296 * sentences - 15.8 ;
     printf ("%s\n%i letters\n%i words\n%i sentences\n", text, letters, words, sentences);
+    printf (%)
 }
