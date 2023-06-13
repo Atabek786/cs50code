@@ -27,8 +27,12 @@ int main(void)
             sentences++;
         }
     }
-    float index;
-    index = 0.0588 * letters - 0.296 * sentences - 15.8 ;
+
+
+    float L = letters / words * 100;
+    float S = sentences / words * 100;
+
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
+
     printf ("%s\n%i letters\n%i words\n%i sentences\n", text, letters, words, sentences);
-    printf (%)
 }
