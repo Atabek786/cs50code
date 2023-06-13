@@ -4,13 +4,30 @@
 #include <string.h>
 #include <math.h>
 
-int count_letters(string text);
-int count_words(string text);
-int count_sentences(string text);
-
 int main(void)
 {
     string text = get_string("Text: ");
+    int letters = 0;
+    int words = 1;
+    int sentences = 0;
+
+    for (int i = 0; i <= strlen(text); i++)
+    {
+        if(isalpha(text[i]))
+        {
+            letters++;
+        }
+
+        else if (text[i] == ' ')
+        {
+            words++;
+        }
+        else if (text[i] == '.' || text[i] =='?' || text[i] == '!')
+        {
+            sentences++;
+        }
+    }
+
 
     float L = (float) letters / (float) words * 100;
     float S = (float) sentences / (float) words * 100;
@@ -30,62 +47,3 @@ int main(void)
         printf("Grade %i\n", index);
     }
 }
-
-int count_letters(string text)
-{
-    int letters = 0;
-    for (int i = 0; i <= strlen(text); i++)
-    {
-        if(isalpha(text[i]))
-        {
-            letters++;
-        }
-    }
-}
-int count_words(string text)
-{
-    int words = 1;
-    for (int i = 0; i <= strlen(text); i++)
-    {
-        if(text[i] == ' ')
-        {
-            words++;
-        }
-    }
-}
-int count_sentences(string text)
-{
-    int sentences = 0;
-    if (text[i] == '.' || text[i] =='?' || text[i] == '!')
-        {
-            sentences++;
-        }
-}
-
-
-
-
-
-
-
-
-//    int letters = 0;
-//    int words = 1;
-//    int sentences = 0;
-
-//    for (int i = 0; i <= strlen(text); i++)
-//    {
-//        if(isalpha(text[i]))
-//        {
-//            letters++;
-//        }
-
-//        else if (text[i] == ' ')
-//        {
-//            words++;
-//        }
-//        else if (text[i] == '.' || text[i] =='?' || text[i] == '!')
-//        {
-//            sentences++;
-//        }
-//    }
