@@ -33,6 +33,10 @@ bool valid(string password)
     bool ispunct(symbol[0]) = false;
 
     if (lowercase == true && uppercase == true && number == true && symbol == true)
-
+    return true;
+    }
+    else
+    {
+        return false;
     }
 }
