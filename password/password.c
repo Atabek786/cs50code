@@ -24,22 +24,12 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
-    bool lowercase[]
-    {
-        return false;
-    }
-    bool uppercase[]
-    {
-        return false;
-    }
-    bool number[]
-    {
-        return false;
-    }
-    bool symbol[]
-    {
-        return false;
-    }
+    bool lowercase = false;
+    bool uppercase = false;
+    bool number = false;
+    bool symbol = false;
+
+
     bool password
     return false;
 }
