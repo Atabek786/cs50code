@@ -13,14 +13,7 @@ int main(void)
 
     for (int i = 0, n = strlen(message); i < n; i++)
     {
-        char c = message[i];
-        for (int j = BITS_IN_BYTE - 1; j >=0; j--)
-        {
-            int bit = (c >> j) & 1;
-
-            print_bulb(bit);
-        }
-        printf("\n");
+        int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
     }
 
 
