@@ -16,7 +16,7 @@ int main(void)
         char c = message[i];
         for (int j = BITS_IN_BYTE - 1; j >=0; j--)
         {
-            int bit = (c >> j) $ 1;
+            int bit = (c >> j) & 1;
 
             print_bulb(bit);
         }
