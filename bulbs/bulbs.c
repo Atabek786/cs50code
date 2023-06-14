@@ -11,7 +11,10 @@ int main(void)
     // TODO
     string message = get_string ("Message: ");
 
-    
+    for (int i = 0; i<=strlen(message); i++)
+    {
+        
+    }
 
 
 }
