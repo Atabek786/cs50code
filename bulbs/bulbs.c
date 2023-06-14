@@ -10,7 +10,8 @@ int main(void)
 {
     // TODO
     string message = get_string ("Message: ");
-    
+    decimal decimalVal
+
 }
 
 void print_bulb(int bit)
