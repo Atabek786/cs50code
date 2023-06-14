@@ -11,9 +11,16 @@ int main(void)
     // TODO
     string message = get_string ("Message: ");
 
-    for (int i = 0; i<=strlen(message); i++)
+    for (int i = 0, n = strlen(message); i < n; i++)
     {
-        
+        char c = message[i];
+        for (int j = BITS_IN_BYTE - 1; j >=0; j--)
+        {
+            int bit = (c >> j) $ 1;
+
+            print_bulb(bit);
+        }
+        printf("\n");
     }
 
 
