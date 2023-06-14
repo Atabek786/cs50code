@@ -6,13 +6,11 @@ const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
-int convert(string message);
-
 int main(void)
 {
     // TODO
     string message = get_string ("Message: ");
-    printf ("%d\n", convert(message));
+
 
 }
 
@@ -30,15 +28,3 @@ void print_bulb(int bit)
     }
 }
 
-int convert(string message) {
-  int dec = 0, i = 0, rem;
-
-  while (message!=0) {
-    rem = message % 10;
-    n /= 10;
-    dec += rem * pow(2, i);
-    ++i;
-  }
-
-  return dec;
-}
