@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int main(int argc, string argv[])
 {
@@ -17,7 +18,13 @@ int main(int argc, string argv[])
         {
             printf("./caesar key\n");
         }
+        int k = atoi(argv[1]); //atoi function makes string into an integer. in the stdlib.h library
+
+        string plaintext = get_string("Plaintext: ");
+        printf("Ciphertext: ");
+
+        
     }
 
-    int k 
+
 }
