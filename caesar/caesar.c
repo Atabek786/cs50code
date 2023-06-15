@@ -3,9 +3,8 @@
 
 int main(int argc, string argv[])
 {
-    argc(int k);
-    if(argc(k) >= 2)
+    if (argc <= 3 )
     {
-        return 0;
+
     }
 }
