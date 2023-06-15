@@ -14,10 +14,12 @@ int main(int argc, string argv[])
 
     for (int i = 0; i<strlen(argv[1]);i++)
     {
-        if (!isdigit(argv[1]))
+        if (!isdigit(argv[1][i]))
         {
-            printf("./caesar key\n");
+            printf("Usage: ./caesar key\n");
+            return 1;
         }
+    }
         int k = atoi(argv[1]); //atoi function makes string into an integer. in the stdlib.h library
 
         string plaintext = get_string("Plaintext: ");
@@ -38,7 +40,6 @@ int main(int argc, string argv[])
             {
                 printf("%c", plaintext[j]);
             }
-        }
 
         printf("\n");
 
