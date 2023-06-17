@@ -15,7 +15,7 @@ int main (void)
     candidate.candidates_array[3];
     for (int i = 0; i < 3; i++)
     {
-        candidate_array[i] = get_candidate("Enter a candidate: ");
+        candidates_array[i] = get_candidate("Enter a candidate. ");
     }
 }
 
