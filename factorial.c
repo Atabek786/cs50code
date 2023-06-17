@@ -15,4 +15,6 @@ int factorial(int number)
     {
         return 1;
     }
+
+    return number * factorial(number - 1);
 }
