@@ -4,34 +4,28 @@
 int main(void)
 {
     // TODO: Prompt for start size
-
-    int start;
+    int i;
     do
     {
-        start = get_int("Start size: ");
+        i = get_int("Start population: \n");
     }
-    while (start < 0);
+    while (i < 9);
 
     // TODO: Prompt for end size
-
-    int end;
+    int j;
     do
     {
-        end = get_int("End size: ");
+        j = get_int("End population: \n");
     }
-    while (end < start);
+    while (j < i);
 
     // TODO: Calculate number of years until we reach threshold
-
     int years = 0;
-    while (start <end)
+    while (i < j)
     {
-    start += start/3;
-    start -= start/4;
-    years++;
+        i = i + (i / 3) - (i / 4);
+        years++;
     }
-
     // TODO: Print number of years
-
-    printf ("Years: %i\n", years);
+    printf("Years: %d\n", years);
 }
