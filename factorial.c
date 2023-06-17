@@ -1,21 +1,17 @@
 #include <cs50.h>
 #include <stdio.h>
 
-long long factorial(long long number);
+int factorial(int number);
 
 int main ()
 {
-long long n = get_long_long ("Type a number: ");
+int n = get_int ("Type a number: ");
 
-if (factorial(long long number) > 9223372036854775807)
-{
-    printf("Too big number.\n");
+
+printf("%i\n", factorial(n));
 }
 
-printf("%lli\n", factorial(n));
-}
-
-long long factorial(long long number)
+int factorial(int number)
 {
     if (number == 1)
     {
@@ -23,4 +19,9 @@ long long factorial(long long number)
     }
 
     return number * factorial(number - 1);
+
+    if (number > 2,147,483,647)
+    {
+        printf("Too big number.\n");
+    }
 }
