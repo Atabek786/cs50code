@@ -1,52 +1,56 @@
-#include <string.h>
-#include <ctype.h>
-#include <cs50.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-int main(int argc, string argv[])
+// formula Ci = (((Pi + 'a') + key) - 'a') % 26 same for capitals 'A'
+
+int main(int argc, string argv[]) //No main for this task to pass values
 {
-
-
-// check there is only 1 arguments and it is a number else returns instructions
-    if (argc == 2 && isdigit(*argv[1]))
-
+    if (argc == 2 && isdigit(*argv[1])) //argc has to be 2 strings, argv second value has to be a digit
     {
 
-        int k = atoi(argv[1]); // get the ceasar KEY value convert into integar
-
-        string s = get_string("plaintext: "); // get text
-        printf("ciphertext: "); // print out cipher
-
-// iterate through plain text letter by letter
-        for (int i = 0, n = strlen(s) ; i < n; i++)
+        // for error "handles non-numeric key"
+        for (int i = 0, n = strlen(argv[1]); i < n; i++)
         {
-            // checking if it is lowercase 97 = a to 112 = z and if it + 13 characters along.
-            if (s[i] >= 'a' && s[i] <= 'z')
+            int x = argv[1][i];
+            // Returns error message if key includes anything other than digits
+            if (x == 0 || !isdigit(x))
             {
-                printf("%c", (((s[i] - 'a') + k) % 26) + 'a'); // print out lowercase with key
-            } // if it it between uppercase A and C
-            else if (s[i] >= 'A' && s[i] <= 'Z')
-            {
-                printf("%c", (((s[i] - 'A') + k) % 26) + 'A'); // print out uppercase with key
-            }
-
-            else
-
-            {
-                printf("%c", s[i]);
+                printf("Usage: ./caesar key\n");
+                return 1;
             }
         }
 
+        string plainText = get_string("plaintext: "); //asking a user for a plaintext
+        printf("ciphertext: "); // printing ciphertext
+        int key = atoi(argv[1]); //atoi to change string value in argv to an integer
+
+
+        for (int i = 0, b = strlen(plainText); i < b; i++) //checking every letter
+        {
+            if (plainText[i] >= 'a' && plainText[i] <= 'z') //checking lowercase
+            {
+                printf("%c", (((plainText[i] - 'a') + key) % 26) + 'a'); // printing lowercase
+            }
+            else if (plainText[i] >= 'A' && plainText[i] <= 'Z') // checking uppercase
+            {
+                printf("%c", (((plainText[i] - 'A') + key) % 26) + 'A'); // printing uppercase
+            }
+            else
+            {
+                printf("%c", plainText[i]); // any punctuations
+            }
+
+        }
         printf("\n");
         return 0;
     }
 
     else
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: ./caesar key\n"); //if conditions are wrong
         return 1;
-
     }
-
 }
