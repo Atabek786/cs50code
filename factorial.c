@@ -1,15 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int factorial(int number);
+long long factorial(long long number);
 
 int main ()
 {
 int n = get_int ("Type a number: ");
-printf("%i\n", factorial(n));
+printf("%lli\n", factorial(n));
 }
 
-int factorial(int number)
+long long factorial(long long number)
 {
     if (number == 1)
     {
