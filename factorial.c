@@ -5,9 +5,9 @@ long long factorial(long long number);
 
 int main ()
 {
-int n = get_int ("Type a number: ");
+long long n = get_long_long ("Type a number: ");
 
-if (n > long long)
+if (factorial(long long number) > 9223372036854775807)
 {
     printf("Too big number.\n");
 }
