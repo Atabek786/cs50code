@@ -18,10 +18,11 @@ int factorial(int number)
         return 1;
     }
 
-    return number * factorial(number - 1);
-
-    if (number > 2,147,483,647)
+    if (number > 2147483647)
     {
         printf("Too big number.\n");
     }
+
+    return number * factorial(number - 1);
+
 }
