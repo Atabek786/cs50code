@@ -6,6 +6,12 @@ long long factorial(long long number);
 int main ()
 {
 int n = get_int ("Type a number: ");
+
+if (n > long long)
+{
+    printf("Too big number.\n");
+}
+
 printf("%lli\n", factorial(n));
 }
 
