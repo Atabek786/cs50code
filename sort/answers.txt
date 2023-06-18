@@ -10,4 +10,16 @@ sort3 uses: TODO
 
 How do you know?: TODO
 
-//sort1 reversed time
+//sort1 reversed time real 5.786s user 4.973s sys 0.163s
+//sort1 random time real 7.998s user 6.854s sys 0.152s
+//sort1 sorted time real 0.875s user 0.047s sys 0.142s
+
+
+//sort2 reversed time real 1.269s user 0.038s sys 0.163s
+//sort2 random time real 0.806s user 0.048s sys 0.150s
+//sort2 sorted time real 1.141s user 0.051s sys 0.143s
+
+
+//sort3 reversed time real 3.716s user 2.650s sys 0.168s
+//sort3 random time real 3.291s user 2.535s sys 0.224s
+//sort3 sorted time real 3.553s user 2.633s sys 0.172s
