@@ -10,6 +10,7 @@ int convert(string input);
 int main(void)
 {
     string input = get_string("Enter a positive integer: ");
+    int result = (atoi(input));
 
     for (int i = 0, n = strlen(input); i < n; i++)
     {
