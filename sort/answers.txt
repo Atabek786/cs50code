@@ -1,14 +1,14 @@
-sort1 uses: Bubble Sort because time spending in sorted text was much lower 
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?: because time spending in sorted text was much lower O(n^2) vs Ω(n)
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: because time spending on each text was much lower comparing to other sort files (Merge Sort is the fastest of them)
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: because time spending on each text was similar to each other O(n^2) vs Ω(n^2)
 
 //sort1 reversed time real 5.786s user 4.973s sys 0.163s
 //sort1 random time real 7.998s user 6.854s sys 0.152s
