@@ -165,7 +165,6 @@ void tabulate(void)
             }
         }
     }
-    return;
 }
 
 // Print the winner of the election, if there is one
@@ -198,7 +197,7 @@ int find_min(void)
             smallest[0] = candidates[i].votes;
         }
     }
-    return 0;
+    return smallest[0];
 }
 
 // Return true if the election is tied between all candidates, false otherwise
@@ -236,5 +235,4 @@ void eliminate(int min)
             candidates[c].eliminated = true;
         }
     }
-    return;
 }
