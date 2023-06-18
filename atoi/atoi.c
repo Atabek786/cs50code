@@ -27,5 +27,10 @@ int convert(string input)
 {
     // TODO
     char string(input);
+
+    int length = strlen(string);
+    int index = length - 1;
+
     
+
 }
