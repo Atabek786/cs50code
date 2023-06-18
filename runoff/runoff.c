@@ -153,7 +153,7 @@ void tabulate(void)
     {
         for (int ranks; ranks < candidate_count; ranks++)
         {
-            inc c = preferences[voter][ranks];
+            int c = preferences[voter][ranks];
             if(!candidates[c].eliminated)
             {
                 candidates[c].votes++;
@@ -168,6 +168,14 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if(candidates[i].votes > (voter_count / 2))
+        {
+            printf("%s\n", candidates[i].name);
+            return true;
+        }
+    }
     return false;
 }
 
@@ -175,6 +183,7 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
+    
     return 0;
 }
 
