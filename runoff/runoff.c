@@ -135,7 +135,10 @@ bool vote(int voter, int rank, string name)
     {
         if(strcmp(name, candidates[i].name)==0)
         {
-            candidates[i].votes++;
+            preferences[voter][rank] = i;
+
+            printf("voter: %d\n", voter);
+            printf("rank: %d\n", rank);
             return true;
         }
     }
@@ -146,7 +149,7 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    
+    for ()
     return;
 }
 
