@@ -68,7 +68,6 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // Look for a candidate called name
-
     
     return false;
 }
