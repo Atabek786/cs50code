@@ -1,5 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -143,6 +146,7 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    
     return;
 }
 
