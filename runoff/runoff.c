@@ -135,6 +135,9 @@ bool vote(int voter, int rank, string name)
     {
         if(strcmp(name, candidates[i].name)==0)
         {
+
+            //update the preferences 2d array to indicate the voter has that cand as their rank n
+
             preferences[voter][rank] = i;
 
             printf("voter: %d\n", voter);
@@ -146,6 +149,7 @@ bool vote(int voter, int rank, string name)
 }
 
 // Tabulate votes for non-eliminated candidates
+// Update each candidate vote count, according to the voters rank
 void tabulate(void)
 {
     // TODO
@@ -183,7 +187,17 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
-    
+    int smallest[] = {voter_count,1};
+    for(int i = 0; i < candidate_count; i++ )
+    {
+        // Find the candidates with the least votes
+        // store smallest number of votes on <smallest[0]>,
+        // if smallest[0] > candidates[i].votes, replace smallest[0] with it.
+        if(smallest[0] > candidates[i].votes && !candidates[i].eliminated)
+        {
+            smallest[0] = candidates[i].votes;
+        }
+    }
     return 0;
 }
 
