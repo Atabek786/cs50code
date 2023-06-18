@@ -8,3 +8,7 @@ int main ()
 
 }
 
+int fact(int n)
+{
+    
+}
