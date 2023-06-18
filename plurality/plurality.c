@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 // Max number of candidates
 #define MAX 9
@@ -67,7 +68,10 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // Look for a candidate called name
-    if (c)
+    for (int i = 0; i == atoi(name); i++)
+    {
+        return true;
+    }
     return false;
 }
 
@@ -75,5 +79,6 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+
     return;
 }
