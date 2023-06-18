@@ -1,3 +1,4 @@
+//NOT SOLVED
 #include <cs50.h>
 #include <ctype.h>
 #include <math.h>
@@ -5,12 +6,11 @@
 #include <string.h>
 #include <stdlib.h>
 
-int convert(string input);
+int convert(string input[]);
 
 int main(void)
 {
     string input = get_string("Enter a positive integer: ");
-    int result = (atoi(input));
 
     for (int i = 0, n = strlen(input); i < n; i++)
     {
@@ -22,32 +22,32 @@ int main(void)
     }
 
     // Convert string to int
-    printf("%i\n", convert(input));
+    printf("%i\n", convert(input[]));
 }
 
-int convert(string input)
+int convert(string input[])
 {
     // TODO
-    int result = (atoi(input));
+    int result = (atoi(input[]));
     int num = 0;
     int i = 0, sign = 1;
 
-    while (input == ' ' || input == '\n' || input == '\t')
+    while (input[i] == ' ' || input[i] == '\n' || input[i] == '\t')
     {
         i++;
     }
-    if (input == '+' || input == '-')
+    if (input[i] == '+' || input[i] == '-')
     {
-        if(input == '-')
+        if(input[i] == '-')
         {
             sign = -1;
         }
         i++;
     }
 
-    while (input && (input >= '0' && input <= '9'))
+    while (input[i] && (input[i] >= '0' && input[i] <= '9'))
     {
-        num = num * 10 + (input - '0');
+        num = num * 10 + (input[i] - '0');
         i++;
     }
     return sign * num;
