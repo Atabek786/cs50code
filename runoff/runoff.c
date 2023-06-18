@@ -236,3 +236,4 @@ void eliminate(int min)
         }
     }
 }
+//why so hard?
