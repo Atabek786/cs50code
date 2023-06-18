@@ -1,19 +1,21 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int fact(int n);
+int collatz(int n);
 
 int main ()
 {
+    int n = get_int ("Write a number: ");
+    
     printf("%i")
 }
 
-int fact(int n)
+int collatz(int n)
 {
     do
     {
         if (n == 1)
-            return 0;
+            return 1;
         else if (n % 2 == 0)
         return n/2
         else
