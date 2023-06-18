@@ -5,9 +5,12 @@ int collatz(int n);
 
 int main ()
 {
-    int n = get_int("Write a number: ");
+    int number, result;
+    number = get_int("Enter a number: ");
 
-    printf("%i\n", n);
+    result = collatz(number);
+
+    printf("collatz = %i\n", result);
     return 0;
 }
 
