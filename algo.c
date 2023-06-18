@@ -16,15 +16,11 @@ int main ()
 
 int collatz(int n)
 {
-    do
+    int product = 1;
+    while(n > 0)
     {
-        if (n == 1)
-            return 1;
-        else if (n % 2 == 0)
-        return n/2;
-        else
-        return 3 * n + 1;
+        product *= n;
+        n--;
     }
-    while (n > 0);
-
+    return product;
 }
