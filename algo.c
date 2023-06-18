@@ -5,7 +5,7 @@ int fact(int n);
 
 int main ()
 {
-
+    printf("%i")
 }
 
 int fact(int n)
@@ -15,9 +15,10 @@ int fact(int n)
         if (n == 1)
             return 0;
         else if (n % 2 == 0)
-        {
-            
-        }
+        return n/2
+        else
+        return 3 * n + 1;
     }
+    while (n > 0)
 
 }
