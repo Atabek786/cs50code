@@ -16,22 +16,14 @@ int main ()
 
 int collatz(int n)
 {
-    do
-    {
-        if (n == 1)
-            return 1;
-        else if (n % 2 == 0)
-        for (int i = 0; i <= 1; i++)
-        {
-            return n/2;
-        }
-        else
-        for (int j = 0; j <= 1; j++)
-        {
-            return 3 * n + 1;
-        }
-    }
-    while (n > 0);
-    return 0;
+    // base case
+    if(n == 1)
+        return 0;
+    // even numbers
+    else if((n % 2) == 0)
+        return 1 + collatz(n/2);
+    // odd numbers
+    else
+    return 1 + collatz(3*n + 1);
 
 }
