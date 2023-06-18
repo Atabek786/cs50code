@@ -216,10 +216,10 @@ bool is_tie(int min)
         {
             onRun++;
         }
-        if(tieCount == onRun)
-        {
-            return true;
-        }
+    }
+    if(tieCount == onRun)
+    {
+        return true;
     }
     return false;
 }
