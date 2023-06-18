@@ -68,11 +68,8 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // Look for a candidate called name
-    candidates[MAX] = name;
-    for (int i = 0; i == atoi(name); i++)
-    {
-        return true;
-    }
+
+    
     return false;
 }
 
