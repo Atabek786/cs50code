@@ -163,6 +163,10 @@ void sort_pairs(void)
     {
         for(int j = 0; j < MAX - i - 1; j++)
         {
+            
+            int strength_j = preferences[pairs[j].winner][pairs[j].loser];
+            int strength_j_plus_1 = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
+
             if(pairs[j].winner > pairs[j+1].loser)
             {
                 struct pair tmp = pairs[j];
