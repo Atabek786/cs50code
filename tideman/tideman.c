@@ -200,10 +200,10 @@ void lock_pairs(void)
     for(int i = 0; i < pair_count; i++)
     {
         int winner = pairs[i].winner;
-        int loser = pairs[i].lose;
+        int loser = pairs[i].loser;
         if(!has_cycle(winner, loser))
         {
-            locked[winner][loser] = ture;
+            locked[winner][loser] = true;
         }
     }
     return;
@@ -212,6 +212,21 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    int maxvotes = 0;
+    for (int j = 0; j < pair_count; j++)
+    {
+        if(pairs[j].winner > maxvotes)
+        {
+            maxvotes = pairs[j].winner;
+        }
+    }
+
+    for (int i = 0; i < pair_count; i++)
+    {
+        if(pairs[i].winner == maxvotes)
+        {
+            printf("%d\n", pairs[i].winner);
+        }
+    }
     return;
 }
