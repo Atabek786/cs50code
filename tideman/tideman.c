@@ -164,9 +164,11 @@ void sort_pairs(void)
         for(int j = 0; j < MAX - i - 1; j++)
         {
             if(pairs[j].winner > pairs[j+1].loser)
+            {
                 int tmp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = tmp;
+            }
         }
     }
     return;
