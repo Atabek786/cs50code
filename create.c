@@ -11,7 +11,16 @@ int maint(int argc, char *argv[])
     }
     int filename_length = strlen(argv[1]);
 
-    char *filename = malloc(sizeof(char) * filename_length)
+    char *filename = malloc(sizeof(char) * filename_length);
 
-    
+    sprintf(filename, "%s", argv[1]);
+
+    FILE *new_file = fopen(filename, "w");
+    if(new_file == NULL)
+    {
+        printf("Could not create file.\n");
+        return 1;
+    }
+    free(filename);
+    fclose(new_file);
 }
