@@ -124,9 +124,9 @@ void record_preferences(int ranks[])
         for (int rank = 0; rank < candidate_count; rank++)
         {
             int c = preferences[voter][rank];
-            if(!pairs[c].loser)
+            if(!pairs[c * (c - 1) / 2].loser)
             {
-                pairs[c].winner[MAX * (MAX - 1) / 2];
+                pairs[c * (c - 1) / 2].winner++;
                 break;
             }
 
