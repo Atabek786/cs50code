@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int maint(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     if(argc !=2)
     {
