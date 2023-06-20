@@ -160,15 +160,17 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     for(int i = 0; i < MAX - 1; i++)
+{
+    for(int j = 0; j < MAX - i - 1; j++)
     {
-        for(int j = 0; j < MAX - i - 1; j++)
+        if(pairs[j] > pairs[j+1])
         {
-            if(pairs[j] > pairs[j+1])
-                int tmp = pairs[j]
-                pairs[j] = pairs[j+1]
-                pairs[j+1] = tmp;
+            int tmp = pairs[j];
+            pairs[j] = pairs[j+1];
+            pairs[j+1] = tmp;
         }
     }
+}
     return;
 }
 
