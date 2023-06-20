@@ -124,7 +124,10 @@ void record_preferences(int ranks[])
         for(int j = 0; j < candidate_count; j++)
         {
             int c = preferences[i][j];
-            if(!pair)
+            if(!candidates[c].loser)
+            {
+                candidates[c].
+            }
         }
     }
     return;
