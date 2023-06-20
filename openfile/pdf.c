@@ -10,12 +10,12 @@ int main (int argc, string argv[])
         return 1;
     }
 
-    //Open file
+    // Open file
 
     string filename = argv[1];
     FILE *file = fopen(filename, "r");
 
-    //Check if file exists
+    // Check if file exists
 
     if (file == NULL)
     {
@@ -25,10 +25,19 @@ int main (int argc, string argv[])
 
 
     uint8_t buffer[4];
+    uint8_t signature[] = {1, 2, 3, 4};
+
     fread(buffer, 1, 4, file);
+
+    // Does the buffet signature match?
     for (int i = 0; i < 4; i++)
     {
-        printf("%i ", buffer[i]);
+        if(buffer[i] != signature[i])
+        {
+            printf("Likely not a pdf!\n");
+            return 0;
+        }
     }
-    printf("\n");
+    printf("Likely a pdf\n");
+    return 0;
 }
