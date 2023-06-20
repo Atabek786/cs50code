@@ -9,10 +9,12 @@ int main (int argc, string argv[])
         return 1;
     }
 
+    //Open file
 
     string filename = argv[1];
     FILE *file = fopen(filename, "r");
 
+    //Check if file exists
     if (file == NULL)
     {
         printf("No file found.\n");
@@ -20,5 +22,5 @@ int main (int argc, string argv[])
     }
 
 
-    
+    uint8_t
 }
