@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     }
     int filename_length = strlen(argv[1]);
 
-    char *filename = malloc(sizeof(char) * filename_length);
+    char *filename = malloc(sizeof(char) * (filename_length + 1));
 
     sprintf(filename, "%s", argv[1]);
 
