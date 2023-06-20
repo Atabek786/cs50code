@@ -13,6 +13,6 @@ int main()
 
     printf("a has the value %i, located at %p\n", a, &a); //14
     printf("b has the value %i, located at %p\n", b, &b); //25
-    printf("c has the value %i, located at %p\n", c, &c); //0x123
+    printf("c has the value %i, located at %p\n", c, &c); //0x123 
 
 }
