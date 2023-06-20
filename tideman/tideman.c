@@ -159,21 +159,53 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    for(int i = pair_count - 1; i >= 0; i--)
+    for (int i = 0; i < pair_count - 1; i++)
     {
-        int min_weight = pair_weight(i);
-        int min_idx = i;
-        for(int j = i - 1; j >= 0; j--)
+        for (int j = 0; j < pair_count - i - 1; j++)
         {
-            if(pair_weight(j) < min_weight)
+            int strength_j = preferences[pairs[j].winner][pairs[j].loser];
+            int strength_j_plus_1 = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
+
+            if (strength_j < strength_j_plus_1)
             {
-                min_weight = pair_weight(j);
-                min_idx = j;
+                // Swap the pairs
+                pair tmp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = tmp;
             }
         }
     }
+    return;
+}
 
-    pair tmp = pairs_
+bool has_cycle(int winner, int loser)
+{
+    if(locked[loser][winner] == true)
+    {
+        return true;
+    }
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if(locked[loser][i] == true && has_cycle(winner, i))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Lock pairs into the candidate graph in order, without creating cycles
+void lock_pairs(void)
+{
+    for(int i = 0; i < pair_count; i++)
+    {
+        int winner = pairs[i].winner;
+        int loser = pairs[i].lose;
+        if(!has_cycle(winner, loser))
+        {
+            locked[winner][loser] = ture;
+        }
+    }
     return;
 }
 
