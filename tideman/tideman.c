@@ -165,8 +165,7 @@ void sort_pairs(void)
         {
             if(pairs[j].winner > pairs[j+1].loser)
             {
-                pair *s;
-                int tmp = s->pairs[j];
+                struct pair tmp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = tmp;
             }
