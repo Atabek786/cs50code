@@ -119,17 +119,13 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    for (int voter = 0; voter < pair_count; voter++)
+    for (int i = 0; i < candidate_count - 1; i++)
     {
-        for (int rank = 0; rank < candidate_count; rank++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
-            int c = preferences[voter][rank];
-            if(!pairs[c * (c - 1) / 2].loser)
-            {
-                pairs[c * (c - 1) / 2].winner++;
-                break;
-            }
-
+            int preferred_candidate = ranks[i];
+            int other_candidate = ranks[j];
+            preferences[preferred_candidate][other_candidate]++;
         }
     }
     return;
