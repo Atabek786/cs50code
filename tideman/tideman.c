@@ -213,18 +213,23 @@ void lock_pairs(void)
 void print_winner(void)
 {
 
-    for(int row = 0; row < candidate_count; row++)
+    for (int col = 0; col < candidate_count; col++)
     {
-        for(int col = 0; col < candidate_count; col++)
+        int is_winner = 1; // Assume candidate is a winner
+
+        for (int row = 0; row < candidate_count; row++)
         {
-            if(locked[row][col] == true)
+            if (locked[row][col]) // If there is a directed edge pointing to the candidate
             {
+                is_winner = 0; // Candidate is not a winner
                 break;
             }
-            else if(col == candidates - 1)
-            {
-                printf("%s", candidates[row]);
-            }
+        }
+
+        if (is_winner)
+        {
+            printf("%s\n", candidates[col]); // Print the name of the winner
+            return; // Exit the function after printing the winner
         }
     }
 }
