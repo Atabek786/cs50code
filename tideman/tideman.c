@@ -181,7 +181,37 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
+     sort_pairs();
+
+    // Iterate over the sorted pairs
+    for (int i = 0; i < pair_count; i++)
+    {
+        // Assume the edge does not create a cycle
+        bool creates_cycle = false;
+
+        // Check if adding the current pair as an edge creates a cycle
+        locked[pairs[i].winner][pairs[i].loser] = true;
+        creates_cycle = creates_cycle_recursive(pairs[i].loser, pairs[i].winner);
+        locked[pairs[i].winner][pairs[i].loser] = false;
+
+        // If no cycle is created, add the edge to the locked graph
+        if (!creates_cycle)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
+
+    // Check if the locked graph forms a valid ranking
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (creates_cycle_recursive(i, i))
+        {
+            // If a cycle is found, the locked graph does not represent a valid ranking
+            return false;
+        }
+    }
+
+    // The locked graph represents a valid ranking
     return;
 }
 
