@@ -169,7 +169,7 @@ void sort_pairs(void)
             if (strength_j < strength_j_plus_1)
             {
                 // Swap the pairs
-                struct pair tmp = pairs[j];
+                pair tmp = pairs[j];
                 pairs[j] = pairs[j + 1];
                 pairs[j + 1] = tmp;
             }
