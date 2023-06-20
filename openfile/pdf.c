@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <stdint.h>
 
 int main (int argc, string argv[])
 {
@@ -15,6 +16,7 @@ int main (int argc, string argv[])
     FILE *file = fopen(filename, "r");
 
     //Check if file exists
+
     if (file == NULL)
     {
         printf("No file found.\n");
@@ -22,5 +24,11 @@ int main (int argc, string argv[])
     }
 
 
-    uint8_t
+    uint8_t buffer[4];
+    fread(buffer, 1, 4, file);
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%i ", buffer[i]);
+    }
+    printf("\n");
 }
