@@ -21,6 +21,6 @@ int maint(int argc, char *argv[])
         printf("Could not create file.\n");
         return 1;
     }
-    free(filename);
     fclose(new_file);
+    free(filename);
 }
