@@ -126,7 +126,7 @@ void record_preferences(int ranks[])
             int c = preferences[voter][rank];
             if(!pairs[c].loser)
             {
-                pairs[c].winner++;
+                pairs[c].winner[MAX * (MAX - 1) / 2];
                 break;
             }
 
