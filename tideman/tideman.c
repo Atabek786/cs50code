@@ -144,8 +144,8 @@ void add_pairs(void)
                 if(pair_count < MAX)
                 {
                     pair new_pair;
-                    new_pair.candidate1 = i;
-                    new_pair.candidate2 = j;
+                    new_pair.winner = i;
+                    new_pair.loser = j;
                     pairs[pair_count] = new_pair;
                     pair_count++;
                 }
