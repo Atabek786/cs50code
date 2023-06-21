@@ -96,7 +96,6 @@ int check_format(WAVHEADER header)
     {
         return false;
     }
-        return 0;
 }
 
 int get_block_size(WAVHEADER header)
