@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include "wav.h"
 
@@ -62,8 +63,6 @@ int check_format(WAVHEADER header)
     fread(&header, sizeof(WAVHEADER), 1, input);
 
     // Compare the chunk ID and format to verify if it's a WAV file
-    bool checkformat
-    {
         if (memcmp(header.chunkID, "RIFF", 4) == 0 && memcmp(header.format, "WAVE", 4) == 0)
         {
             fclose(input);
@@ -74,7 +73,7 @@ int check_format(WAVHEADER header)
             fclose(input);
             return false;
         }
-    }
+
         return 0;
 }
 
