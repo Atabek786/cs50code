@@ -87,7 +87,6 @@ int main(int argc, char *argv[])
 
 int check_format(WAVHEADER header)
 {
-    // TODO #4
     if (memcmp(header.chunkID, "RIFF", 4) == 0 && memcmp(header.format, "WAVE", 4) == 0)
     {
         return true;
@@ -100,8 +99,6 @@ int check_format(WAVHEADER header)
 
 int get_block_size(WAVHEADER header)
 {
-    // TODO #7
-    int block = 0;
-    block = header.numChannels * (header.bitsPerSample / 8);
+    int block = header.numChannels * (header.bitsPerSample / 8);  // Divide by 8 to convert bits to bytes
     return block;
 }
