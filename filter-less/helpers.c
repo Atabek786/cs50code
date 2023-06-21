@@ -3,9 +3,9 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (int row = 0; row < height; row++)
+    for (int row = 0; row <= height; row++)
     {
-        for (int col = 0; col < width; col++)
+        for (int col = 0; col <= width; col++)
         {
             // Calculate grayscale value
             int grayscalef = (image[row][col].rgbtRed + image[row][col].rgbtGreen + image[row][col].rgbtBlue) / 3;
