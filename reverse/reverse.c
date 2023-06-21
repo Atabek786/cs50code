@@ -65,9 +65,16 @@ int main(int argc, char *argv[])
     fread(audioData, sizeof(int16_t), numSamples, input);
 
     // Reverse the ascending scale (reorder samples to create descending scale)
-    for (long i = 0; i < numSamples; i++)
+    for (long i = numBlocks - 1; i >= 0; i--)
     {
-        audioData[i] = audioData[numSamples - 1 - i];
+        // Move the input pointer to the beginning of the current block
+        fseek(input, -block, SEEK_CUR);
+
+        // Read the audio block
+        fread(audioBlock, sizeof(uint8_t), block, input);
+
+        // Write the audio block to the output file
+        fwrite(audioBlock, sizeof(uint8_t), block, output);
     }
 
     // Write reversed audio to file
