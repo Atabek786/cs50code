@@ -11,12 +11,11 @@ int main(int argc, char *argv[])
 {
     // Ensure proper usage
     // TODO #1
-    if(argc != 2)
+    if(argc != 3 && argv[1] != strcmp(input.wav) argv[2] != "output.wav")
     {
-        printf("Usage: ./reverse wav.h")
+        printf("Usage: ./reverse input.wav output.wav");
         return 1;
     }
-    if(argv[1] != "wav")
 
     // Open input file for reading
     // TODO #2
