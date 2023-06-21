@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
     if(output == NULL)
     {
         printf("File doesn't exist\n");
-        return 1;
+        return 0;
     }
     // Write header to file
     // TODO #6
