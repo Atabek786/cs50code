@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     {
         if(factor != 1.0)
         {
-            factor * 
+            input = input * factor;
         }
     }
     // Close files
