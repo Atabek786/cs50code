@@ -52,8 +52,13 @@ int main(int argc, char *argv[])
     // Get block size
     int block_size = get_block_size(header);
 
+    // Calculate size of audio data
+    fseek(input, 0, SEEK_END);
+    long file_size = ftell(input);
+    long audio_data_size = file_size - sizeof(WAVHEADER);
+
     // Calculate number of blocks in the audio data
-    long num_blocks = (header.dataSize + block_size - 1) / block_size;
+    long num_blocks = (audio_data_size + block_size - 1) / block_size;
 
     // Read and write audio blocks in reverse order
     for (long i = num_blocks - 1; i >= 0; i--)
