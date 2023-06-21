@@ -24,12 +24,10 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, 7, infile) == 7)
     {
         // Replace '\n' with '\0'
-        buffer[6] = '\0';
+        buffer[7] = '\0';
 
         // Save plate number in array
-        int *b = malloc (sizeof(int));
-        buffer[7] = b;
-        plates[idx] = strcpy(buffer[]);
+        plates[idx] = buffer[7];
     }
 
     for (int i = 0; i < 8; i++)
