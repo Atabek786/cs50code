@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
     // TODO #1
     if(argc != 3)
     {
-        printf("Usage: ./reverse input.wav output.wav");
-        return 1;
+        printf("Usage: ./reverse input.wav output.wav \n");
+        return 0;
     }
 
     // Open input file for reading
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     if(input == NULL)
     {
         printf("File doesn't exist");
-        return 1;
+        return 0;
     }
 
     // Read header
@@ -40,10 +40,13 @@ int main(int argc, char *argv[])
     fread(&header, sizeof(WAVHEADER), 1, input);
     fclose(input);
 
-    if (check_format(header)) {
-        printf("File is in the WAV format.\n");
-    } else {
-        printf("File is not in the WAV format.\n");
+    if (check_format(header))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 
     // Open output file for writing
@@ -52,7 +55,7 @@ int main(int argc, char *argv[])
 
     if(output == NULL)
     {
-        printf("File doesn't exist");
+        printf("File doesn't exist\n");
         return 1;
     }
     // Write header to file
@@ -75,11 +78,11 @@ int check_format(WAVHEADER header)
     // TODO #4
     if (memcmp(header.chunkID, "RIFF", 4) == 0 && memcmp(header.format, "WAVE", 4) == 0)
     {
-        return 1;
+        return true;
     }
     else
     {
-        return 0;
+        return false;
     }
         return 0;
 }
