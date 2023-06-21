@@ -56,14 +56,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if(BYTE chunkID[4])
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    if(strcmp(header.chunkID, ""))
     return 0;
 }
 
