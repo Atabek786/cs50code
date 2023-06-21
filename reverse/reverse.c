@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     // TODO #4
     WAVHEADER header;
 
-    if (check_format(&header))
+    if (check_format(input.wav))
     {
         return true;
     }
