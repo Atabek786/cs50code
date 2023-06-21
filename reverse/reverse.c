@@ -51,13 +51,19 @@ int main(int argc, char *argv[])
 
     // closing files
     fclose(input);
-    fclose(output);
 }
 
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if()
+    if(BYTE chunkID[4])
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
     return 0;
 }
 
