@@ -8,12 +8,12 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int col = 0; col < width; col++)
         {
             // Calculate grayscale value
-            int grayscale = (image[row][col].rgbtRed + image[row][col].rgbtGreen + image[row][col].rgbtBlue) / 3;
+            int grayscalef = (image[row][col].rgbtRed + image[row][col].rgbtGreen + image[row][col].rgbtBlue) / 3;
 
             // Assign grayscale value to each RGB component
-            image[row][col].rgbtRed = grayscale;
-            image[row][col].rgbtGreen = grayscale;
-            image[row][col].rgbtBlue = grayscale;
+            image[row][col].rgbtRed = grayscalef;
+            image[row][col].rgbtGreen = grayscalef;
+            image[row][col].rgbtBlue = grayscalef;
         }
     }
     return;
