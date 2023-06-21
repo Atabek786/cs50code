@@ -19,11 +19,10 @@ int main(int argc, char *argv[])
     }
 
     // Open input file for reading
-    FILE *input = fopen(argv[1], "rb");  // Use "rb" for binary mode
-
+    FILE *input = fopen(argv[1], "rb");
     if (input == NULL)
     {
-        printf("File doesn't exist\n");
+        printf("Cannot open input file\n");
         return 1;
     }
 
@@ -31,62 +30,47 @@ int main(int argc, char *argv[])
     WAVHEADER header;
     fread(&header, sizeof(WAVHEADER), 1, input);
 
-    // Use check_format to ensure WAV format
     if (!check_format(header))
     {
-        printf("Invalid WAV file format\n");
+        printf("Invalid WAV format\n");
         fclose(input);
         return 1;
     }
 
     // Open output file for writing
-    FILE *output = fopen(argv[2], "wb");  // Use "wb" for binary mode
-
+    FILE *output = fopen(argv[2], "wb");
     if (output == NULL)
     {
-        printf("Cannot create output file\n");
+        printf("Cannot open output file\n");
         fclose(input);
         return 1;
     }
 
-    // Write header to file
+    // Write header to output file
     fwrite(&header, sizeof(WAVHEADER), 1, output);
 
-    // Calculate block size
-    int block = get_block_size(header);
+    // Get block size
+    int block_size = get_block_size(header);
 
-    // Move the input pointer to the start of audio data
-    fseek(input, sizeof(WAVHEADER), SEEK_SET);
+    // Calculate number of blocks in the audio data
+    long num_blocks = (header.dataSize + block_size - 1) / block_size;
 
-    // Seek to the end of the audio data
-    fseek(input, 0, SEEK_END);
-
-    // Calculate the number of audio blocks
-    long numBlocks = ftell(input) / block;
-
-    // Allocate memory for an audio block
-    uint8_t *audioBlock = (uint8_t *)malloc(block * sizeof(uint8_t));
-
-    // Reverse and write audio blocks
-    if(fseek(input, block, SEEK_END))
+    // Read and write audio blocks in reverse order
+    for (long i = num_blocks - 1; i >= 0; i--)
     {
-        return 1;
-    }
-    BYTE buffer[block];
-    {
-        while(ftell(input) - block > sizeof(header))
-        {
-            if(fseek(input, -2 * block, SEEK_CUR))
-            {
-                return 1;
-            }
-            fread(buffer, block, 1, input);
-            fwrite(buffer, block, 1, output);
-        }
-    }
+        // Set input file pointer to the beginning of the current block
+        fseek(input, sizeof(WAVHEADER) + i * block_size, SEEK_SET);
 
-    // Free allocated memory
-    free(audioBlock);
+        // Read audio block
+        uint8_t *block = malloc(block_size);
+        fread(block, 1, block_size, input);
+
+        // Write audio block to output file
+        fwrite(block, 1, block_size, output);
+
+        // Free memory
+        free(block);
+    }
 
     // Close files
     fclose(input);
@@ -109,6 +93,7 @@ int check_format(WAVHEADER header)
 
 int get_block_size(WAVHEADER header)
 {
-    int block = header.numChannels * (header.bitsPerSample * 8);  // Divide by 8 to convert bits to bytes
-    return block;
+    int bytes_per_sample = header.bitsPerSample / 8;
+    int block_size = header.numChannels * bytes_per_sample;
+    return block_size;
 }
