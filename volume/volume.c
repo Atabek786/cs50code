@@ -41,6 +41,9 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
     input = fopen(HEADER_SIZE, "r");
+
+    output = fopen(HEADER_SIZE, "w");
+    if()
     // Close files
     fclose(input);
     fclose(output);
