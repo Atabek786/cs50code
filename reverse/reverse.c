@@ -22,6 +22,12 @@ int main(int argc, char *argv[])
     // TODO #2
     FILE *infile = fopen (argv[1], "r");
 
+    if(infile == NULL)
+    {
+        printf("File doesn't exist");
+        return 1;
+    }
+
     // Read header
     // TODO #3
 
