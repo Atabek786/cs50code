@@ -21,13 +21,24 @@ int main(int argc, char *argv[])
 
     int idx = 0;
 
-    while (fread(buffer, 1, 7, infile) == 7)
+    while (fread(buffer, 1, 7 , infile) == 7)
     {
+
+        char *temp = malloc(sizeof(char) * 7);
+
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
-        // Save plate number in array
-        plates[idx] = buffer[7];
+        if(temp != NULL)
+        {
+            strcpy(temp, buffer);
+        }
+
+        plates[idx] = temp;
+        temp = NULL;
+
+        free(temp);
+        idx++;
     }
 
     for (int i = 0; i < 8; i++)
