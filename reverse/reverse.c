@@ -20,15 +20,9 @@ int main(int argc, char *argv[])
 
     // Open input file for reading
     // TODO #2
-    FILE *infile = fopen (argv[1], "r");
+    FILE *input = fopen (argv[1], "r");
 
-    if(infile == NULL)
-    {
-        printf("File doesn't exist");
-        return 1;
-    }
-    FILE *outfile = fopen(argv[2], "w");
-    if(outfile == NULL)
+    if(input == NULL)
     {
         printf("File doesn't exist");
         return 1;
@@ -36,6 +30,8 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
+    uint8_t buffer;
+    fread(&buffer, sizeof(uint8_t), 1, input);
 
     // Use check_format to ensure WAV format
     // TODO #4
