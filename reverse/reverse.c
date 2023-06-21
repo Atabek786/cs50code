@@ -104,6 +104,6 @@ int check_format(WAVHEADER header)
 
 int get_block_size(WAVHEADER header)
 {
-    int block = header.numChannels * (header.bitsPerSample / 8);  // Divide by 8 to convert bits to bytes
+    int block = header.numChannels * (header.bitsPerSample * 8);  // Divide by 8 to convert bits to bytes
     return block;
 }
