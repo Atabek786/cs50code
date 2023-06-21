@@ -56,14 +56,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if(strncmp(header.chunkID, "RIFF", 4)==0 && strncmp(header.format, "WAVE", 4)==0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    
     return 0;
 }
 
