@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "wav.h"
 
@@ -11,7 +12,7 @@ int main(int argc, char *argv[])
 {
     // Ensure proper usage
     // TODO #1
-    if(argc != 3 && argv[1] != strcmp(input.wav) argv[2] != "output.wav")
+    if(argc != 3)
     {
         printf("Usage: ./reverse input.wav output.wav");
         return 1;
