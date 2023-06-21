@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     int16_t buffer2;
     while(fread(&buffer2, sizeof(int16_t), 1, input))
     {
-        
+        fseek(input,)
         fwrite(&buffer, sizeof(int16_t), 1, output);
     }
 
