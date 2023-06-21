@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         printf("File doesn't exist");
         return 1;
     }
-    FILE *outfile = fopen(argv[2], "r");
+    FILE *outfile = fopen(argv[2], "w");
     if(outfile == NULL)
     {
         printf("File doesn't exist");
