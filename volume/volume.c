@@ -42,8 +42,13 @@ int main(int argc, char *argv[])
     }
 
     // TODO: Read samples from input file and write updated data to output file
+    int number;
+    while(scanf(input, "%d", &number) == 2)
+    {
+        int updatenumber = number + 2;
 
-    for(int i = 0; i < )
+        fprintf(output, "%d\n", updatednumber);
+    }
     // Close files
     fclose(input);
     fclose(output);
