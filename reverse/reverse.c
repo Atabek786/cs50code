@@ -27,6 +27,12 @@ int main(int argc, char *argv[])
         printf("File doesn't exist");
         return 1;
     }
+    FILE *outfile = fopen(argv[2], "r");
+    if(outfile == NULL)
+    {
+        printf("File doesn't exist");
+        return 1;
+    }
 
     // Read header
     // TODO #3
