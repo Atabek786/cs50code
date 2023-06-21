@@ -37,13 +37,13 @@ int main(int argc, char *argv[])
         plates[idx] = temp;
         temp = NULL;
 
-        free(temp);
         idx++;
     }
 
     for (int i = 0; i < 8; i++)
     {
         printf("%s\n", plates[i]);
+        free(plates[i]);
     }
     fclose(infile);
 }
