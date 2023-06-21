@@ -55,16 +55,19 @@ int main(int argc, char *argv[])
     // Calculate block size
     int block = get_block_size(header);
 
-    // Calculate the number of audio samples
-    long numSamples = header.subchunk2Size / (header.bitsPerSample / 8);
+    // Move the input pointer to the start of audio data
+    fseek(input, sizeof(WAVHEADER), SEEK_SET);
 
-    // Allocate memory for audio data
-    int16_t *audioData = (int16_t *)malloc(numSamples * sizeof(int16_t));
+    // Seek to the end of the audio data
+    fseek(input, 0, SEEK_END);
 
-    // Read audio data
-    fread(audioData, sizeof(int16_t), numSamples, input);
+    // Calculate the number of audio blocks
+    long numBlocks = ftell(input) / block;
 
-    // Reverse the ascending scale (reorder samples to create descending scale)
+    // Allocate memory for an audio block
+    uint8_t *audioBlock = (uint8_t *)malloc(block * sizeof(uint8_t));
+
+    // Reverse and write audio blocks
     for (long i = numBlocks - 1; i >= 0; i--)
     {
         // Move the input pointer to the beginning of the current block
@@ -77,11 +80,8 @@ int main(int argc, char *argv[])
         fwrite(audioBlock, sizeof(uint8_t), block, output);
     }
 
-    // Write reversed audio to file
-    fwrite(audioData, sizeof(int16_t), numSamples, output);
-
     // Free allocated memory
-    free(audioData);
+    free(audioBlock);
 
     // Close files
     fclose(input);
