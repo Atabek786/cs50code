@@ -55,26 +55,33 @@ int main(int argc, char *argv[])
     // Calculate block size
     int block = get_block_size(header);
 
-    // Calculate the number of audio samples
-    long numSamples = header.subchunk2Size / (header.bitsPerSample / 8);
+    // Move the input pointer to the start of audio data
+    fseek(input, sizeof(WAVHEADER), SEEK_SET);
 
-    // Allocate memory for audio data
-    int16_t *audioData = (int16_t *)malloc(numSamples * sizeof(int16_t));
+    // Seek to the end of the audio data
+    fseek(input, 0, SEEK_END);
 
-    // Read audio data
-    fseek(input, sizeof(WAVHEADER), SEEK_SET);  // Move file pointer past the header
+    // Calculate the number of audio blocks
+    long numBlocks = ftell(input) / block;
 
-    while (fread(audioData, sizeof(int16_t), block, input) == block)
+    // Allocate memory for an audio block
+    uint8_t *audioBlock = (uint8_t *)malloc(block * sizeof(uint8_t));
+
+    // Reverse and write audio blocks
+    for (long i = numBlocks - 1; i >= 0; i--)
     {
-        // Reverse the order of audio blocks
-        fseek(input, -2 * block, SEEK_CUR);  // Move file pointer back to the previous block
+        // Move the input pointer to the beginning of the current block
+        fseek(input, -block, SEEK_CUR);
 
-        // Write the reversed audio block to the output file
-        fwrite(audioData, sizeof(int16_t), block, output);
+        // Read the audio block
+        fread(audioBlock, sizeof(uint8_t), block, input);
+
+        // Write the audio block to the output file
+        fwrite(audioBlock, sizeof(uint8_t), block, output);
     }
 
     // Free allocated memory
-    free(audioData);
+    free(audioBlock);
 
     // Close files
     fclose(input);
@@ -97,6 +104,6 @@ int check_format(WAVHEADER header)
 
 int get_block_size(WAVHEADER header)
 {
-    int block = header.numChannels * (header.bitsPerSample / 8);  // Divide by 8 to convert bits to bytes
+    int block = header.numChannels * (header.bitsPerSample * 8);  // Divide by 8 to convert bits to bytes
     return block;
 }
