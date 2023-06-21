@@ -57,7 +57,10 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    bool header
+    bool chf(header)
+    {
+        if()
+    }
     return 0;
 }
 
