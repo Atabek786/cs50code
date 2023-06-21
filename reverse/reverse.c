@@ -36,7 +36,12 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    check_format(input.wav);
+    const char *inputn = "input.wav";
+
+    if (check_format(inputn))
+    {
+        return true;
+    }
 
     // Open output file for writing
     // TODO #5
