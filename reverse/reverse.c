@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     {
         fseek(input, 0, SEEK_END);
         fwrite(&buffer2, sizeof(int16_t), 1, output);
-        ftell()
+        ftell(input);
     }
 
     // closing files
