@@ -26,7 +26,9 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        buffer = strcpy(plates[idx]);
+
+        
+        plates[idx] = strcpy(buffer[]==7);
     }
 
     for (int i = 0; i < 8; i++)
