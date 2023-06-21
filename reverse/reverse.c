@@ -63,23 +63,14 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    const char* filename;
-    FILE *input = fopen(filename, "r");
-
-    fread(&header, sizeof(WAVHEADER), 1, input);
-
-    // Compare the chunk ID and format to verify if it's a WAV file
-        if (memcmp(header.chunkID, "RIFF", 4) == 0 && memcmp(header.format, "WAVE", 4) == 0)
-        {
-            fclose(input);
-            return true;
-        }
-        else
-        {
-            fclose(input);
-            return false;
-        }
-
+    if (memcmp(header.chunkID, "RIFF", 4) == 0 && memcmp(header.format, "WAVE", 4) == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
         return 0;
 }
 
