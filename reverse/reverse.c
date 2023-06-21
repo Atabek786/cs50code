@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     // Open input file for reading
     // TODO #2
-    FILE *
+    FILE *infile = fopen (argv[1], "r");
 
     // Read header
     // TODO #3
