@@ -64,12 +64,10 @@ int main(int argc, char *argv[])
     // Read audio data
     fread(audioData, sizeof(int16_t), numSamples, input);
 
-    // Reverse audio data
-    for (long i = 0; i < numSamples / 2; i++)
+    // Reverse the ascending scale (reorder samples to create descending scale)
+    for (long i = 0; i < numSamples; i++)
     {
-        int16_t temp = audioData[i];
         audioData[i] = audioData[numSamples - 1 - i];
-        audioData[numSamples - 1 - i] = temp;
     }
 
     // Write reversed audio to file
