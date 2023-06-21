@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     if(input == NULL)
     {
         printf("File doesn't exist");
-        return 0;
+        return 1;
     }
 
     // Read header
@@ -56,10 +56,11 @@ int main(int argc, char *argv[])
     if(output == NULL)
     {
         printf("File doesn't exist\n");
-        return 0;
+        return 1;
     }
     // Write header to file
     // TODO #6
+    
 
     // Use get_block_size to calculate size of block
     // TODO #7
