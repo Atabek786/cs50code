@@ -42,7 +42,10 @@ int main(int argc, char *argv[])
     }
 
     // TODO: Read samples from input file and write updated data to output file
-    for()
+    for(int i = 0; i <= input; i + 2)
+    {
+        if()
+    }
     // Close files
     fclose(input);
     fclose(output);
