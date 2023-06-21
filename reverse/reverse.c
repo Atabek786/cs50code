@@ -37,10 +37,13 @@ int main(int argc, char *argv[])
     // Use check_format to ensure WAV format
     // TODO #4
     WAVHEADER header;
+    fread(&header, sizeof(WAVHEADER), 1, input);
+    fclose(input);
 
-    if (check_format(input.wav))
-    {
-        return true;
+    if (check_format(header)) {
+        printf("File is in the WAV format.\n");
+    } else {
+        printf("File is not in the WAV format.\n");
     }
 
     // Open output file for writing
