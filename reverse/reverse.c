@@ -68,16 +68,21 @@ int main(int argc, char *argv[])
     uint8_t *audioBlock = (uint8_t *)malloc(block * sizeof(uint8_t));
 
     // Reverse and write audio blocks
-    for (long i = numBlocks - 1; i >= 0; i--)
+    if(fseek(input, block, SEEK_END))
     {
-        // Move the input pointer to the beginning of the current block
-        fseek(input, -block, SEEK_CUR);
-
-        // Read the audio block
-        fread(audioBlock, sizeof(uint8_t), block, input);
-
-        // Write the audio block to the output file
-        fwrite(audioBlock, sizeof(uint8_t), block, output);
+        return 1;
+    }
+    BYTE buffer[block];
+    {
+        while(ftell(input) - block > sizeof(header))
+        {
+            if(fseek(input, -2 * block, SEEK_CUR))
+            {
+                return 1;
+            }
+            fread(buffer, block, 1, input);
+            fwrite(buffer, block, 1, output);
+        }
     }
 
     // Free allocated memory
