@@ -42,14 +42,7 @@ int main(int argc, char *argv[])
     }
 
     // TODO: Read samples from input file and write updated data to output file
-    
-    for(int i = 0; i <= buf; i + 2)
-    {
-        if(factor != 1.0)
-        {
-            input = input * factor;
-        }
-    }
+    fscanf(buffer)
     // Close files
     fclose(input);
     fclose(output);
