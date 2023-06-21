@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
     // Write header to file
     // TODO #6
     fwrite(&buffer, sizeof(uint8_t), 1, output);
+    fclose(output);
 
     // Use get_block_size to calculate size of block
     // TODO #7
@@ -68,7 +69,12 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     // TODO #8
-    arinput[input];
+    int16_t buffer2;
+    while(fread(&buffer2, sizeof(int16_t), 1, input))
+    {
+        
+        fwrite(&buffer, sizeof(int16_t), 1, output);
+    }
 
     // closing files
     fclose(input);
