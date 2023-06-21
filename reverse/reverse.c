@@ -65,11 +65,11 @@ int main(int argc, char *argv[])
     fread(audioData, sizeof(int16_t), numSamples, input);
 
     // Reverse audio data
-    for (long i = 0, j = numSamples - 1; i < j; i++, j--)
+    for (long i = 0; i < numSamples / 2; i++)
     {
         int16_t temp = audioData[i];
-        audioData[i] = audioData[j];
-        audioData[j] = temp;
+        audioData[i] = audioData[numSamples - 1 - i];
+        audioData[numSamples - 1 - i] = temp;
     }
 
     // Write reversed audio to file
