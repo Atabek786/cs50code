@@ -36,9 +36,7 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    const char *inputn = "input.wav";
-
-    if (check_format(inputn))
+    if (check_format(&header))
     {
         return true;
     }
