@@ -12,17 +12,11 @@ int main(int argc, char *argv[])
 {
     // Ensure proper usage
     // TODO #1
-    if(argc != 3)
+    if(argc != 3 && (strcmp(argv[1], "input.wav" && strcmp(argv[2], "output.wav")==0))
     {
         printf("Usage: ./reverse input.wav output.wav");
         return 1;
     }
-    if(argv[1] != "input.wav")
-    {
-        printf("Usage: ./reverse input.wav output.wav")
-        return 1;
-    }
-
     // Open input file for reading
     // TODO #2
     FILE *infile = fopen (argv[1], "r");
