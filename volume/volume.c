@@ -36,8 +36,10 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     uint8_t header[44]
     int16_t buffer;
-    fread(buffer, 1, 44, input);
-    fwrite()
+    while (fread(&buffer, 1, 44, input))
+    {
+        fwrite(&buffer, 1, 44, output);
+    }
 
     // TODO: Read samples from input file and write updated data to output file
     input = fopen(HEADER_SIZE, "r");
