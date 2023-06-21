@@ -48,7 +48,13 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
+    FILE *output = fopen (argv[2], "w");
 
+    if(output == NULL)
+    {
+        printf("File doesn't exist");
+        return 1;
+    }
     // Write header to file
     // TODO #6
 
@@ -61,6 +67,7 @@ int main(int argc, char *argv[])
 
     // closing files
     fclose(input);
+    fclose(output);
 }
 
 int check_format(WAVHEADER header)
