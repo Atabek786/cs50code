@@ -12,74 +12,77 @@ int get_block_size(WAVHEADER header);
 int main(int argc, char *argv[])
 {
     // Ensure proper usage
-    // TODO #1
-    if(argc != 3)
+    if (argc != 3)
     {
-        printf("Usage: ./reverse input.wav output.wav \n");
-        return 0;
-    }
-
-    // Open input file for reading
-    // TODO #2
-    FILE *input = fopen (argv[1], "r");
-
-    if(input == NULL)
-    {
-        printf("File doesn't exist");
+        printf("Usage: ./reverse input.wav output.wav\n");
         return 1;
     }
 
-    // Read header
-    // TODO #3
-    uint8_t buffer;
-    fread(&buffer, sizeof(uint8_t), 1, input);
+    // Open input file for reading
+    FILE *input = fopen(argv[1], "rb");  // Use "rb" for binary mode
 
-    // Use check_format to ensure WAV format
-    // TODO #4
-    WAVHEADER header;
-    fread(&header, sizeof(WAVHEADER), 1, input);
-    fclose(input);
-
-    if (check_format(header))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-
-    // Open output file for writing
-    // TODO #5
-    FILE *output = fopen (argv[2], "w");
-
-    if(output == NULL)
+    if (input == NULL)
     {
         printf("File doesn't exist\n");
         return 1;
     }
-    // Write header to file
-    // TODO #6
-    fwrite(&buffer, sizeof(uint8_t), 1, output);
-    fclose(output);
 
-    // Use get_block_size to calculate size of block
-    // TODO #7
-    int block = get_block_size(header);
+    // Read header
+    WAVHEADER header;
+    fread(&header, sizeof(WAVHEADER), 1, input);
 
-    // Write reversed audio to file
-    // TODO #8
-    int16_t buffer2;
-    while(fread(&buffer2, sizeof(int16_t), 1, input))
+    // Use check_format to ensure WAV format
+    if (!check_format(header))
     {
-        fseek(input, 0, SEEK_END);
-        fwrite(&buffer2, sizeof(int16_t), 1, output);
-        ftell(input);
+        printf("Invalid WAV file format\n");
+        fclose(input);
+        return 1;
     }
 
-    // closing files
+    // Open output file for writing
+    FILE *output = fopen(argv[2], "wb");  // Use "wb" for binary mode
+
+    if (output == NULL)
+    {
+        printf("Cannot create output file\n");
+        fclose(input);
+        return 1;
+    }
+
+    // Write header to file
+    fwrite(&header, sizeof(WAVHEADER), 1, output);
+
+    // Calculate block size
+    int block = get_block_size(header);
+
+    // Calculate the number of audio samples
+    long numSamples = header.subchunk2Size / (header.bitsPerSample / 8);
+
+    // Allocate memory for audio data
+    int16_t *audioData = (int16_t *)malloc(numSamples * sizeof(int16_t));
+
+    // Read audio data
+    fread(audioData, sizeof(int16_t), numSamples, input);
+
+    // Reverse audio data
+    for (long i = 0, j = numSamples - 1; i < j; i++, j--)
+    {
+        int16_t temp = audioData[i];
+        audioData[i] = audioData[j];
+        audioData[j] = temp;
+    }
+
+    // Write reversed audio to file
+    fwrite(audioData, sizeof(int16_t), numSamples, output);
+
+    // Free allocated memory
+    free(audioData);
+
+    // Close files
     fclose(input);
     fclose(output);
+
+    return 0;
 }
 
 int check_format(WAVHEADER header)
