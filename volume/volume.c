@@ -43,11 +43,11 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
     int number;
-    while(scanf(input, "%d", &number) == 2)
+    while(fscanf(input, "%d", &number) == 2)
     {
         int updatenumber = number + 2;
 
-        fprintf(output, "%d\n", updatednumber);
+        fprintf(output, "%d\n", updatenumber);
     }
     // Close files
     fclose(input);
