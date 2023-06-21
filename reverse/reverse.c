@@ -62,19 +62,20 @@ int check_format(WAVHEADER header)
     fread(&header, sizeof(WAVHEADER), 1, input);
 
     // Compare the chunk ID and format to verify if it's a WAV file
-    if (memcmp(header.chunkID, "RIFF", 4) == 0 &&
-        memcmp(header.format, "WAVE", 4) == 0)
+    bool checkformat
     {
-        fclose(input);
-        return true;
+        if (memcmp(header.chunkID, "RIFF", 4) == 0 && memcmp(header.format, "WAVE", 4) == 0)
+        {
+            fclose(input);
+            return true;
+        }
+        else
+        {
+            fclose(input);
+            return false;
+        }
     }
-    else
-    {
-        fclose(input);
-        return false;
-    }
-
-    return 0;
+        return 0;
 }
 
 int get_block_size(WAVHEADER header)
