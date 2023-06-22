@@ -43,10 +43,13 @@ int main(void)
 
 void unload(node *list)
 {
-
+    node *ptr = list->next;
+    free(list);
+    list = ptr;
+    ptr = list->next;
 }
 
 void visualize(node *list)
 {
-    
+
 }
