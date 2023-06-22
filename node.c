@@ -26,12 +26,12 @@ int main(void)
         node *n = malloc(sizeof(node));
 
         n->phrase = phrase;
-        n->next = NULL;
+        n->next = list;
+
         list = n;
 
         visualize(list);
     }
 
     unload(list);
-
 }
