@@ -24,6 +24,11 @@ int main(void)
         string phrase = get_string("Enter message: ");
 
         node *n = malloc(sizeof(node));
+        if(n == NULL)
+        {
+            printf("Null here\n");
+            return 1;
+        }
 
         n->phrase = phrase;
         n->next = list;
