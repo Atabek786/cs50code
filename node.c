@@ -40,3 +40,13 @@ int main(void)
 
     unload(list);
 }
+
+void unload(node *list)
+{
+
+}
+
+void visualize(node *list)
+{
+    
+}
