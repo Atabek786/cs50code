@@ -25,7 +25,7 @@ int main(void)
     }
 }
 
-// TODO: return an index, 0â€“25, for a given phrase
+// TODO: return an index, 0-25, for a given phrase
 int hash(string phrase)
 {
     return toupper(phrase[0]) - 'A';
