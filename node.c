@@ -43,19 +43,21 @@ int main(void)
 
 void unload(node *list)
 {
+    while (list !=NULL)
+    {
     node *ptr = list->next;
     free(list);
     list = ptr;
-    ptr = list->next;
-    free(list);
-    list = ptr;
+    }
 }
 
 void visualize(node *list)
 {
-    printf("<------Visualizer------>\n")
+    printf("<------Visualizer------>\n");
     while (list != NULL)
     {
-        
+        printf("Location %p\n", list);
+        printf("Phrase: %p\n", list);
+        printf("Next: %p\n", list);
     }
 }
