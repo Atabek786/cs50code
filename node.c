@@ -47,9 +47,15 @@ void unload(node *list)
     free(list);
     list = ptr;
     ptr = list->next;
+    free(list);
+    list = ptr;
 }
 
 void visualize(node *list)
 {
-
+    printf("<------Visualizer------>\n")
+    while (list != NULL)
+    {
+        
+    }
 }
