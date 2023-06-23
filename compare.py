@@ -1,9 +1,10 @@
-x = int(input("x: "))
-y = int(input("y: "))
+def main():
+    meow(3)
 
-if x < y:
-    print("x is less than y")
-elif x > y:
-    print("x is greater than y")
-else:
-    print("x is equal to y")
+
+def meow(n):
+    for i in range(n):
+        print("meow")
+
+
+main()
