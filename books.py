@@ -3,7 +3,7 @@ books = []
 # Add three books to your shelf
 for i in range(3):
     book = dict()
-    book["title"] = input("Title: ")
+    book["title"] = input("Title: ").strip()
     book["author"] = input("Author: ")
 
 
