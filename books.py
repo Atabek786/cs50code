@@ -9,3 +9,5 @@ for i in range(3):
 
     books.append(book)
 # Print book titles
+for book in books:
+    print(book["title"])
