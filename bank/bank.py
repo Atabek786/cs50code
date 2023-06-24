@@ -1,11 +1,13 @@
+def calculate_fee(greeting):
+    greeting = greeting.lstrip().lower()  # Remove leading whitespace and convert to lowercase
 
-greeting = input("Greeting: ")
-if greeting.isdigit():
-    print("Print a string")
-if greeting == str.isidentifier('hello'):
-    print("$0")
-elif greeting == str.isidentifier('h'):
-    print("$20")
-else:
-    print("$100")
+    if greeting.startswith("hello"):
+        return "$0"
+    elif greeting.startswith("h"):
+        return "$20"
+    else:
+        return "$100"
 
+user_greeting = input("Enter your greeting: ")
+fee = calculate_fee(user_greeting)
+print("Fee:", fee)
