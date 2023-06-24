@@ -3,10 +3,8 @@ import csv
 books = []
 
 with open("books.csv") as file:
-    file_reader = csv.DictReader(file)
-    for book in file_reader:
-        print(book["title"])
+    file_reader = csv.reader(file)
+    for row in file_reader:
+        print(row[0])
 
 
-for book in books:
-    print(book["title"])
