@@ -1,10 +1,5 @@
-def main():
-    meow(3)
+book = dict()
+book["title"] = "Corduroy"
+book["author"] = "Don Freeman"
+print(book["title"])
 
-
-def meow(n):
-    for i in range(n):
-        print("meow")
-
-
-main()
