@@ -1,22 +1,16 @@
-import sys
-import figlet
+import sys, random
+from pyfiglet import Figlet
 
-def print_text_in_font(text, font):
-    # Print the text in the chosen font
-    ascii_art = figlet.Font().renderText(text, font=font)
-    print(ascii_art)
+filget = Figlet()
 
-# Check command-line arguments
-if len(sys.argv) == 1:
-    # No arguments, output text in a random font
-    text = input("Enter the text to print: ")
-    fonts = figlet.Fonts().getFonts()
-    font = fonts[0] if fonts else None
-    print_text_in_font(text, font)
-elif len(sys.argv) == 3 and sys.argv[1] in ("-f", "--font"):
-    # Two arguments, output text in the specified font
-    font = sys.argv[2]
-    text = input("Enter the text to print: ")
-    print_text_in_font(text, font)
-else:
-    print("Invalid arguments. Usage: python figlet.py [-f/--font FONT_NAME]")
+user = input("Input: ")
+
+fonts = Figlet.getFonts()
+
+try:
+    if len(sys.argv) == 1:
+        f = random.choice(Figlet.getFonts())
+        Figlet.setFont(font = f)
+        print(f"Output: {Figlet.renderText(user)}")
+    elif sys.argv[1] == '-f' or sys.argv[1] == "--font":
+        if sys.argv[1] == "-f" or sys.argv[1] == 
