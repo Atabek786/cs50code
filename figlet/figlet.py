@@ -1,4 +1,4 @@
-from pyfiglet import Figlet
+
 import pyfiglet
 import sys
 
