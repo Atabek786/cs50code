@@ -1,6 +1,10 @@
 import sys
 import figlet
 
+def print_text_in_font(text, font):
+    # Print the text in the chosen font
+    ascii_art = figlet.Font().renderText(text, font=font)
+    print(ascii_art)
 
 # Check command-line arguments
 if len(sys.argv) == 1:
