@@ -9,8 +9,10 @@ arg2 = sys.argv[2]
 if arg1 == '-f' or arg1 == '--font':
     
 else:
+    return
 
 
 prompt = input("Enter a string: ")
 prompt = Figlet()
+
 print(pyfiglet.renderText(prompt))
