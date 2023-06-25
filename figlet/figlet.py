@@ -7,7 +7,7 @@ arg1 = sys.argv[1]
 arg2 = sys.argv[2]
 
 if arg1 == '-f' or arg1 == '--font':
-    
+    return Success
 else:
     return
 
