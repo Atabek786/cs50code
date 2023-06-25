@@ -9,6 +9,6 @@ arg2 = sys.argv[2]
 
 
 prompt = input("Enter a string: ")
-prompt = Figlet()
+prompt = pyfiglet.Figlet(prompt)
 
 print(pyfiglet.renderText(prompt))
