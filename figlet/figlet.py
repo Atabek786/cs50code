@@ -1,3 +1,4 @@
-from pyfiglet import Figlet
+import figlet
 prompt = input("Enter a string: ")
-prompt = Figlet()
+prompt = figlet.Figlet()
+print(prompt)
