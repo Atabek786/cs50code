@@ -5,7 +5,7 @@ filget = Figlet()
 
 user = input("Input: ")
 
-fonts = figlet.getFonts()
+fonts = filget.getFonts()
 
 try:
     if len(sys.argv) == 1:
