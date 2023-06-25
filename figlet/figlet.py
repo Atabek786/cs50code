@@ -15,5 +15,9 @@ msg = input("Input: ")
 figlet.getFonts()
 
 if isRandomFont == False:
-    figlet.setFont(font=sys.argv[2])
-    print(figlet.renderText(msg))
+    try:
+        figlet.setFont(font=sys.argv[2])
+        print(figlet.renderText(msg))
+    except:
+        print("Invalid usage")
+        sys.exit(1)
