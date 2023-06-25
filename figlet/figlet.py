@@ -1,11 +1,11 @@
 import sys, random
 from pyfiglet import Figlet
 
-filget = Figlet()
+figlet = Figlet()
 
 user = input("Input: ")
 
-fonts = filget.getFonts()
+fonts = figlet.getFonts()
 
 try:
     if len(sys.argv) == 1:
