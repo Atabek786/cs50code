@@ -77,7 +77,7 @@ def comparative_averages(new_cases, states):
             p = round(d * 100,2)
         except ZeroDivisionError:
             raise ZeroDivisionError
-        print(f"{state} had a 7-day average of {average}")
+        print(f"{state} had a 7-day average of {avg_recent} and {msg} of {p}%")
 
 
 main()
