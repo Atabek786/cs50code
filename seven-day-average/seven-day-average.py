@@ -40,8 +40,15 @@ def calculate(reader):
     previous_cases = dict()
 
     for row in reader:
-        state = row("state")
-        date = row("date")
+        state = row["state"]
+        date = row["date"]
+        cases = int(row["cases"])
+
+        if state not in previous_cases:
+            previous_cases[state] = cases
+            new_cases[state] = []
+        else:
+            3
 
 
     previous_cases = {"Day 1":[]}
