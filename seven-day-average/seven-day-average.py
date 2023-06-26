@@ -48,14 +48,36 @@ def calculate(reader):
             previous_cases[state] = cases
             new_cases[state] = []
         else:
-            3
+            new_case = cases - previous_cases[state]
+            previous_cases[state] = case
 
-
-    previous_cases = {"Day 1":[]}
+            if state not in new_cases:
+                new_cases[state] = []
+            if len(new_cases[state]) >= 14:
+                new_cases[state].pop(0)
+            new_cases[state].append(new_case)
+    return new_cases
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
-    ...
+    for state in states:
+        recent_cases = new_cases[state][7:]
+        last_week_cases = new_cases[state][:7]
+        avg_recent = round(sum(recent_cases) / 7)
+        avg_last_week = round(sum(last_week_cases) / 7)
+
+        diff = avg_recent - avg_last_week
+
+        if diff > 0:
+            msg = "an increase"
+        else:
+            msg = "a decrease"
+        try:
+            d = diff / avg_last_week
+            p = round(d * 100,2)
+        except ZeroDivisionError:
+            raise ZeroDivisionError
+        print(f"{state} had a 7-day average of {average}")
 
 
 main()
