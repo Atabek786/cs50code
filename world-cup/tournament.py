@@ -15,10 +15,24 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    # TODO: Read teams into memory from file
+    #todo: How to read teams into memory from file
+    # Open file
     with open ('2018m.csv') as fileObject:
+        # Create reader object by passing the file
+        # object to reader method
         reader_obj = csv.reader(file_obj)
 
+        # Iterate over each row in the csv
+        # File using reader object
+        for row in reader_obj:
+            print(row)
+    with open ('2019w.csv') as fileObject:
+        # Create reader object by passing the file
+        # object to reader method
+        reader_obj = csv.reader(file_obj)
+
+        # Iterate over each row in the csv
+        # File using reader object
         for row in reader_obj:
             print(row)
 
