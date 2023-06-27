@@ -19,7 +19,8 @@ def main():
     with open ('2018m.csv') as fileObject:
         reader_obj = csv.reader(file_obj)
 
-        for row
+        for row in reader_obj:
+            print(row)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
