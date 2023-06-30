@@ -16,7 +16,6 @@ def main():
 
     teams = []
     #todo: How to read teams into memory from file
-    # Open file
     with open ('2018m.csv') as fileObject:
         # Create reader object by passing the file
         # object to reader method
