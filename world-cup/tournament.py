@@ -19,14 +19,14 @@ def main():
     with open ('2018m.csv') as fileObject:
         # Create reader object by passing the file
         # object to reader method
-        reader_obj = csv.reader(file_obj)
+        reader_obj = csv.DictReader(file_obj)
         # Iterate over each row in the csv
         # File using reader object
         for row in reader_obj:
             print(row)
 
     with open ('2019w.csv') as fileObject:
-        reader_obj = csv.reader(file_obj)
+        reader_obj = csv.DictReader(file_obj)
         for row in reader_obj:
             print(row)
 
