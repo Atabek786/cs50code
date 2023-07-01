@@ -15,20 +15,12 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    #todo: How to read teams into memory from file
-    with open ('2018m.csv') as fileObject:
-        # Create reader object by passing the file
-        # object to reader method
-        reader_obj = csv.DictReader(file_obj)
-        # Iterate over each row in the csv
-        # File using reader object
-        for row in reader_obj:
-            print(row)
-
-    with open ('2019w.csv') as fileObject:
-        reader_obj = csv.DictReader(file_obj)
-        for row in reader_obj:
-            print(row)
+    filename = sys.argv[1]
+    with open(filename) as f:
+        reader = csv.DictReader(f)
+        for team in reader:
+            team["rating"] = int(team["rating"])
+            teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
@@ -62,7 +54,9 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    # TODO
+    while len(teams) > 1:
+        teams = simulate_round(teams)
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
