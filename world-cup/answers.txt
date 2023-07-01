@@ -9,7 +9,10 @@ Times:
 
 Questions:
 
-Which predictions, if any, proved incorrect as you increased the number of simulations?: 100000 and 1000000 simulations
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+
+With a small number of simulations
 
 Suppose you're charged a fee for each second of compute time your program uses.
-After how many simulations would you call the predictions "good enough"?: 4
+After how many simulations would you call the predictions "good enough"?:
+It seems like the predictions stabilized after about
