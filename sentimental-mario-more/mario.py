@@ -1,11 +1,12 @@
 height = int(input("Height: "))
-while height < 1 and height > 8:
+if height < 1 or height > 8:
+    print("give an integer between 1 and 8")
 
 for row in range(height):
     for space in range(height - row - 1):
         print(' ')
-    for cols in range(rows):
+    for cols in range(row):
         print('#')
     print('  ')
-    for cols in range(rows):
+    for cols in range(row):
         print('#')
