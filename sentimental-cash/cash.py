@@ -1,6 +1,6 @@
-import m
+
 def main():
-    cents = float(input())
+    cents = int(input())
 
 
     quarters = calculate_quarters(cents)
