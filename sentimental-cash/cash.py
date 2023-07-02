@@ -4,11 +4,11 @@ def main():
         cents = float(input("Enter the amount in cents: ").strip())
         if cents > 0:
             break
-        if cents.isalpha():
-            break
 
     cents = round(cents*100)
 
+    count = 0
+    
     quarters = calculate_quarters(cents)
     cents = cents - quarters * 25
 
