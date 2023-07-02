@@ -4,7 +4,7 @@ def main():
         cents = float(input("Enter the amount in cents: ").strip())
         if cents > 0:
             break
-        if cents.isalpha:
+        if cents.isalpha():
             break
 
     cents = round(cents*100)
