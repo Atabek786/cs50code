@@ -2,6 +2,9 @@
 def main():
     try:
         cents = float(input("Enter a number: "))
+        if cents < 0:
+            print("ERROR")
+            return 0
 
         quarters = calculate_quarters(cents)
         cents = cents - quarters * 25
