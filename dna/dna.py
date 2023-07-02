@@ -19,7 +19,7 @@ def main():
     for key in database[0].keys():
         if key == "name":
             continue
-    str_counts[key] = longest_match(sequence, key)
+        str_counts[key] = longest_match(sequence, key)
 
     for row in database:
         match = True
@@ -29,9 +29,9 @@ def main():
             if int(row[key]) != str_counts[key]:
                 match = False
                 break
-            if match:
-                print(row["name"])
-                return
+        if match:
+            print(row["name"])
+            return
     print("No match")
 
 
