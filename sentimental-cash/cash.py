@@ -1,25 +1,26 @@
 
 def main():
-    try:
-        cents = float(input())
+    while True:
+        try:
+            cents = float(input())
 
-        quarters = calculate_quarters(cents)
-        cents = cents - quraters * 25
+            quarters = calculate_quarters(cents)
+            cents = cents - quraters * 25
 
-        dimes = calculate_dimes(cents)
-        cents = cents - dimes * 10
+            dimes = calculate_dimes(cents)
+            cents = cents - dimes * 10
 
-        nickels = calculate_nickels(cents)
-        cents = cents - nickels * 5
+            nickels = calculate_nickels(cents)
+            cents = cents - nickels * 5
 
-        pennies = calculate_pennies(cents)
-        cents = cents - pennies * 1
+            pennies = calculate_pennies(cents)
+            cents = cents - pennies * 1
 
-        coins = quarters + dimes + nickels + pennies
+            coins = quarters + dimes + nickels + pennies
 
-        print("Total number of coins given: " + coins)
-    except ValueError:
-        print("Invalid input, please enter a valid number.")
+            print("Total number of coins given: " + coins)
+        except ValueError:
+            print("Invalid input, please enter a valid number.")
 
 
 
