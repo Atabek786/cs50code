@@ -36,6 +36,8 @@ def calculate_quarters(cents):
             cents = cents - 25
             if cents < 25:
                 break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
     return quarters
 
 def calculate_dimes(cents):
@@ -45,6 +47,8 @@ def calculate_dimes(cents):
             cents = cents - 10
             if cents < 10:
                 break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
     return dimes
 
 def calculate_nickels(cents):
@@ -54,6 +58,8 @@ def calculate_nickels(cents):
             cents = cents - 5
             if cents < 5:
                 break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
     return nickels
 
 def calculate_pennies(cents):
@@ -63,6 +69,8 @@ def calculate_pennies(cents):
             cents = cents - 1
             if cents < 1:
                 break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
     return pennies
 
 if __name__=="__main__":
