@@ -1,7 +1,7 @@
 
 while True:
     cents = float(input("Enter the amount in cents: ").strip())
-    if cents > 0:
+    if cents < 0:
         break
 
 cents = round(cents*100)
