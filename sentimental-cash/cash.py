@@ -31,30 +31,38 @@ def main():
 
 def calculate_quarters(cents):
     quarters = 0
-    while cents >= 25:
-        cents = cents - 25
-        quraters += 1
+    while True:
+        try:
+            cents = cents - 25
+            if cents < 25:
+                break
     return quarters
 
 def calculate_dimes(cents):
     dimes = 0
-    while cents >= 10:
-        cents = cents - 10
-        dimes += 1
+    while True:
+        try:
+            cents = cents - 10
+            if cents < 10:
+                break
     return dimes
 
 def calculate_nickels(cents):
     nickels = 0
-    while cents >= 5:
-        cents = cents - 5
-        nickels += 1
+    while True:
+        try:
+            cents = cents - 5
+            if cents < 5:
+                break
     return nickels
 
 def calculate_pennies(cents):
     pennies = 0
-    while cents >= 1:
-        cents = cents - 1
-        pennies += 1
+    while True:
+        try:
+            cents = cents - 1
+            if cents < 1:
+                break
     return pennies
 
 if __name__=="__main__":
