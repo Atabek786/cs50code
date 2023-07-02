@@ -1,1 +1,2 @@
-# TODO
+cents = int(input())
+
