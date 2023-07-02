@@ -4,7 +4,7 @@ def main():
         cents = float(input().strip())
 
         quarters = calculate_quarters(cents)
-        cents = cents - quraters * 25
+        cents = cents - quarters * 25
 
         dimes = calculate_dimes(cents)
         cents = cents - dimes * 10
@@ -17,7 +17,7 @@ def main():
 
         coins = quarters + dimes + nickels + pennies
 
-        print("Total number of coins given: " + coins)
+        print("Total number of coins given: " + str(coins))
     except ValueError:
         print("Invalid input, please enter a valid number.")
 
