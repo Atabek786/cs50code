@@ -1,2 +1,12 @@
-cents = int(input())
+def main():
+    cents = int(input())
+
+
+
+
+
+
+def 
+
+main()
 
