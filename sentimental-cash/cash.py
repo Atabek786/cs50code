@@ -1,6 +1,6 @@
 def main():
     cents = int(input())
-    if cents 
+
 
     quarters = calculate_quarters(cents)
     cents = cents - quraters * 25
