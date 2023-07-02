@@ -6,6 +6,8 @@ letters = 0
 words = 1
 sentences = 0
 
-for i in range(text):
-    i += 1
-    if isalpha()
+for i in text:
+    if i.isalpha():
+        letters += 1
+    elif i in text == ' ':
+        
