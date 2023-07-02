@@ -9,9 +9,9 @@ sentences = 0
 for i in text:
     if i.isalpha():
         letters += 1
-    elif text[i] == ' ':
+    elif i == ' ':
         words += 1
-    elif text[i] == '.' or text[i] == '!' or text[i] == '?':
+    elif i == '.' or i == '!' or i == '?':
         sentences += 1
 L = letters / words * 100
 S = sentences / words * 100
@@ -23,4 +23,4 @@ if index >= 16:
 elif index < 1:
     print("Befor Grade 1")
 else:
-    print("Grade " + index)
+    print("Grade " + str(index))
