@@ -1,36 +1,25 @@
+from cs50 import get_float
 
 while True:
-    cents = float(input("Enter the amount in cents: ").strip())
-    if cents >= 0:
+    dollars = get_float("Change owed: ")
+    if dollars > 0:
         break
 
-cents = round(cents*100)
+coins = round(dollars * 100)
 
 count = 0
+while coins > 0:
+    if coins >= 25:
+        coins -= 25
+        count += 1
+    elif coins >= 10:
+        coins -= 10
+        count += 1
+    elif coins >= 5:
+        coins -= 5
+        count += 1
+    else:
+        coins -= 1
+        count += 1
 
-while cents >= 25:
-    cents = cents - 25
-    count += 1
-
-
-
-while cents >= 10:
-    cents = cents - 10
-    count += 1
-
-
-
-while cents >= 5:
-    cents = cents - 5
-    count += 1
-
-
-
-while cents >= 1:
-    cents = cents - 1
-    count += 1
-
-
-
-print("Total number of coins given: " + str(count))
-
+print(count)
