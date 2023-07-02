@@ -21,6 +21,6 @@ index = round(0.0588 * L - 0.296 * S - 15.8)
 if index >= 16:
     print("Grade 16+")
 elif index < 1:
-    print("Befor Grade 1")
+    print("Before Grade 1")
 else:
     print("Grade " + str(index))
