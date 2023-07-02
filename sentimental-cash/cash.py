@@ -1,5 +1,5 @@
 def main():
-    cents = int(input())
+    cents = float(input())
 
 
     quarters = calculate_quarters(cents)
