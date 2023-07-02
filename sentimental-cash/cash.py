@@ -1,7 +1,7 @@
 
 def main():
     try:
-        cents = float(input().strip())
+        cents = float(input("Enter the amount in cents: ").strip())
 
         quarters = calculate_quarters(cents)
         cents = cents - quarters * 25
