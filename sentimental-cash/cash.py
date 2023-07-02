@@ -1,7 +1,7 @@
 
 def main():
     try:
-        cents = get_cents()
+        cents = float(input("Enter a number: "))
 
         quarters = calculate_quarters(cents)
         cents = cents - quarters * 25
@@ -23,14 +23,6 @@ def main():
 
 
 
-
-
-def get_cents():
-    while True:
-        cents = int(input("Number of cents: "))
-        if cents < 0:
-            break
-    return cents
 
 def calculate_quarters(cents):
     quarters = 0
