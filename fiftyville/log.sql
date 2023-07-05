@@ -11,4 +11,13 @@ AND transcript LIKE "%bakery%";
 SELECT * FROM atm_transactions
 WHERE month = 7 AND day = 28
 AND atm_location = "Leggett Street";
-
+-- See license plate of the suspect car
+SELECT * FROM bakery_security_logs
+WHERE month = 7 AND day = 28;
+-- Look into phone calls that were made this time
+SELECT * FROM phone_calls
+WHERE month = 7 AND day = 28
+AND duration < 60;
+-- Look into a person with the same license plate
+SELECT * FROM people
+WHERE license_plate = "R3G7486";
