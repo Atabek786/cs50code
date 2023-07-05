@@ -29,3 +29,7 @@ SELECT * FROM flights
 JOIN airports ON airports.id = flights.origin_airport_id
 WHERE airports.id = 8
 AND month = 7 AND day = 29 ORDER BY hour ASC;
+--SUSPECT #1 bank account
+SELECT * FROM bank_accounts
+JOIN people ON people.id = bank_accounts.person_id
+WHERE id = "325548";
