@@ -22,4 +22,6 @@ AND duration < 60;
 SELECT * FROM people
 WHERE license_plate = "R3G7486";
 --Finding tickets
-SELECT * FROM 
+SELECT * FROM airports
+WHERE city = "Fiftyville";
+
