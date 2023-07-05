@@ -2,4 +2,5 @@ SELECT title FROM movies
 JOIN ratings ON ratings.movie_id = movies.id
 JOIN stars ON stars.movie_id = ratings.movie_id
 JOIN people ON people.id = stars.person_id
-WHERE name = "Johnny Depp" AND name = "Helena Bonham Carter"
+WHERE name = "Johnny Depp"
+AND WHERE name = "Helena Bonham Carter"
