@@ -28,4 +28,4 @@ WHERE city = "Fiftyville";
 SELECT * FROM flights
 JOIN airports ON airports.id = flights.origin_airport_id
 WHERE airports.id = 8
-AND month = 7 AND day = 29;
+AND month = 7 AND day = 29 ORDER BY hour ASC;
