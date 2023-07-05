@@ -35,5 +35,5 @@ WHERE phone_number = "(717) 555-1342";
 --Accomplice bank account
 SELECT * FROM bank_accounts
 JOIN people ON people.id = bank_accounts.person_id
-WHERE id = "626361";
+WHERE id = 626361;
 
