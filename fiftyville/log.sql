@@ -20,7 +20,7 @@ WHERE month = 7 AND day = 28
 AND duration < 60;
 -- Look into a person with the same license plate
 SELECT * FROM people
-WHERE license_plate = "207W38T ";
+WHERE license_plate = "4468KVT";
 --Finding tickets
 SELECT * FROM airports
 WHERE city = "Fiftyville";
@@ -29,4 +29,4 @@ SELECT * FROM flights
 JOIN airports ON airports.id = flights.origin_airport_id
 WHERE airports.id = 8
 AND month = 7 AND day = 29 ORDER BY hour ASC;
---SUSPECT #1 bank account
+
