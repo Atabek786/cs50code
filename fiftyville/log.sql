@@ -21,4 +21,5 @@ AND duration < 60;
 -- Look into a person with the same license plate
 SELECT * FROM people
 WHERE license_plate = "R3G7486";
---
+--Finding tickets
+SELECT * FROM 
