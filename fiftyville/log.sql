@@ -39,5 +39,5 @@ JOIN people ON people.passport_number = passengers.passport_number
 WHERE passengers.passport_number = "8294398571";
 --Finding city where SUSPECT escaped to
 SELECT * FROM airports
-   ...> WHERE id = 4;
+WHERE id = 4;
 
