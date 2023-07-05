@@ -34,5 +34,7 @@ SELECT * FROM people
 WHERE phone_number = "(717) 555-1342";
 --Looking into passengers
 SELECT * FROM passengers
-
+JOIN flights ON flights.id = passengers.flight_id
+JOIN people ON people.passport_number = passengers.passport_number
+WHERE passengers.passport_number = "8294398571";
 
