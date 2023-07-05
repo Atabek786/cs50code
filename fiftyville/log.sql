@@ -8,6 +8,6 @@ SELECT transcript FROM interviews
 WHERE month = 7 AND day = 28
 AND transcript LIKE "%bakery%";
 
- SELECT id, amount FROM atm_transactions
-   ...> WHERE month = 7 AND day = 28
-   ...> AND atm_location = "Leggett Street";
+SELECT * FROM atm_transactions
+WHERE month = 7 AND day = 28
+AND atm_location = "Leggett Street";
