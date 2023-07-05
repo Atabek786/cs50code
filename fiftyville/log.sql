@@ -7,7 +7,8 @@ AND street = 'Humphrey Street';
 SELECT transcript FROM interviews
 WHERE month = 7 AND day = 28
 AND transcript LIKE "%bakery%";
-
+-- See transactions of the thief before the theft
 SELECT * FROM atm_transactions
 WHERE month = 7 AND day = 28
 AND atm_location = "Leggett Street";
+
