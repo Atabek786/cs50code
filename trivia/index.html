@@ -6,11 +6,11 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            const incorrectans = document.getElementByClassName('incorrectans');
+            const inbtn1 = document.getElementById('inbtn1');
 
-            incorrectans.addEventListener('click', function onClick() {
-                incorrectans.style.backgroundColor = 'red';
-                incorrectans.style.color = 'white';
+            btn.addEventListener('click', function onClick() {
+                btn.style.backgroundColor = 'salmon';
+                btn.style.color = 'white';
             });
 
         </script>
@@ -25,12 +25,10 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <h3>In which year WW2 started? </h3>
-                <button class="incorrectans" onclick="incorrect()">1941</button>
-                <button onclick="correct()">1939</button>
-                <button class="incorrectans" onclick="incorrect()">1940</button>
-                <button class="incorrectans" onclick="incorrect()">1938</button>
-                <p id="incorrect"></p>
-                <p id="correct"></p>
+                <button id="inbtn1" onclick="incorrect()">1941</button>
+                <button id="cbtn" onclick="correct()">1939</button>
+                <button id="inbtn2" onclick="incorrect()">1940</button>
+                <button id="inbtn3" onclick="incorrect()">1938</button>
             </div>
 
             <div class="section">
