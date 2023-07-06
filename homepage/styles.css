@@ -2,7 +2,6 @@
     text-align: center;
 }
 
-
 .centered-image {
     max-width: 100%;
     max-height: 100%;
@@ -13,3 +12,8 @@
     width: 400px; /* Set the desired width for the images */
     height: 300px; /* Set the desired height for the images */
   }
+
+#bigimg {
+    max-width: 1000px;
+    max-height: 200px;
+}
