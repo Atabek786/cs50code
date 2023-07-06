@@ -9,8 +9,8 @@
     display: block; /* Ensures the images are centered properly */
     margin: auto; /* Centers the images horizontally within the container */
     margin-bottom: 20px; /* Add margin at the bottom to create vertical spacing between the images */
-    width: 400px; /* Set the desired width for the images */
-    height: 300px; /* Set the desired height for the images */
+    width: 500px; /* Set the desired width for the images */
+    height: 600px; /* Set the desired height for the images */
 }
 
 #bigimg {
@@ -20,6 +20,6 @@
     display: block; /* Ensures the images are centered properly */
     margin: auto; /* Centers the images horizontally within the container */
 
-    width: 2000px; /* Set the desired width for the images */
-    height: 500px; /* Set the desired height for the images */
+    width: 500px; /* Set the desired width for the images */
+    height: 600px; /* Set the desired height for the images */
 }
