@@ -6,13 +6,13 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            function incorrect() {
-                document.getElementById('incorrect').innerHTML = "Incorrect";
-                document.getElementByClassName('incorrectans').style.color = "red";
-            }
-            function correct() {
-                document.getElementById('correct').innerHTML = "Correct";
-            }
+            const incorrectans = document.getElementByClassName('incorrectans');
+
+            incorrectans.addEventListener('click', function onClick() {
+                incorrectans.style.backgroundColor = 'red';
+                incorrectans.style.color = 'white';
+            });
+
         </script>
     </head>
     <body>
