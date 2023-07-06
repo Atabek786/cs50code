@@ -1,4 +1,5 @@
 <script>
+    
     const incbtn = document.querySelectorAll("#incbtn1, #incbtn2, #incbtn3");
 
     incbtn.addEventListener('click', function onClick() {
