@@ -7,6 +7,15 @@
         <title>Trivia!</title>
         <script>
 
+            function correct(event) {
+                var trigger = event.srcElement;
+                alert = ('Correct answer ! ' + trigger.innerHTML)
+            }
+            function incorrect(event) {
+                var trigger = event.srcElement;
+                alert = ('Incorrect answer ! ' + trigger.innerHTML)
+            }
+
         </script>
     </head>
     <body>
@@ -19,10 +28,10 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <h3>In which year WW2 started? </h3>
-                <button class="button">1941</button>
-                <button class="button">1939</button>
-                <button class="button">1940</button>
-                <button class="button">1938</button>
+                <button class="incorrect" onclick="incorrect(event)">1941</button>
+                <button id="correct" onclick="correct(event)">1939</button>
+                <button class="incorrect" onclick="incorrect(event)">1940</button>
+                <button class="incorrect" onclick="incorrect(event)">1938</button>
             </div>
 
             <div class="section">
