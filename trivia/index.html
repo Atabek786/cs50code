@@ -8,6 +8,7 @@
         <script>
             function incorrect() {
                 document.getElementById('incorrect').innerHTML = "Incorrect";
+                document.getElementByClassName('incorrectans').style.color = "red";
             }
             function correct() {
                 document.getElementById('correct').innerHTML = "Correct";
@@ -24,10 +25,10 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <h3>In which year WW2 started? </h3>
-                <button onclick="incorrect()">1941</button>
+                <button class="incorrectans" onclick="incorrect()">1941</button>
                 <button onclick="correct()">1939</button>
-                <button onclick="incorrect()">1940</button>
-                <button onclick="incorrect()">1938</button>
+                <button class="incorrectans" onclick="incorrect()">1940</button>
+                <button class="incorrectans" onclick="incorrect()">1938</button>
                 <p id="incorrect"></p>
                 <p id="correct"></p>
             </div>
