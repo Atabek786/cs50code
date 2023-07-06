@@ -24,8 +24,14 @@
 
                 document.querySelector('#check').addEventListener('click', function() {
                     let input = document.querySelector('input');
-                    if (input.value === '')
-                })
+                    if (input.value === 'Tiger') {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#feedback2').innerHTML = 'Correct';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect';
+                    }
+                });
             })
         </script>
     </head>
@@ -52,7 +58,7 @@
                 <hr>
                 <h3>Which tank was the most advanced in tems of technology in WW2?</h3>
                 <input type="text" autocomplete="off" autofocus id="answer">
-                <button type="submit">Check answer</button>
+                <button type="submit" id="check">Check answer</button>
                 <p id="feedback2"></p>
             </div>
         </div>
