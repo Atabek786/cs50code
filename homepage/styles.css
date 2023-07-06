@@ -1,7 +1,14 @@
 .centered {
     text-align: center;
 }
-.img-fluid {
-    max-width: auto;
-    height: auto;
-}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .centered-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
