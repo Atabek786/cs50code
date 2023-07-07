@@ -1,3 +1,6 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
 .centered {
     text-align: center;
 }
