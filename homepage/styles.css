@@ -32,8 +32,13 @@
 #squiz {
     margin-top: 10px;
     margin-bottom: -10px;
+    font-size: 400%;
 }
 #links {
     margin-top: -5px;
     margin-bottom: -10px;
+}
+#headlineone {
+    margin-top: -4%;
+    size: -5%;
 }
