@@ -40,5 +40,9 @@
 }
 #headlineone {
     margin-top: -4%;
-    size: -5%;
+    font-size: 200%;
+}
+#headlinetwo {
+    margin-top: -3%;
+    font-size: 200%;
 }
