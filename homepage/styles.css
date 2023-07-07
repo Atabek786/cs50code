@@ -72,3 +72,18 @@ a:hover.nav-link {
     background-color: transparent;
     text-decoration: underline;
 }
+a:link.footerlink {
+    color: #AD343E;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited.footerlink {
+    color: #AD343E;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover.footerlink {
+    color: #F5F5DC;
+    background-color: transparent;
+    text-decoration: underline;
+}
