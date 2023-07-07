@@ -50,3 +50,9 @@
     width: 110%;
     height:200px;
 }
+body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
