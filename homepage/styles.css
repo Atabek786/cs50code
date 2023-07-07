@@ -26,3 +26,14 @@
     width: 500px; /* Set the desired width for the images */
     height: 600px; /* Set the desired height for the images */
 }
+#pinm {
+    margin-top: 20px;
+}
+#squiz {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+#links {
+    margin-top: -5px;
+    margin-bottom: -10px;
+}
