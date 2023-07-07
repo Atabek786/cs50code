@@ -26,3 +26,9 @@
     width: 500px; /* Set the desired width for the images */
     height: 600px; /* Set the desired height for the images */
 }
+#squiz {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
