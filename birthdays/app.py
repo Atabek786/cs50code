@@ -38,7 +38,7 @@ def index():
 
         return render_template("index.html", birthdays=birthdays)
 
-@app.route("/", methods=["POST"])
+@app.route("/delete", methods=["POST"])
 def delete():
     birthday_id = request.form.get("id")
 
