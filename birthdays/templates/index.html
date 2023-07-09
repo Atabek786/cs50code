@@ -30,13 +30,14 @@
                         <tr>
                             <th>Name</th>
                             <th>Birthday</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for birthd in birthdays %}
                             <tr>
                                 <td>{{ birthd.name }}</td>
-                                <td>{{ birthd.birthday }}</td>
+                                <td>{{ birthd.month }}/{{ birthd.day }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
