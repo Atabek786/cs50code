@@ -33,8 +33,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for birthday in birthdays %}
-                            
+                        {% for birthd in birthdays %}
+                            <tr>
+                                <td>{{ birthd.name }}</td>
+                                <td>{{ birthd.birthday }}</td>
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>
