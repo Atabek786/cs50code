@@ -26,7 +26,7 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        birthdays[]
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)",)
 
         return redirect("/")
 
