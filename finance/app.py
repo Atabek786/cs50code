@@ -110,19 +110,17 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
+    session.clear()
 
     if request.method == "POST":
-        try:
-            name = request.form.get("username")
-            password = request.form.get("password")
-            confirmation = request.form.get("confirmation")
-
-            if len(name) == 0:
-                return apology("Must provide username", 403)
-            if len(password) == 0:
-                return apology("Must provide password", 403)
-            if password != confirmation:
-                return apology("Passwords don't match", 403)
+        if not request.form.get("username"):
+            return apology("Must provide username", 400)
+        elif not request.form.get("password"):
+            return apology("Must provide password", 400)
+        elif not request.form.get("confirmation"):
+            return apology("Must confirm password", 400)
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("Passwords don't match", 400)
 
             # Check if the username exists in the users table
             cursor.execute("SELECT * FROM users WHERE username = ?", (name,))
