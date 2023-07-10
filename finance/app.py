@@ -122,7 +122,7 @@ def register():
             return apology("must provide password", 403)
         except password != confirmation:
             return apology("passwords don't match", 403)
-        except db.execute("SELECT * FROM users WHERE username = ?", (username,))
+        else 
 
 
     return apology("TODO")
