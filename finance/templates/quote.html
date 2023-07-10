@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/quote" method="POST">
+    <h2>Get a stock Quote</h2>
+    <form action="{{ url_for{'quote'} }}" method="POST">
+        <label for="symbol">Symbol</label>
         <input autocomplete="off" autofocus type="text" name="symbol" placeholder="Input a stock's symbol">
         <button type="submit">Find stock</button>
     </form>
