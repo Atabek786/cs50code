@@ -104,7 +104,7 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    
+    if request.method == "POST":
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
