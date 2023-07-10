@@ -6,6 +6,8 @@
 
 {% block main %}
     <form action="/register" method="post">
-        <input type="text" name="username" 
+        <input type="text" name="username" autocomplete="off" autofocus class="form-control mx-auto w-auto" placeholder="Username">
+        <input type="text" name="password" class="form-control mx-auto w-auto" placeholder="Password">
+        <input type="text" name="confirmation" class="form-control mx-auto w-auto" placeholder="Confirmation">
     </form>
 {% endblock %}
