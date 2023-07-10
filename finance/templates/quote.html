@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block main %}
-    <input autocomplete="off" autofocus type="text" name="symbol" placeholder="Input a stock's symbol">
-    <button type="submit">Submit</button>
+    <form action="/quote" method="POST">
+        <input autocomplete="off" autofocus type="text" name="symbol" placeholder="Input a stock's symbol">
+        <button type="submit">Submit</button>
+    </form>
 {% endblock %}
