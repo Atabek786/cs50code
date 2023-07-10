@@ -116,13 +116,25 @@ def register():
             name = request.form.get("username")
             password = request.form.get("password")
             confirmation = request.form.get("confirmation")
-        except len(name) == 0:
-            return apology("must provide username", 403)
-        except len(password) == 0:
-            return apology("must provide password", 403)
-        except password != confirmation:
-            return apology("passwords don't match", 403)
-        else 
+
+            if len(name) == 0:
+                return apology("Must provide username", 403)
+            if len(password) == 0:
+                return apology("Must provide password", 403)
+            if password != confirmation:
+                return apology("Passwords don't match", 403)
+
+            # Check if the username exists in the users table
+            cursor.execute("SELECT * FROM users WHERE username = ?", (name,))
+            result = cursor.fetchone()
+
+            if result:
+                return apology("Username is already taken", 403)
+
+            # Continue with user registration logic here
+            # Insert the new user into the users table, handle password hashing, etc.
+
+            return "User registration successful"  # Replace this with your desired response
 
 
     return apology("TODO")
