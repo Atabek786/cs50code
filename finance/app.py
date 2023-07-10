@@ -133,11 +133,11 @@ def register():
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Remember which user logged in
         session["user_id"] = rows[0]["id"]
-        
+
         return redirect("/")
 
     else:
-        return apology("Must provide data", 403)
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
