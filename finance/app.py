@@ -142,6 +142,7 @@ def register():
                 self.password_hash = generate_password_hash(password)
             def verify_password(self, password):
                 return check_password_hash(self.password_hash, password)
+
             db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",username, hash)
 
             return "User registration successful"  # Replace this with your desired response
