@@ -110,8 +110,9 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    session.clear()
 
+    session.clear()
+    # Check if there is a problem prompting
     if request.method == "POST":
         if not request.form.get("username"):
             return apology("Must provide username", 400)
@@ -121,27 +122,19 @@ def register():
             return apology("Must confirm password", 400)
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("Passwords don't match", 400)
-
-
-
-        # Continue with user registration logic here
-        # Insert the new user into the users table, handle password hashing, etc.
-        password_hash = db.Column(db.String(128))
-        @property
-        def password(self):
-            raise AttributeError('password is not a readable attribute!')
-        @password.setter
-        def password(self, password):
-            self.password_hash = generate_password_hash(password)
-        def verify_password(self, password):
-            return check_password_hash(self.password_hash, password)
-
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",username, hash)
-
-        return "User registration successful"  # Replace this with your desired response
-
-        except Exception as e:
-            return apology("An error occurred during registration", 500)
+        # Query database for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # Check if username exists
+        if len(rows) != 0:
+            return apology("Username already exists", 400)
+        # Insert new user into database
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",request.form.get("username"), generate_password_hash(request.form.get("password")))
+        # Query database for newly inserted user
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # Remember which user logged in
+        session["user_id"] = rows[0]["id"]
+        
+        return redirect("/")
 
     else:
         return apology("Must provide data", 403)
