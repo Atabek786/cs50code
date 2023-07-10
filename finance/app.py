@@ -105,6 +105,7 @@ def logout():
 def quote():
     """Get stock quote."""
     if request.method == "POST":
+        lookup()
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
