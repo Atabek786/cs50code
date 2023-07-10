@@ -133,6 +133,8 @@ def register():
 
             # Continue with user registration logic here
             # Insert the new user into the users table, handle password hashing, etc.
+            
+            db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",username, hash)
 
             return "User registration successful"  # Replace this with your desired response
 
