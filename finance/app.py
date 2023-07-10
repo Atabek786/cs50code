@@ -112,10 +112,11 @@ def register():
     """Register user"""
 
     if request.method == "POST":
-        name = request.form.get("username")
-        password = request.form.get("password")
-        confirmation = request.form.get("confirmation")
-        if name = 
+        try:
+            name = request.form.get("username")
+            password = request.form.get("password")
+            confirmation = request.form.get("confirmation")
+        except 
 
 
     return apology("TODO")
