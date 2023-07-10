@@ -64,7 +64,7 @@ def buy():
 
         db.execute("UPDATE users GET cash = cash - :total_cost WHERE id = :user_id", total_cost=total_cost, user_id=session["user_id"])
 
-        db.execute("INSERT INTO transaction (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
         flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
