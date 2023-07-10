@@ -114,7 +114,8 @@ def register():
     if request.method == "POST":
         name = request.form.get("username")
         password = request.form.get("password")
-        db.execute("INSERT INTO users (username, )")
+        confirmation = request.form.get("confirmation")
+        if name = 
 
 
     return apology("TODO")
