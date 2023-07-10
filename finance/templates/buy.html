@@ -6,7 +6,8 @@
 
 {% block main %}
     <form action="/buy" method="post">
-        <input type="text" name="symbol" required>
-        <input type="text" name="shares" required>
+        <input type="text" name="symbol" required placeholder="Symbol...">
+        <input type="text" name="shares" required placeholder="Shares...">
+        <button type="submit">Submit</button>
     </form>
 {% endblock %}
