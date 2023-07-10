@@ -117,7 +117,11 @@ def register():
             password = request.form.get("password")
             confirmation = request.form.get("confirmation")
         except len(name) == 0:
-            return apology()
+            return apology("must provide username", 403)
+        except len(password) == 0:
+            return apology("must provide password", 403)
+        except password != confirmation:
+            return apology("passwords don't match", 403)
 
 
     return apology("TODO")
