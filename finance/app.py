@@ -136,8 +136,11 @@ def register():
 
             return "User registration successful"  # Replace this with your desired response
 
+        except Exception as e:
+            return apology("An error occurred during registration", 500)
 
-    return apology("TODO")
+    else:
+        return apology("Must provide data", 403)
 
 
 @app.route("/sell", methods=["GET", "POST"])
