@@ -5,28 +5,24 @@
 {% endblock %}
 
 {% block main %}
-    <table class="table table-striped">
-        <thead>
+    <table class="table">
+        <thead class="thead-dark">
             <tr>
-                <th scope="col">Symbol</th>
-                <th scope="col">Shares</th>
-                <th scope="col">Method</th>
-                <th scope="col">Price</th>
-                <th scope="col">Transacted</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">Transacted</th>
             </tr>
         </thead>
         <tbody>
-            {% for row in rows %}
-                <tr>
-                    <td>{{row['symbol']}}</td>
-                    <td>{{row['shares']}}</td>
-                    <td>{{row['method']}}</td>
-                    <td>{{row['price']}}</td>
-                    <td>{{row['transacted']}}</td>
-                </tr>
+            {% for transaction in transactions %}
+            <tr>
+              <th scope="row">{{ transaction["symbol"] }}</th>
+              <td>{{ transaction["shares"] }}</td>
+              <td>{{ transaction["price"] }}</td>
+              <td>{{ transaction["transacted"] }}</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
-
-
 {% endblock %}
