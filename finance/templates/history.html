@@ -5,23 +5,23 @@
 {% endblock %}
 
 {% block main %}
-    <table class="table">
-        <thead class="thead-dark">
+    <table class="table table-triped">
+        <thead>
             <tr>
-              <th scope="col">Symbol</th>
-              <th scope="col">Shares</th>
-              <th scope="col">Price</th>
-              <th scope="col">Transacted</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
             </tr>
         </thead>
         <tbody>
-            {% for transaction in transactions %}
-            <tr>
-              <th scope="row">{{ transaction["symbol"] }}</th>
-              <td>{{ transaction["shares"] }}</td>
-              <td>{{ transaction["price"] }}</td>
-              <td>{{ transaction["transacted"] }}</td>
-            </tr>
+            {% for t in transactions %}
+                <tr>
+                    <td>{{ t.symbol }}</td>
+                    <td>{{ t.shares }}</td>
+                    <td>{{ t.price | usd }}</td>
+                    <td>{{ t.transacted }}</td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>

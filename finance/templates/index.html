@@ -1,46 +1,40 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Home
+    Portfolio
 {% endblock %}
 
 {% block main %}
-    <table class="table">
-        <thead class="thead-dark">
+    <table class="table table-striped">
+        <thead>
             <tr>
-              <th scope="col">Symbol</th>
-              <th scope="col">Name</th>
-              <th scope="col">Shares</th>
-              <th scope="col">Price</th>
-              <th scope="col">TOTAL</th>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
             </tr>
         </thead>
-        <tbody>
-            {% for holding in holdings %}
-            <tr>
-              <th scope="row">{{ holding["symbol"] }}</th>
-              <td>{{ holding["name"] }}</td>
-              <td>{{ holding["shares"] }}</td>
-              <td>{{ holding["price"] }}</td>
-              <td>{{ holding["total"] }}</td>
-            </tr>
-            {% endfor %}
-            <tr>
-                <th scope="row">CASH</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td >{{ cash }}</td>
-            </tr>
-        </tbody>
         <tfoot>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>{{ all_total }}</td>
+                <td colspan="4"></td>
+                <td>{{ sum_totals | usd }}</td>
             </tr>
         </tfoot>
+        <tbody>
+            {% for summary in summaries %}
+                <tr>
+                    <td>{{ summary.symbol }}</td>
+                    <td>{{ summary.company }}</td>
+                    <td>{{ summary.sum_of_shares }}</td>
+                    <td>{{ summary.price | usd }}</td>
+                    <td>{{ summary.total | usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{ owned_cash | usd }}</td>
+            </tr>
+        </tbody>
     </table>
 {% endblock %}
