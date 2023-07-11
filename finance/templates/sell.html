@@ -11,7 +11,7 @@
             <select class="form-control" id="symbol" name="symbol">
                 <option value="">Select a stock</option>
                 {% for stock in stocks %}
-                    <option value="{{ stock.symbol }}"> {{ stock.name }} {{{ stock.symbol }}} </option>
+                    <option value="{{ stock.symbol }}"> {{ stock.name }} ({{ stock.symbol }}) </option>
                 {% endfor %}
             </select>
         </div>
@@ -19,6 +19,11 @@
             <label for="shares">Shares</label>
             <input class="form-control" id="shares" name="shares" placeholder="Number of shares" type="number">
         </div>
-        <button class="btn btn-primary" type="submit">Sell</button>
+        <button class="btn btn-primary" type="submit" id="sellsell">Sell</button>
     </form>
+    <style>
+        #sellsell {
+            margin-top: 2%;
+        }
+    </style>
 {% endblock %}
