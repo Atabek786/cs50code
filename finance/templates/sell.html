@@ -1,15 +1,17 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Sell
+    Sell shares
 {% endblock %}
 
 {% block main %}
-    <h2>Sell</h2>
     <form action="{{ url_for('sell') }}" method="post" >
-        <input type="select" name="symbol">
-        <input type="number" name="shares">
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <label for="symbol">Symbol</label>
+            <select class="form-control" id="symbol" name="symbol">
+                <option value="{{ stock. }}"
+            </select>
+        </div>
     </form>
 
 {% endblock %}
