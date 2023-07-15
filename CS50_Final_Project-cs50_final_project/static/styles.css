@@ -1,0 +1,131 @@
+body {
+    display: grid;
+    grid-gap: 3em;
+    text-align: center;
+    background-color: #F0F0F0;
+  }
+img {
+    width: 100%;
+}
+.bigimg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block; /* Ensures the images are centered properly */
+    margin: auto; /* Centers the images horizontally within the container */
+    width: 650px; /* Set the desired width for the images */
+    height: 900px; /* Set the desired height for the images */
+}
+.imgme {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block; /* Ensures the images are centered properly */
+    margin: auto; /* Centers the images horizontally within the container */
+    margin-bottom: 20px; /* Add margin at the bottom to create vertical spacing between the images */
+    width: 500px; /* Set the desired width for the images */
+    height: 600px; /* Set the desired height for the images */
+}
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 120%;
+    font-stretch:extra-condensed;
+    width:67%;
+    margin-left: 17%;
+}
+h1 {
+    font-family: 'Geometric Sans Serif v1', sans-serif;
+}
+nav {
+    font-family: 'Geometric Sans Serif v1', sans-serif;
+}
+footer {
+
+    margin-top: auto;
+    width: 100%;
+    height: 60px;
+    
+    background: #e8e8e8;
+    
+    }
+#linkdin {
+    margin-top:-7%;
+}
+
+#about {
+    text-align: center;
+    margin-left:-58%;
+}
+
+
+section#postone {
+    margin-bottom: 40px;
+
+  }
+  
+  /* Styling for the subheading */
+section#postone h3 {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+/* Styling for the content container */
+section#postone .content {
+margin-top: 10px;
+}
+
+/* Styling for the first paragraph */
+
+/* Styling for the main image */
+section#postone .bigimg {
+width: 100%;
+max-width: 500px;
+height: auto;
+margin-bottom: 10px;
+}
+
+
+#heading {
+    text-align: center;
+}
+
+.figcaption {
+    font-family: 'georgia';
+    margin-left:-24%;
+}
+
+
+section#postonein {
+    margin-bottom: 40px;
+
+  }
+  
+  /* Styling for the subheading */
+section#postonein h3 {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+/* Styling for the content container */
+section#postonein .content {
+margin-top: 10px;
+}
+
+/* Styling for the first paragraph */
+
+/* Styling for the main image */
+section#postonein .bigimg {
+width: 100%;
+max-width: 500px;
+height: auto;
+margin-bottom: 10px;
+}
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+    color: #bf5700;
+}
