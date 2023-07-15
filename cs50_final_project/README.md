@@ -16,13 +16,14 @@ This is the repository for my CS50 final project, a website that serves as a pla
 
 ## Project Overview
 
-The website is designed to showcase my personal experiences, adventures, and thoughts through blog posts. The main goal of this project is to provide a platform to document and share memorable moments of my life. In the future , when I will host this website, user will be able to read my articles. 
+The website is designed to showcase my personal experiences, adventures, and thoughts through blog posts. The main goal of this project is to provide a platform to document and share memorable moments of my life. In the future , when I will host this website, user will be able to read my articles.
 
 ## Features
 
 The features implemented in this project include:
 
-- User-friendly and responsive design
+- User-friendly and responsive design. Website's design is minimalistic.
+- Read articles: Users can browse through the blog posts and read about my life experiences and stories.
 
 ## Technologies Used
 
