@@ -24,8 +24,7 @@ The features implemented in this project include:
 
 - User-friendly and responsive design: The website has been designed with a clean and intuitive interface, ensuring a seamless reading experience across different devices and screen sizes.
 
-- Read articles: Users can dive into a variety of blog posts that recount my personal experiences, adventures, and reflections. From captivating travel stories to insightful life lessons, each article offers a glimpse into different aspects of my life.
-
+- Blog posts: The website displays a collection of blog posts that document my personal experiences, adventures, and reflections. Each blog post is presented with its title, date, and a brief introduction to entice readers.
 ## Technologies Used
 
 The following technologies were used to develop the "My Life Blog" website:
@@ -57,4 +56,4 @@ Once the application is running locally, you can access to the website by openin
 
 I am deeply grateful to Harvard University and the CS50 course staff for providing invaluable learning resources and guidance throughout the development of this project. Additionally, I would like to express my appreciation to the CS50 community for their continuous support and shared knowledge, which greatly contributed to my understanding of web development and inspired the creation of "atabekblog".
 
-Through "atabekblog," I aim to share my stories, inspire others, and create a connection with readers around the world. Thank you for joining me on this journey of exploration and discovery through the power of storytelling
+Through "atabekblog," I aim to share my stories, inspire others, and create a connection with readers around the world. Thank you for joining me on this journey of exploration and discovery through the power of storytelling and unity through digital blogs.
