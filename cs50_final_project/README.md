@@ -16,7 +16,7 @@ This is the repository for my CS50 final project, a website that serves as a pla
 
 ## Project Overview
 
-The website is designed to showcase my personal experiences, adventures, and thoughts through blog posts. The main goal of this project is to provide a platform to document and share memorable moments of my life.
+The website is designed to showcase my personal experiences, adventures, and thoughts through blog posts. The main goal of this project is to provide a platform to document and share memorable moments of my life. In the future , when I will host this website, user will be able to read my articles. 
 
 ## Features
 
