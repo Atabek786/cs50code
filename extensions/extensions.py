@@ -1,11 +1,9 @@
 prompt = input("File name: ")
-prompt = prompt.lstrip().lower()
+prompt = prompt.strip().lower()
 
 if prompt.endswith(".gif"):
     print("image/gif")
-elif prompt.endswith(".jpg"):
-    print("image/jpeg")
-elif prompt.endswith(".jpeg"):
+elif prompt.endswith(".jpg") or prompt.endswith(".jpeg"):
     print("image/jpeg")
 elif prompt.endswith(".png"):
     print("image/png")
