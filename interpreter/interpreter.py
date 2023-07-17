@@ -4,8 +4,18 @@ prompt = input("Expression: ")
 
 x, y, z = prompt.split(" ")
 
-math.isinteger(x)
+x = float(x)
+z = float(z)
 
-math.isinteger(z)
+if y == '+':
+    result = x + z
+elif y == '-':
+    result = x - z
+elif y == '*':
+    result = x * z
+elif y == '/':
+    result = x / z
+else:
+    print("Invalid operator")
 
-print(float())
+print(result)
