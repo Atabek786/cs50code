@@ -1,11 +1,12 @@
 price = 50
-print("Amount Due: ", price)
+
 while price > 0:
+    print("Amount Due: ", price)
     insert = int(input("Insert coin: "))
-    if insert == 25 or insert == 10 or insert == 5:
-        new_price = price - insert
-        print("Amount due: ", new_price)
-    else:
-        print("only 25, 10, 5 cents accepted")
+    if insert in [25, 10, 5]:
+        price -= insert
+        print(price)
 
+changed_owed = abs(price)
 
+print(price)
