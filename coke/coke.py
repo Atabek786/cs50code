@@ -5,7 +5,7 @@ while price > 0:
     insert = int(input("Insert coin: "))
     if insert in [25, 10, 5]:
         price -= insert
-        print(price)
+
 
 changed_owed = abs(price)
 
