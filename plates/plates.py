@@ -1,4 +1,5 @@
 punctuation = {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "]", "^", "_", "`", "{", ",", "|", "}", "~"}
+
 def main():
     plate = input("Plate: ")
     if is_valid(plate):
@@ -12,8 +13,11 @@ def is_valid(s):
         return False
     elif len(s) > 6:
         return False
-    elif 
+    ...
+
+def number_check():
+    ...
 
 
-
+def 
 main()
