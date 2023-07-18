@@ -22,8 +22,9 @@ def number_check(n):
 def zero_check(z):
     ...
 
-def begin_with_letters(a):
-    for char in len(a):
+def doesnt_begin_with_letters(a):
+    if a[0].isalpha() == False or a[1]
+
 
 
 def contains_punctuation(x):
