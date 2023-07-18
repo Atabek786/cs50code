@@ -61,3 +61,8 @@ products = {
     }
 }
 
+item = input("Item: ")
+if item in products:
+    print("Calories: ", products[item["calories"]])
+else:
+    print("Item not found in store")
