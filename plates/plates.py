@@ -23,7 +23,8 @@ def zero_check(z):
     ...
 
 def doesnt_begin_with_letters(a):
-    if a[0].isalpha() == False or a[1]
+    if a[0].isalpha() == False or a[1].isalpha() == False:
+        return True
 
 
 
