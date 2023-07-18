@@ -1,5 +1,7 @@
 prompt = input("Input: ")
 
-converted = replace()
+words = 'A', 'E', 'I', 'O', 'U'
 
-print(prompt)
+converted = prompt.replace(words, '')
+
+print(converted)
