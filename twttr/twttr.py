@@ -1,7 +1,10 @@
 prompt = input("Input: ")
 
-words = ['A', 'E', 'I', 'O', 'U']
+words = ['A', 'E', 'I', 'O', 'U', ']
 
-converted = prompt.replace(words, '')
+converted = prompt
+
+for word in words:
+    converted = converted.replace(word, '')
 
 print(converted)
