@@ -1,4 +1,4 @@
-punctuation = {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "]", "^", "_", "`", "{", ",", "|", "}", "~"}
+punctuation = {" ", "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "]", "^", "_", "`", "{", ",", "|", "}", "~"}
 
 def main():
     plate = input("Plate: ")
@@ -15,9 +15,21 @@ def is_valid(s):
         return False
     ...
 
-def number_check():
+def number_check(n):
     ...
 
 
-def 
+def zero_check(z):
+    ...
+
+def begin_with_letters(a):
+    for char in len(a):
+
+
+def contains_punctuation(x):
+    for char in x:
+        if char in punctuation:
+            return True
+
+
 main()
