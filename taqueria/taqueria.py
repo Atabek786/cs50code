@@ -3,6 +3,14 @@ def main():
 
 
 
+def get_int(prompt):
+    while True:
+        x = input(prompt)
+        try:
+            if x in menu:
+                
+
+
 
 def calculate_price():
     ...
