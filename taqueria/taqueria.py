@@ -3,17 +3,13 @@ def main():
 
 
 
-def get_int(prompt):
+def get_int(prompt, item, total):
     while True:
         x = input(prompt)
         try:
             if x in menu:
+                total += menu[item]
 
-
-
-
-def order_item(menu, item, total):
-    if 
 
 
 menu = {
