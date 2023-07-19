@@ -8,12 +8,12 @@ def get_int(prompt):
         x = input(prompt)
         try:
             if x in menu:
-                
 
 
 
-def calculate_price():
-    ...
+
+def order_item(menu, item, total):
+    if 
 
 
 menu = {
