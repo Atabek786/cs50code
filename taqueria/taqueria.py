@@ -1,14 +1,14 @@
-def get_int(prompt, item, total):
-    while True:
-        x = input(prompt)
-        try:
-            if x in menu:
-                total += menu[x]  # Use x (user input) as the key to get the item's price from the menu dictionary
-                return total
-        except EOFError:
-            return True  # If the input is interrupted (e.g., using Ctrl + D), return True to stop the loop
-        except KeyError:
-            print(f"Invalid item: {x}. Please enter a valid item from the menu.")
+def display_menu(menu):
+    print("Menu:")
+    for item, price in menu.items():
+        print(f"{item}: ${price:.2f}")
+
+def get_total_cost(items, menu):
+    total = 0
+    for item in items:
+        if item.title() in menu:
+            total += menu[item.title()]
+    return total
 
 # Menu dictionary
 menu = {
@@ -23,15 +23,20 @@ menu = {
     "Tortilla Salad": 8.00,
 }
 
-total = 0
+print("Welcome to the Taqueria!")
 
-# Get items from the user and update the total cost of the order
+# Display the menu
+display_menu(menu)
+
+# Initialize the list to store the user's ordered items
+ordered_items = []
+
 print("Enter the items you want to order (press Ctrl + D to finish):")
-while True:
-    result = get_int("Item: ")
-    if result is True:
-        break
-    total = result
-
-# Display the total cost of the order
-print(f"Total: ${total:.2f}")
+try:
+    while True:
+        item = input("Item: ")
+        ordered_items.append(item)
+        total_cost = get_total_cost(ordered_items, menu)
+        print(f"Total: ${total_cost:.2f}")
+except EOFError:
+    print("\nOrder completed. Enjoy your meal!")
