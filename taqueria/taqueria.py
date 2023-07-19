@@ -28,7 +28,7 @@ total = 0
 # Get items from the user and update the total cost of the order
 print("Enter the items you want to order (press Ctrl + D to finish):")
 while True:
-    result = get_int("Item: ", item, total)
+    result = get_int("Item: ")
     if result is True:
         break
     total = result
