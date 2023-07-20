@@ -6,10 +6,10 @@ def prefix_ordered_items(order_history):
     for order in order_history:
         item = order["item"]
 
-        if item not in user_item_count[user]:
-            user_item_count[user][item] = 1
+        if item not in user_item_count[item]:
+            user_item_count[item] = 1
         else:
-            user_item_count[user][item] += 1
+            user_item_count[item] += 1
 
     # Generate the prefixed item names
     prefixed_items = []
@@ -28,7 +28,7 @@ def get_order_from_user():
     try:
         while True:
             item = input()
-            order_history.append({"user": user, "item": item})
+            order_history.append({"item": item})
             return order_history
     except EOFError:
         return
