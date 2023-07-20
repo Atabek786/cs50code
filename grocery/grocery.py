@@ -1,11 +1,11 @@
 
 
 
-ordered_items = {}
+item_count = []
 
 try:
     while True:
         item = input()
-        ordered_items.append(item)
-
+        item_count.append(item)
+        
 
