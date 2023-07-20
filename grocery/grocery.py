@@ -31,7 +31,7 @@ def get_order_from_user():
             order_history.append({"user": user, "item": item})
             return order_history
     except EOFError:
-        print("\nOrder completed. Enjoy your meal!")
+        return
 
 # Get the order history from the user
 order_history = get_order_from_user()
