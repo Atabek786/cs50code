@@ -14,7 +14,7 @@ months = [
 ]
 
 while True:
-    prompt = input("Date: ")
+    prompt = input("Date: ").strip()
     try:
         month, day, year = prompt.split('/')
         if (int(month) >=1 and int(month) <= 12) and (int(day) >= 1 and int(day) <= 31):
