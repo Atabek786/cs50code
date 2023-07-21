@@ -16,4 +16,5 @@ months = [
 while True:
     prompt = input("Date: ")
     try:
-        
+        split = prompt.split('/')
+        if 
