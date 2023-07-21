@@ -20,18 +20,19 @@ while True:
         if (int(month) >=1 and int(month) <= 12) and (int(day) >= 1 and int(day) <= 31):
             break
     except:
-        str_month, str_day, str_year = prompt.split(" ")
+        try:
+            str_month, str_day, year = prompt.split(" ")
 
-        for i in range(len(months)):
-            if str_month == months[i]:
-                month = i + 1
-        day = str_day.replace(",","")
+            for i in range(len(months)):
+                if str_month == months[i]:
+                    month = i + 1
+            day = str_day.replace(",","")
 
-        if (int(month) >=1 and int(month) <= 12) and (int(str_day) >= 1 and int(str_day) <= 31):
-            break
-    except:
-        print()
-        pass
+            if (int(month) >=1 and int(month) <= 12) and (int(str_day) >= 1 and int(str_day) <= 31):
+                break
+        except:
+            print()
+            pass
 
 
 
