@@ -11,10 +11,13 @@ try:
 except EOFError:
     pass
 
-# Replace commas with "and" in each name
-updated_names = [name.replace(',', ' and ') for name in names]
 
 # Create a grammatically correct farewell message using the inflect library
-farewell_message = f"Adieu, adieu to {p.join(updated_names)}."
+if len(names) == 1:
+    farewell_message = f"Adieu, adieu to {names[0]}."
+elif len(names) == 2:
+    farewell_message = f"Adieu, adieu to {names[0]} and {names[1]}."
+else:
+    farewell_message = f"Adieu, adieu to {p.join(names[:-1])}, and {names[-1]}."
 
 print(farewell_message)
