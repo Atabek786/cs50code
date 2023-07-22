@@ -10,7 +10,7 @@ locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 def format_currency(amount):
     # Format the amount to four decimal places with comma as thousands separator
-    return locale.currency(amount, grouping=True)
+    return locale.format_string("%.4f", amount, grouping=True)
 
 
 def get_bitcoin_price():
