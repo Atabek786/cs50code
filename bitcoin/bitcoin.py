@@ -1,5 +1,6 @@
 import sys, requests
 
+url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 
 
 if len(sys.argv) < 2:
