@@ -1,22 +1,28 @@
+import sys, random
 from pyfiglet import Figlet
-import sys
-import random
 
-prompt = input("Input: ")
-
-if len(sys.argv) == 1 :
-    f = Figlet()
-    availablefonts = f.getFonts()
-    selectfont = random.choice(availablefonts)
-
-    f = Figlet(font=selectfont)
-    converted = f.renderText(prompt)
-    print(converted)
-
-elif len(sys.argv) == 2 :
-    f = Figlet(font=sys.argv[1])
-    converted = f.renderText(prompt)
-
-    print(converted)
+figlet = Figlet()
+if len(sys.argv) == 1:
+    isRandomFont = True
+elif len(sys.argv) == 3 and (sys.argv[1] == '-f' or sys.argv[1] == '--font'):
+    isRandomFont = False
 else:
-    print("Type 0 or 2 command line arguments")
+    print("INVALID")
+    sys.exit(1)
+
+figlet.getFonts()
+
+if isRandomFont == False:
+    try:
+        figlet.setFont(font=sys.argv[2])
+    except:
+        print("INVALID")
+        sys.exit(1)
+else:
+    font = random.choice(figlet.getFonts())
+
+msg = input("Input: ")
+
+
+print("Output: ")
+print(figlet.renderText(msg))
