@@ -1,5 +1,6 @@
 from pyfiglet import Figlet
+import sys
+import random
 
-figlet = Figlet()
-
-print(figlet.getFonts())
+if sys.argv == 0:
+    
