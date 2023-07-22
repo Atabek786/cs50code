@@ -7,7 +7,8 @@ names = []
 try:
     while True:
         name = input("Name: ")
-        names.append(name)
+        if name.strip():  # Check if the name is non-empty
+            names.append(name)
 except EOFError:
     pass
 
@@ -20,3 +21,4 @@ else:
     farewell_message = f"Adieu, adieu to {', '.join(names[:-1])}, and {names[-1]}."
 
 print(farewell_message)
+
