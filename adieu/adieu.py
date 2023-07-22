@@ -10,7 +10,7 @@ try:
 
         names.append(name)
 
-        
+        updated = names.replace(',', ' and ')
 except EOFError:
     pass
 
