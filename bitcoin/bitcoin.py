@@ -37,5 +37,5 @@ else:
 
     price_usd = get_bitcoin_price()
     in_usd = btc_amount * price_usd
-    formatted_result = format_currency(in_usd)
+    formatted_result = format_currency(in_usd).strip()
     print(f"${formatted_result}")
