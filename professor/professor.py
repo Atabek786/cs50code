@@ -13,7 +13,7 @@ def get_level():
     try:
         while True:
             level = int(input("Level: "))
-            if 3 < level or level <= 0:
+            if level > 3 or level <= 0:
                 pass
             else:
                 return level
