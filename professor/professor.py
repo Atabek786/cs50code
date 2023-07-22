@@ -3,8 +3,10 @@ import random
 
 def main():
     level = get_level()
-    if level == 1:
-        
+
+    problem = generate_integer(level)
+
+    print(problem)
 
 
 def get_level():
@@ -25,7 +27,7 @@ def generate_integer(level):
         x = random.randint(1,9)
         y = random.randint(1,9)
         problem = x + y
-        print(i)
+        print(problem)
 
 if __name__ == "__main__":
     main()
