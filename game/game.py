@@ -13,6 +13,7 @@ try:
             pass
         elif prompt == randomizer:
             print("Just right")
+            break
         else:
             pass
 except ValueError:
