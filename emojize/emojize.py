@@ -3,4 +3,4 @@ import emoji
 
 prompt = input("Input: ")
 
-print("Output: ", prompt)
+print("Output: ", emoji.emojize(prompt))
