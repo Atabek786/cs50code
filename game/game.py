@@ -15,4 +15,5 @@ try:
             print("Just right")
         else:
             pass
-        
+except ValueError:
+    pass
