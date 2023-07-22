@@ -5,10 +5,10 @@ import random
 
 prompt = input("Input: ")
 
-if sys.argv == 0:
+if len(sys.argv == 0):
     converted = random(Figlet(prompt))
     print(converted)
-elif sys.argv == 2:
+elif len(sys.argv == 2):
     converted = Figlet(sys.argv[2])
     print(converted)
 else:
