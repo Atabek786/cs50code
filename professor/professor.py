@@ -16,7 +16,7 @@ def main():
                     print("EEE")
         else:
             print(problem["solution"])
-
+    print("Score: ", solved)
 
 def get_level():
     try:
