@@ -1,5 +1,6 @@
 import sys
 import requests
+import locale
 
 url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 
@@ -18,8 +19,12 @@ else:
                 # The JSON response has a 'bpi' key that contains the price data in different currencies
                 price_usd = float(data['bpi']['USD']['rate'].replace(',',''))
 
-                result = int(sys.argv[1]) * price_usd
-                print(result)
+                inbitcoin = int(sys.argv[1]) * price_usd
+
+                locale.setlocale(locale.LC_ALL, '')
+
+                formated = locale.format_string("%.4f", inbitcoin, grouping=True)
+                print(formated)
             else:
                 print(f"Request failed with status code: {response.status_code}")
 
