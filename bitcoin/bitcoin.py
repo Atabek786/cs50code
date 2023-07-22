@@ -16,9 +16,9 @@ else:
             if response.status_code == 200:
                 data = response.json()
                 # The JSON response has a 'bpi' key that contains the price data in different currencies
-                price_usd = data['bpi']['USD']['rate']
+                price_usd = float(data['bpi']['USD']['rate'].replace(',',''))
 
-                result = int(sys.argv[1]) * int(price_usd)
+                result = int(sys.argv[1]) * price_usd
                 print(result)
             else:
                 print(f"Request failed with status code: {response.status_code}")
