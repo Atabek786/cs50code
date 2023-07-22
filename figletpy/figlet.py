@@ -2,10 +2,11 @@ from pyfiglet import Figlet
 import sys
 import random
 
-availablefonts = Figlet.getFonts()
 prompt = input("Input: ")
 
 if len(sys.argv) == 1 :
+    
+    availablefonts = Figlet.getFonts()
     selectfont = random.choice(availablefonts)
 
     f = Figlet(font=selectfont)
