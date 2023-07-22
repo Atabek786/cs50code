@@ -3,7 +3,8 @@ import random
 
 def main():
     level = get_level()
-    
+    if level == 1:
+        
 
 
 def get_level():
