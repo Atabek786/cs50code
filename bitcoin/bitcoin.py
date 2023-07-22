@@ -1,4 +1,5 @@
-import sys, requests
+import sys
+import requests
 
 url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 
@@ -8,5 +9,5 @@ if len(sys.argv) < 2:
 else:
     if not sys.argv[1].isdigit():
         print("Command-line argument is not a number")
-    else:
+
 
