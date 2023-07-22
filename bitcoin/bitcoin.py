@@ -17,7 +17,9 @@ else:
                 data = response.json()
                 # The JSON response has a 'bpi' key that contains the price data in different currencies
                 price_usd = data['bpi']['USD']['rate']
-                print(f"Current Bitcoin price in USD: {price_usd}")
+
+                result = int(sys.argv[1]) * int(price_usd)
+                print(result)
             else:
                 print(f"Request failed with status code: {response.status_code}")
 
