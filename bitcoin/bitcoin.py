@@ -24,7 +24,7 @@ else:
                 locale.setlocale(locale.LC_ALL, '')
 
                 formated = locale.format_string("%.4f", inbitcoin, grouping=True)
-                print(formated)
+                print(f"${formated}")
             else:
                 print(f"Request failed with status code: {response.status_code}")
 
