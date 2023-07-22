@@ -8,6 +8,7 @@ def main():
         problem = generate_integer(level)
 
         for j in range(3):
+            print(problem[expression])
             user_answer = get_user_answer()
 
             if user_answer == problem["solution"]:
