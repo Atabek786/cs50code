@@ -17,25 +17,33 @@ def main():
                     print("EEE")
         if j == 2:
             print(problem["solution"])
-            
+
     print("Score: ", solved)
 
 def get_level():
-    try:
-        while True:
+    while True:
+        try:
             level = int(input("Level: "))
-            if level > 3 or level <= 0:
-                pass
-            else:
+            if 1 <= level <= 3:
                 return level
-    except ValueError:
-        print("Select level between 1-3")
+            else:
+                print("Select level between 1-3")
+        except ValueError:
+            print("Enter number")
 
 
 def generate_integer(level):
     for i in range(10):
-        x = random.randint(1,9)
-        y = random.randint(1,9)
+        if level == 1:
+            x = random.randint(0,9)
+            y = random.randint(0,9)
+        elif level == 2:
+            x = random.randint(10,99)
+            y = random.randint(10,99)
+        else:
+            x = random.randint(100,999)
+            y = random.randint(100,999)
+
         problem = {
             "expression": f"{x} + {y} =",
             "solution": x + y
