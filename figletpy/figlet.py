@@ -2,15 +2,20 @@ from pyfiglet import Figlet
 import sys
 import random
 
-
+availablefonts = Figlet.getFonts()
 prompt = input("Input: ")
 
 if len(sys.argv) == 1 :
-    converted = Figlet(font=random(prompt))
+    selectfont = random.choice(availablefonts)
 
-    converted = 
+    f = Figlet(font=selectfont)
+    converted = f.renderText(prompt)
+    print(converted)
+
 elif len(sys.argv) == 2 :
-    converted = Figlet(font=sys.argv[2])
+    f = Figlet(font=sys.argv[2])
+    converted = f.renderText(sys.argv[2])
+
     print(converted)
 else:
     print("Type 0 or 2 command line arguments")
