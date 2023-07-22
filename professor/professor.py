@@ -6,15 +6,16 @@ def main():
     solved = 0
     for i in range(10):
         problem = generate_integer(level)
-        user_answer = get_user_answer()
 
-        if user_answer == problem["solution"]:
-            solved += 1
+        for j in range(3):
+            user_answer = get_user_answer()
+
+            if user_answer == problem["solution"]:
+                solved += 1
+            else:
+                    print("EEE")
         else:
-            for j in range(3):
-                print("EEE")
-            if j == 2:
-                print(problem["solution"])
+            print(problem["solution"])
 
 
 def get_level():
