@@ -11,7 +11,10 @@ def main():
         if user_answer == problem["solution"]:
             solved += 1
         else:
-            print("EEE")
+            for j in range(3):
+                print("EEE")
+            if j == 2:
+                print(problem["solution"])
 
 
 def get_level():
