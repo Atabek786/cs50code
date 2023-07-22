@@ -1,14 +1,12 @@
 import sys
 import requests
-import locale
 
 url = "https://api.coindesk.com/v1/bpi/currentprice.json"
 
 
 def format_currency(amount):
-    # Set the locale to use a comma as the thousands separator
-    formatted_amount = "{:,.4f}".format(amount)
-    return formatted_amount
+    # Format the amount to four decimal places with comma as thousands separator
+    return "${:,.4f}".format(amount)
 
 
 def get_bitcoin_price():
@@ -41,5 +39,5 @@ if __name__ == "__main__":
         price_usd = get_bitcoin_price()
         in_usd = btc_amount * price_usd
         formatted_result = format_currency(in_usd)
-        print(f"${formatted_result}")
+        print(formatted_result)
 
