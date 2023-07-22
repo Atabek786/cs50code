@@ -7,9 +7,8 @@ url = "https://api.coindesk.com/v1/bpi/currentprice.json"
 
 def format_currency(amount):
     # Set the locale to use a comma as the thousands separator
-    locale.setlocale(locale.LC_ALL, "")
-    # Format the amount to four decimal places with comma as thousands separator
-    return locale.format_string("%.4f", amount, grouping=True)
+    formatted_amount = "{:,.4f}".format(amount)
+    return formatted_amount
 
 
 def get_bitcoin_price():
