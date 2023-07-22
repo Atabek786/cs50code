@@ -20,5 +20,5 @@ elif len(names) == 2:
 else:
     farewell_message = f"Adieu, adieu to {', '.join(names[:-1])}, and {names[-1]}."
 
-print(farewell_message)
+print(" ".join(farewell_message.split()))
 
