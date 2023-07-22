@@ -10,8 +10,11 @@ try:
 
         names.append(name)
 
-        updated = names.replace(',', ' and ')
 except EOFError:
     pass
 
-print(f"Adieu, adieu to {names}")
+# Replace commas with "and" in each name
+updated_names = [name.replace(',', ' and ') for name in names]
+
+print(f"Adieu, adieu to {', '.join(updated_names)}")
+
