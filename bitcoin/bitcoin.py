@@ -12,7 +12,6 @@ else:
         sys.exit()
     else:
         try:
-            amount = float(sys.argv[1])
             response = requests.get(url)
 
             if response.status_code == 200:
@@ -20,11 +19,11 @@ else:
                 # The JSON response has a 'bpi' key that contains the price data in different currencies
                 price_usd = float(data['bpi']['USD']['rate'].replace(',',''))
 
-                inbitcoin = int(sys.argv[1]) * price_usd
+                inbitcoin = float(sys.argv[1]) * price_usd
 
                 locale.setlocale(locale.LC_ALL, '')
 
-                formated = locale.format_string("%.4f", inbitcoin, grouping=True)
+                formated = locale.format_string("%.2f", inbitcoin, grouping=True)
                 print(f"${formated}")
             else:
                 print(f"Request failed with status code: {response.status_code}")
