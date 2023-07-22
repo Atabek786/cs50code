@@ -1,6 +1,6 @@
 import emoji
 
 
-prompt = input("Input: ")
+prompt = input("Input:")
 
-print("Output: ", emoji.emojize(prompt))
+print("Output:", emoji.emojize(prompt))
