@@ -1,9 +1,14 @@
-prompt = input("Input: ")
+def main():
+    prompt = input("Input: ")
+    result = shorten(prompt)
+    print(result)
 
 
+def shorten(word):
+    words = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
+    for w in words:
+        word = word.replace(w, '')
+    return word
 
-words = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
-for word in words:
-    prompt = prompt.replace(word, '')
-
-print(prompt)
+if __name__ == "__main__":
+    main()

@@ -1,1 +1,5 @@
-from twttr import 
+from twttr import shorten
+
+def test_shorten():
+    shorten("Atabek") == "tbk"
+
