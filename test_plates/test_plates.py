@@ -1,17 +1,25 @@
 from plates import is_valid
 
-def test_should_be_valid():
+def test_length():
+    assert is_valid("C") == False
+    assert is_valid("CS") == True
+    assert is_valid("CS5") == True
     assert is_valid("CS50") == True
-    assert is_valid("ATA23") == True
 
-def test_shouldnt_be_valid():
+def test_number():
+    assert is_valid("5") == False
+    assert is_valid("50") == False
+    assert is_valid("50C") == False
     assert is_valid("50CS") == False
-    assert is_valid("23ATA") == False
 
-def test_should_be_valid_reverse():
-    assert is_valid("CS50") == False
-    assert is_valid("ATA23") == False
+def test_lwrcase_and_uppcase():
+    assert is_valid("cS50") == True
+    assert is_valid("Cs50") == True
+    assert is_valid("cs50") == True
+    assert is_valid("CS50") == True
 
-def test_shouldnt_be_valid_reverse():
-    assert is_valid("50CS") == True
-    assert is_valid("23ATA") == True
+def test_long():
+    assert is_valid("cSx50") == False
+    assert is_valid("ATA295") == False
+    assert is_valid("139Ata") == False
+    assert is_valid("A22bek") == False
