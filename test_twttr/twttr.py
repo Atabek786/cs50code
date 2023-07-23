@@ -5,7 +5,7 @@ def main():
 
 
 def shorten(word):
-    words = [ 'a', 'e', 'i', 'o', 'u']
+    words = ['a', 'e', 'i', 'o', 'u']
     for w in words:
         word = word.replace(w, '')
     return word
