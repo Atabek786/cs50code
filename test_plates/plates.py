@@ -23,11 +23,6 @@ def is_valid(s):
     if not s[0].isalpha() or not s[1].isalpha():
         return False
 
-    if any(char.isdigit() for char in s):
-        first_digit = next(char for char in s if char.isdigit())
-        if first_digit == "0":
-            return False
-
     if any(char in punctuation for char in s):
         return False
 
@@ -35,8 +30,8 @@ def is_valid(s):
     if any(char.isdigit() for char in s[2:]):
         return False
 
-    # Check for zero placement
-    if "0" in s[2:]:
+    # Check for zero placement (it should be at index 2)
+    if s[2] == "0":
         return False
 
     # Check for alphanumeric characters
@@ -44,8 +39,6 @@ def is_valid(s):
         return False
 
     return True
-
-
 
 
 if __name__ == "__main__":
