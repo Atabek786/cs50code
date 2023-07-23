@@ -1,4 +1,3 @@
-punctuation = {" ", "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "]", "^", "_", "`", "{", ",", "|", "}", "~"}
 
 def main():
     plate = input("Plate: ")
@@ -9,6 +8,13 @@ def main():
 
 
 def is_valid(s):
+    punctuation = {
+    " ","!","#","$","%","&",
+    "(",")","*","+",",","-",
+    ".","/",":",";","<","=",
+    ">","?","@","[","^","]",
+    "^","_","`","{",",","|","}","~",
+}
     s = s.strip().upper()  # Remove leading/trailing whitespace and convert to uppercase
 
     if len(s) < 2 or len(s) > 6:
@@ -26,6 +32,7 @@ def is_valid(s):
         return False
 
     return True
+
 
 if __name__ == "__main__":
     main()
