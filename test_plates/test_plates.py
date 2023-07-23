@@ -1,5 +1,11 @@
 from plates import is_valid
 
+def main():
+    test_length()
+    test_number()
+    test_lwrcase_and_uppcase()
+    test_long()
+
 def test_length():
     assert is_valid("C") == False
     assert is_valid("CS") == True
@@ -23,3 +29,6 @@ def test_long():
     assert is_valid("ATA295") == False
     assert is_valid("139Ata") == False
     assert is_valid("A22bek") == False
+
+if __name__ == "__main__":
+    main()
