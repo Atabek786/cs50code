@@ -9,62 +9,23 @@ def main():
 
 
 def is_valid(s):
-    if len(s) < 2:
-        return False
-    elif len(s) > 6:
-        return False
-    elif number_check(s) == False:
-        return False
-    elif zero_check(s) == False:
-        return False
-    elif contains_punctuation(s) == True:
-        return False
-    elif doesnt_begin_with_letters(s) == True:
-        return False
-    else:
-        return True
+    s = s.strip().upper()  # Remove leading/trailing whitespace and convert to uppercase
 
-
-def number_check(n):
-    firstnum = None
-    for c in n:
-        if c.isdigit():
-            firstnum = c
-            break
-    if firstnum == None:
-        return True
-    if int(firstnum) == 0:
+    if len(s) < 2 or len(s) > 6:
         return False
-    index = n.index(firstnum)
-    position = len(n) - index
-    for c in n[-position:]:
-        if not c.isdigit():
+
+    if any(char.isdigit() for char in s):
+        first_digit = next(char for char in s if char.isdigit())
+        if first_digit == "0":
             return False
+
+    if any(char in punctuation for char in s):
+        return False
+
+    if not (s[0].isalpha() and s[1].isalpha()):
+        return False
+
     return True
-
-
-
-def zero_check(z):
-    i = 0
-    while i < len(z):
-        if z[i].isalpha()== False:
-            if z[i] == "0":
-                return False
-            else:
-                break
-        i += 1
-
-def doesnt_begin_with_letters(a):
-    if a[0].isalpha() == False or a[1].isalpha() == False:
-        return True
-
-
-
-def contains_punctuation(x):
-    for char in x:
-        if char in punctuation:
-            return True
-
 
 if __name__ == "__main__":
     main()
