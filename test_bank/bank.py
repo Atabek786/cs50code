@@ -1,14 +1,11 @@
 
 def main():
-    user_greeting = input("Enter your greeting: ")
+    user_greeting = input("Enter your greeting: ").strip().lower()
     fee = value(user_greeting)
     print("Fee:", fee)
 
 
-def value(greeting):
-    greeting = greeting.strip().lower()  # Remove leading whitespace and convert to lowercase
-
-
+def value(greeting):  # Remove leading whitespace and convert to lowercase
     if greeting.startswith("hello"):
         return "$0"
     elif greeting.startswith("h"):
