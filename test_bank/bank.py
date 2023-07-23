@@ -6,7 +6,7 @@ def main():
 
 
 def value(greeting):
-    greeting = greeting.lstrip().lower()  # Remove leading whitespace and convert to lowercase
+    greeting = greeting.strip().lower()  # Remove leading whitespace and convert to lowercase
 
     if greeting.startswith("hello"):
         return "$0"
