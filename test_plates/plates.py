@@ -66,4 +66,5 @@ def contains_punctuation(x):
             return True
 
 
-main()
+if __name__ == "__main__":
+    main()
