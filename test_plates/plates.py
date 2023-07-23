@@ -9,12 +9,12 @@ def main():
 
 def is_valid(s):
     punctuation = {
-    " ","!","#","$","%","&",
-    "(",")","*","+",",","-",
-    ".","/",":",";","<","=",
-    ">","?","@","[","^","]",
-    "^","_","`","{",",","|","}","~",
-}
+        " ", "!", "#", "$", "%", "&",
+        "(", ")", "*", "+", ",", "-",
+        ".", "/", ":", ";", "<", "=",
+        ">", "?", "@", "[", "^", "]",
+        "^", "_", "`", "{", ",", "|", "}", "~",
+    }
     s = s.strip().upper()
 
     if len(s) < 2 or len(s) > 6:
@@ -31,7 +31,20 @@ def is_valid(s):
     if any(char in punctuation for char in s):
         return False
 
+    # Check for number placement
+    if any(char.isdigit() for char in s[2:]):
+        return False
+
+    # Check for zero placement
+    if "0" in s:
+        return False
+
+    # Check for alphanumeric characters
+    if not all(char.isalnum() for char in s):
+        return False
+
     return True
+
 
 
 if __name__ == "__main__":
