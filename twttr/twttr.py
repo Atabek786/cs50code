@@ -1,7 +1,7 @@
 
 def main():
     result = shorten(word)
-    
+    print(result)
 
 
 
@@ -11,5 +11,6 @@ def shorten(word):
     converted = prompt
     for word in words:
         converted = converted.replace(word, '')
+        return converted
 
 
