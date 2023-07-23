@@ -1,46 +1,41 @@
 def main():
-    # Prompt the user to enter a fraction in the format X/Y
-    fraction = gauge("Enter the fraction (e.g., X/Y):")
-
-    # Calculate the percentage of fuel based on the fraction and display the result
-    percentage = convert(fraction)
-
-    # Check if the tank is essentially empty (1% or less) or essentially full (99% or more),
-    # and output 'E' or 'F' accordingly. Otherwise, print the calculated percentage.
-    if percentage <= 1:
-        print("E")
-    elif percentage >= 99:
-        print("F")
-    else:
-        print(f"{percentage}%")
-
-def gauge(percentage):
-    while True:
-        # Get the user input for the fraction
-        x = input(percentage)
-        try:
-            # Split the input into numerator and denominator parts
-            num, denom = x.split('/')
-            num = int(num)
-            denom = int(denom)
-
-            # Validate the fraction: denominator cannot be zero, and numerator should be less than or equal to the denominator
-            if denom == 0:
-                print("Invalid input. Denominator cannot be zero.")
-            elif num > denom:
-                print("Invalid input. Numerator cannot be greater than the denominator.")
-            else:
-                return num, denom  # Return the valid fraction as integers
-        except ValueError:
-            print("Invalid input. Please enter a valid fraction (e.g., 'X/Y')")
+    fraction = input("Fraction: ")
+    fraction_converted = convert(fraction)
+    output = gauge(fraction_converted)
+    print(output)
 
 def convert(fraction):
-    # Calculate the percentage of fuel by dividing the numerator by the denominator and multiplying by 100
-    num, denom = fraction
-    percentage = (num / denom) * 100
+    while True:
+        try:
+            # Try to split the fuel
+            numerator, denominator = fraction.split("/")
+            # Convert into integers
+            new_numerator = int(numerator)
+            new_denominator = int(denominator)
+            # Calculate the percentage
+            f = new_numerator / new_denominator
+            # Check if its less than 1 and stop the loop
+            if f <= 1:
+                # Multiply percentage by 100
+                p = int(f * 100)
+                return p
+            else:
+                fraction = input("Fraction: ")
+                pass
+        except (ValueError,ZeroDivisionError):
+            raise
 
-    # Round the percentage to the nearest integer and return the result
-    return round(percentage)
+def gauge(percentage):
+    # Check if percentage is less than 1, return E
+    if percentage <= 1:
+        return "E"
+    # Check if percentage is greater than 99, return F
+    elif percentage >= 99:
+        return "F"
+    # Otherwise, return the %
+    else:
+        return str(percentage) + "%"
+
 
 if __name__ == "__main__":
     main()
