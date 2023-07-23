@@ -36,7 +36,7 @@ def is_valid(s):
         return False
 
     # Check for zero placement
-    if "0" in s:
+    if "0" in s[2:]:
         return False
 
     # Check for alphanumeric characters
@@ -44,6 +44,7 @@ def is_valid(s):
         return False
 
     return True
+
 
 
 
