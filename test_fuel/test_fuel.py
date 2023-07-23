@@ -7,7 +7,7 @@ def main():
     test_letters()
 
 def test_zero():
-    assert convert("1/2") == "50%"
+    assert gauge("1/2") == "50%"
 
 
 
