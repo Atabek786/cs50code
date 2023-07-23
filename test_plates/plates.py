@@ -15,9 +15,12 @@ def is_valid(s):
     ">","?","@","[","^","]",
     "^","_","`","{",",","|","}","~",
 }
-    s = s.strip().upper()  # Remove leading/trailing whitespace and convert to uppercase
+    s = s.strip().upper()
 
     if len(s) < 2 or len(s) > 6:
+        return False
+
+    if not s[0].isalpha() or not s[1].isalpha():
         return False
 
     if any(char.isdigit() for char in s):
@@ -26,9 +29,6 @@ def is_valid(s):
             return False
 
     if any(char in punctuation for char in s):
-        return False
-
-    if not (s[0].isalpha() and s[1].isalpha()):
         return False
 
     return True
