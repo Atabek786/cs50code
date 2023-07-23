@@ -1,4 +1,3 @@
-
 def main():
     user_greeting = input("Enter your greeting: ")
     fee = value(user_greeting)
