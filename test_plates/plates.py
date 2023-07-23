@@ -1,4 +1,3 @@
-
 def main():
     plate = input("Plate: ")
     if is_valid(plate):
@@ -8,36 +7,38 @@ def main():
 
 
 def is_valid(s):
-    punctuation = {
-        " ", "!", "#", "$", "%", "&",
-        "(", ")", "*", "+", ",", "-",
-        ".", "/", ":", ";", "<", "=",
-        ">", "?", "@", "[", "^", "]",
-        "^", "_", "`", "{", ",", "|", "}", "~",
-    }
-    s = s.strip().upper()
-
+    # vanity plates may contain a maximum of 6 characters (letters or numbers)
+    # and a minimum of 2 characters.
     if len(s) < 2 or len(s) > 6:
         return False
 
-    if not s[0].isalpha() or not s[1].isalpha():
+    # All vanity plates must start with at least two letters
+    if s[0].isalpha() == False or s[1].isalpha() == False:
         return False
 
-    if any(char in punctuation for char in s):
-        return False
+    # Numbers cannot be used in the middle of a plate; they must come at the end.
+    # For example, AAA222 would be an acceptable … vanity plate; AAA22A would not be acceptable.
+    # The first number used cannot be a ‘0’
+    i = 0
+    while i < len(s):
+        if s[i].isalpha() == False:
+            if s[i] == '0':
+                return False
+            else:
+                break
+        i += 1
 
-    # Check for number placement
-    if any(char.isdigit() for char in s[2:]):
-        return False
+    for i in range(len(s)):
+        if s[i].isdigit():
+            if not s[i:].isdigit():
+                return False
 
-    # Check for zero placement (it should be at index 2)
-    if s[2] == "0":
-        return False
+    # No periods, spaces, or punctuation marks are allowed
+    for c in s:
+        if c in ['.', ' ', '!', '?']:
+            return False
 
-    # Check for alphanumeric characters
-    if not all(char.isalnum() for char in s):
-        return False
-
+    # If we pass all the tests, return True
     return True
 
 
