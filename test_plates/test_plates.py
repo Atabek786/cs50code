@@ -25,8 +25,8 @@ def test_lwrcase_and_uppcase():
     assert is_valid("CS50") == True
 
 def test_long():
-    assert is_valid("cSx50") == False
-    assert is_valid("ATA295") == False
+    assert is_valid("cSx50") == True
+    assert is_valid("ATA295") == True
     assert is_valid("139Ata") == False
     assert is_valid("A22bek") == False
 
