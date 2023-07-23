@@ -7,14 +7,7 @@ def main():
     test_letters()
 
 def test_zero():
-    assert convert("1/0") == 
-
-
-
-
-
-
-
+    assert convert("1/2") == "50%"
 
 
 
