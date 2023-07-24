@@ -11,6 +11,10 @@ def read_file(file_path):
     except FileNotFoundError:
         print("File not found")
 
+def write_file(file):
+    try:
+        with
+
 if __name__ == "__main__":
     if len(sys.argv)  < 4:
         print("Too few command-line arguments")
