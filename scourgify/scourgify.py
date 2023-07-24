@@ -16,6 +16,7 @@ def read_file(file_path):
 def write_file(file):
     try:
         with open(file, 'w', newline='') as filewrite:
+            fielnames = ['first', 'last', 'house']
             
 
 if __name__ == "__main__":
