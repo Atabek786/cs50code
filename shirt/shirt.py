@@ -1,41 +1,39 @@
 import sys
-import os
-import csv
 from PIL import Image
 
-before_image_path = sys.argv[1]
-after_image_path = sys.argv[2]
+def resize_crop_image(input_image, target_size):
+    image = Image.open(input_image)
+    image = image.resize(target_size)
+    return image
 
-before_image_base_name, before_image_extension = os.path.splitext(before_image_path)
-after_image_base_name, after_image_extension = os.path.splitext(after_image_path)
+def overlay_shirt(input_image, output_image, shirt_image):
+    input_size = input_image.size
+    shirt_size = shirt_image.size
+    if input_size != shirt_size:
+        shirt_image = resize_crop_image(shirt_image, input_size)
 
+    # Overlay the shirt on the input image
+    result_image = Image.alpha_composite(input_image.convert('RGBA'), shirt_image)
 
-def editing_image(input_image, output_image):
-    try:
-        shirt = Image.open('shirt.png')
-        inputimage = Image.open(input_image)
-        outputimage = Image.open(output_image)
-
-        # size = shirt.size
-
-        outputimage.paste(shirt, inputimage)
-    except FileNotFoundError:
-        print("File Not Found :(")
-
-
-
-
-
-
-
-
-
+    # Save the result image to the output file
+    result_image.save(output_image)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python script_name.py beforeimage.jpg afterimage.jpg or afterimage.png")
+        print("Usage: python shirt.py input_image.jpg output_image.jpg")
         sys.exit(1)
 
-    input_image = sys.argv[1]
-    output_image = sys.argv[2]
-    editing_image(input_image, output_image)
+    input_image_path = sys.argv[1]
+    output_image_path = sys.argv[2]
+
+    try:
+        # Load the "shirt.png" image
+        shirt_image = Image.open("shirt.png")
+
+        # Resize, crop, and overlay the images
+        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image)
+        print("Image processing complete.")
+    except FileNotFoundError:
+        print("File Not Found :(")
+    except Exception as e:
+        print("An error occurred:", e)
