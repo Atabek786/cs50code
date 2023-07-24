@@ -41,9 +41,11 @@ if __name__ == "__main__":
         before = read_file('before.csv')
         for row in before:
             full_name = row['name']
+            house = row['house']
             last, first = full_name.split(', ')
             row['first'] = first
             row['last'] = last
             row.pop('name', None)
+
 
         write_file('after.csv', before)
