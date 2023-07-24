@@ -14,7 +14,7 @@ def read_file(file_path):
     return data
 
 
-def write_file(file):
+def write_file(file, data):
     try:
         with open(file, 'w', newline='') as file:
             fieldnames = data[0].keys()
@@ -44,5 +44,6 @@ if __name__ == "__main__":
             last, first = full_name.split(', ')
             row['first'] = first
             row['last'] = last
+            row.pop('name', None)
 
         write_file('after.csv', before)
