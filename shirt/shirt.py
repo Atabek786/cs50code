@@ -1,6 +1,13 @@
 import sys
 import os
+import csv
 from PIL import Image
+
+before_image_path = sys.argv[1]
+after_image_path = sys.argv[2]
+
+before_image_base_name, before_image_extension = os.path.splitext(before_image_path)
+after_image_base_name, after_image_extension = os.path.splitext(after_image_path)
 
 
 def editing_image(input_image, output_image):
