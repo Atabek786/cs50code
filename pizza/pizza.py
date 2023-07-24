@@ -7,8 +7,8 @@ def read_file(file_path):
     try:
         with open(file_path, 'r', ) as file:
             reader = csv.DictReader(file)
-            for row in reader:
-                print(row)
+            data = [row for row in reader]
+            return data
     except FileNotFoundError:
         print("File not found")
 
