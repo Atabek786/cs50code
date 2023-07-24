@@ -1,13 +1,14 @@
 import sys
 import os
+from tabulate import tabulate
 
 
 def count_lines(file_path):
     try:
         with open(file_path, 'r') as file:
-            lines = file.readlines()
-            lines_of_code = sum(1 for line in lines if line.strip() and not line.strip().startswith('#'))
-        return lines_of_code
+            reader = csv.DictReader(file)
+            for row in reader:
+                print(row)
     except FileNotFoundError:
         print("File not found")
 
@@ -26,5 +27,5 @@ if __name__ == "__main__":
         sys.exit()
     else:
         result = count_lines(sys.argv[1])
-        final_result = tabulate()
-        print(f"{result}")
+        final_result = tabulate(result)
+        print(f"{final_result}")
