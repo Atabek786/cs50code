@@ -7,7 +7,7 @@ def resize_crop_image(input_image, target_size):
     image = image.resize(target_size)
     return image
 
-def overlay_shirt(input_image, output_image, shirt_image):
+def overlay_shirt(input_image, output_image, shirt_image, y_offset):
     input_size = input_image.size
     shirt_size = shirt_image.size
 
@@ -18,9 +18,11 @@ def overlay_shirt(input_image, output_image, shirt_image):
     input_image = input_image.convert('RGBA')
     shirt_image = shirt_image.convert('RGBA')
 
-    # Calculate the position to overlay the shirt (centered vertically)
+    # Calculate the position to overlay the shirt (centered horizontally)
     x_offset = (input_size[0] - shirt_size[0]) // 2  # Center the shirt horizontally
-    y_offset = (input_size[1] - shirt_size[1]) // 2  # Center the shirt vertically
+
+    # Adjust the vertical position of the shirt
+    y_offset = -y_offset  # Negative value moves the shirt up
 
     # Create a new transparent image to hold the overlay
     overlay = Image.new('RGBA', input_size, (0, 0, 0, 0))
@@ -57,8 +59,11 @@ if __name__ == "__main__":
         # Load the "shirt.png" image
         shirt_image = Image.open("shirt.png")
 
-        # Resize, crop, and overlay the images
-        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image)
+        # Set the desired uplift value (change this to uplift or lower the shirt)
+        uplift_amount = 50
+
+        # Resize, crop, and overlay the images with the uplift amount
+        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image, uplift_amount)
         print("Image processing complete.")
     except FileNotFoundError:
         print("File Not Found :(")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
         print(ve)
     except Exception as e:
         print("An error occurred:", e)
+
 
 
