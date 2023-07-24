@@ -39,11 +39,7 @@ if __name__ == "__main__":
         sys.exit(1)
     else:
         input_file = sys.argv[1]
-        
-        # Get the output file name based on the input file name
-        base_name = os.path.splitext(os.path.basename(input_file))[0]
-        output_file = f"{base_name}_after.csv"
-
+        output_file = 'after.csv'
         before = read_file(input_file)
         for row in before:
             full_name = row['name']
