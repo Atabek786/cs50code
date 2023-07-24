@@ -12,10 +12,13 @@ after_image_base_name, after_image_extension = os.path.splitext(after_image_path
 
 def editing_image(input_image, output_image):
     try:
-        s
-        inputimage = Image.open(input_image), outputimage = Image.open(output_image)
+        shirt = Image.open('shirt.png')
+        inputimage = Image.open(input_image)
+        outputimage = Image.open(output_image)
 
+        size = shirt.size
 
+        
     except FileNotFoundError:
         print("File Not Found :(")
 
