@@ -1,6 +1,7 @@
 import sys
-from PIL import Image
 import os
+import numpy as np
+from PIL import Image
 
 def resize_crop_image(input_image, target_size):
     image = Image.open(input_image)
@@ -62,6 +63,18 @@ def determine_output_format(output_image_path):
     else:
         raise ValueError("Unsupported output image format. Please use JPG or PNG.")
 
+def compare_images(image_path1, image_path2):
+    image1 = Image.open(image_path1)
+    image2 = Image.open(image_path2)
+
+    if image1.size != image2.size:
+        return False
+
+    array1 = np.array(image1)
+    array2 = np.array(image2)
+
+    return np.array_equal(array1, array2)
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python shirt.py before1.jpg after1.jpg")
@@ -74,9 +87,18 @@ if __name__ == "__main__":
         # Load the "shirt.png" image
         shirt_image = Image.open("shirt.png")
 
+        # Set the desired uplift value (change this to uplift or lower the shirt)
+        uplift_amount = 50
+
         # Resize, crop, and overlay the images with the desired positioning
-        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image, x_offset=0, y_offset=-50)
-        print("Image processing complete.")
+        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image, x_offset=0, y_offset=-uplift_amount)
+
+        # Compare the output image with the expected result
+        expected_image_path = "expected_" + os.path.basename(output_image_path)
+        if compare_images(output_image_path, expected_image_path):
+            print("Image processing complete.")
+        else:
+            print("Image does not match the expected result.")
     except FileNotFoundError:
         print("File Not Found :(")
     except ValueError as ve:
