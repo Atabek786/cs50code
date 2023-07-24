@@ -9,4 +9,6 @@ def count_lines(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print()
+        print("Too few command-line arguments")
+        sys.exit()
+    elif 
