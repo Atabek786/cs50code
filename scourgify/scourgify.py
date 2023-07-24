@@ -31,11 +31,11 @@ if __name__ == "__main__":
     elif len(sys.argv) > 3:
         print("Too many command-line arguments")
         sys.exit(1)
-    elif not sys.argv[2].endswith(".csv") and sys.argv[3].endswith(".csv"):
+    elif not sys.argv[1].endswith(".csv") and sys.argv[2].endswith(".csv"):
         print("Not a csv file")
         sys.exit(1)
-    elif not os.path.exists(sys.argv[2]):
-        print("File doesn't exist")
+    elif not os.path.exists(sys.argv[1]):
+        print("Could not read "+ sys.argv[1])
         sys.exit(1)
     else:
         before = read_file('before.csv')
