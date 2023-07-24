@@ -10,6 +10,7 @@ def resize_crop_image(input_image, target_size):
 def overlay_shirt(input_image, output_image, shirt_image):
     input_size = input_image.size
     shirt_size = shirt_image.size
+
     if input_size != shirt_size:
         shirt_image = resize_crop_image(shirt_image, input_size)
 
@@ -17,8 +18,16 @@ def overlay_shirt(input_image, output_image, shirt_image):
     input_image = input_image.convert('RGBA')
     shirt_image = shirt_image.convert('RGBA')
 
-    # Overlay the shirt on the input image
-    result_image = Image.alpha_composite(input_image, shirt_image)
+    # Calculate the position to overlay the shirt (centered vertically)
+    x_offset = (input_size[0] - shirt_size[0]) // 2  # Center the shirt horizontally
+    y_offset = (input_size[1] - shirt_size[1]) // 2  # Center the shirt vertically
+
+    # Create a new transparent image to hold the overlay
+    overlay = Image.new('RGBA', input_size, (0, 0, 0, 0))
+    overlay.paste(shirt_image, (x_offset, y_offset))
+
+    # Composite the overlay on the input image
+    result_image = Image.alpha_composite(input_image, overlay)
 
     # Convert the result image to RGB mode if saving as JPEG
     if determine_output_format(output_image) == 'JPEG':
@@ -57,4 +66,5 @@ if __name__ == "__main__":
         print(ve)
     except Exception as e:
         print("An error occurred:", e)
+
 
