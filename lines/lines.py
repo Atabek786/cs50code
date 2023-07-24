@@ -14,13 +14,13 @@ def count_lines(file_path):
 if __name__ == "__main__":
     if len(sys.argv)  < 2:
         print("Too few command-line arguments")
-        sys.exit()
+        sys.exit(1)
     elif len(sys.argv) > 2:
         print("Too many command-line arguments")
-        sys.exit()
+        sys.exit(1)
     elif not sys.argv[1].endswith(".py"):
         print("Not a python file")
-        sys.exit()
+        sys.exit(1)
     elif not os.path.exists(sys.argv[1]):
         print("File doesn't exist")
         sys.exit()
