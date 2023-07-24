@@ -16,7 +16,8 @@ def read_file(file_path):
 def write_file(file):
     try:
         with open(file, 'w', newline='') as filewrite:
-            fielnames = ['first', 'last', 'house']
+            fieldnames = ['first', 'last', 'house']
+            writer = csv.DictWriter(filewrite, fieldnames=fieldnames)
             
 
 if __name__ == "__main__":
