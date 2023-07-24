@@ -12,7 +12,9 @@ after_image_base_name, after_image_extension = os.path.splitext(after_image_path
 
 def editing_image(input_image, output_image):
     try:
-        image = Image.open(input_image)
+        s
+        inputimage = Image.open(input_image), outputimage = Image.open(output_image)
+
 
     except FileNotFoundError:
         print("File Not Found :(")
