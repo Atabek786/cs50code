@@ -1,11 +1,11 @@
 import sys
 import os
 from tabulate import tabulate
+import csv
 
-
-def count_lines(file_path):
+def read_file(file_path):
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', ) as file:
             reader = csv.DictReader(file)
             for row in reader:
                 print(row)
@@ -26,6 +26,6 @@ if __name__ == "__main__":
         print("File doesn't exist")
         sys.exit()
     else:
-        result = count_lines(sys.argv[1])
+        result = read_file(sys.argv[1])
         final_result = tabulate(result)
         print(f"{final_result}")
