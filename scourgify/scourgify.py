@@ -25,10 +25,10 @@ def write_file(file):
         print('Error writing to file')
 
 if __name__ == "__main__":
-    if len(sys.argv)  < 4:
+    if len(sys.argv)  < 3:
         print("Too few command-line arguments")
         sys.exit(1)
-    elif len(sys.argv) > 4:
+    elif len(sys.argv) > 3:
         print("Too many command-line arguments")
         sys.exit(1)
     elif not sys.argv[2].endswith(".csv") and sys.argv[3].endswith(".csv"):
