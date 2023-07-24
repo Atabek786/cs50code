@@ -14,4 +14,7 @@ if __name__ == "__main__":
     elif len(sys.argv) > 1:
         print("Too many command-line arguments")
         sys.exit()
-    elif sys.argv
+    elif not sys.argv[1].endswith(".py"):
+        print("Not a python file")
+        sys.exit()
+    elif 
