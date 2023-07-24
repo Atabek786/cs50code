@@ -1,5 +1,6 @@
 import sys
 from PIL import Image
+import os
 
 def resize_crop_image(input_image, target_size):
     image = Image.open(input_image)
@@ -13,14 +14,23 @@ def overlay_shirt(input_image, output_image, shirt_image):
         shirt_image = resize_crop_image(shirt_image, input_size)
 
     # Overlay the shirt on the input image
-    result_image = Image.alpha_composite(input_image.convert('RGBA'), shirt_image)
+    result_image = Image.alpha_composite(input_image, shirt_image)
 
     # Save the result image to the output file
-    result_image.save(output_image)
+    result_image.save(output_image, format=determine_output_format(output_image))
+
+def determine_output_format(output_image_path):
+    _, file_extension = os.path.splitext(output_image_path)
+    if file_extension.lower() == '.jpg' or file_extension.lower() == '.jpeg':
+        return 'JPEG'
+    elif file_extension.lower() == '.png':
+        return 'PNG'
+    else:
+        raise ValueError("Unsupported output image format. Please use JPG or PNG.")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python shirt.py input_image.jpg output_image.jpg")
+        print("Usage: python shirt.py input_image.jpg output_image.jpg or output_image.png")
         sys.exit(1)
 
     input_image_path = sys.argv[1]
@@ -35,5 +45,8 @@ if __name__ == "__main__":
         print("Image processing complete.")
     except FileNotFoundError:
         print("File Not Found :(")
+    except ValueError as ve:
+        print(ve)
     except Exception as e:
         print("An error occurred:", e)
+
