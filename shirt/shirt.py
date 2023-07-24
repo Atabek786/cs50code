@@ -16,9 +16,9 @@ def editing_image(input_image, output_image):
         inputimage = Image.open(input_image)
         outputimage = Image.open(output_image)
 
-        size = shirt.size
+        # size = shirt.size
 
-        
+        outputimage.paste(shirt, inputimage)
     except FileNotFoundError:
         print("File Not Found :(")
 
