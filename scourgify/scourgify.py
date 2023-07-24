@@ -3,22 +3,23 @@ import os
 import csv
 
 def read_file(file_path):
+    data = []
     try:
         with open(file_path, 'r') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                name = row['name']
-                house = row['house']
-            return name, house
+                data.append(row)
     except FileNotFoundError:
         print("File not found")
+    return data
+
 
 def write_file(file):
     try:
-        with open(file, 'w', newline='') as filewrite:
+        with open(file, 'w', newline='') as file:
             fieldnames = ['first', 'last', 'house']
             writer = csv.DictWriter(filewrite, fieldnames=fieldnames)
-            
+
 
 if __name__ == "__main__":
     if len(sys.argv)  < 4:
