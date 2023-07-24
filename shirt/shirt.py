@@ -4,10 +4,27 @@ import os
 
 def resize_crop_image(input_image, target_size):
     image = Image.open(input_image)
-    image = image.resize(target_size)
+    target_width, target_height = target_size
+    aspect_ratio = target_width / target_height
+
+    # Resize the image while maintaining the original aspect ratio
+    if image.width / image.height > aspect_ratio:
+        new_width = int(image.height * aspect_ratio)
+        image = image.resize((new_width, target_height))
+    else:
+        new_height = int(image.width / aspect_ratio)
+        image = image.resize((target_width, new_height))
+
+    # Crop the image to the target size
+    left = (image.width - target_width) // 2
+    top = (image.height - target_height) // 2
+    right = left + target_width
+    bottom = top + target_height
+    image = image.crop((left, top, right, bottom))
+
     return image
 
-def overlay_shirt(input_image, output_image, shirt_image, y_offset):
+def overlay_shirt(input_image, output_image, shirt_image, x_offset=0, y_offset=0):
     input_size = input_image.size
     shirt_size = shirt_image.size
 
@@ -18,11 +35,9 @@ def overlay_shirt(input_image, output_image, shirt_image, y_offset):
     input_image = input_image.convert('RGBA')
     shirt_image = shirt_image.convert('RGBA')
 
-    # Calculate the position to overlay the shirt (centered horizontally)
-    x_offset = (input_size[0] - shirt_size[0]) // 2  # Center the shirt horizontally
-
-    # Adjust the vertical position of the shirt
-    y_offset = -y_offset  # Negative value moves the shirt up
+    # Calculate the position to overlay the shirt
+    x_offset = x_offset
+    y_offset = y_offset
 
     # Create a new transparent image to hold the overlay
     overlay = Image.new('RGBA', input_size, (0, 0, 0, 0))
@@ -59,11 +74,8 @@ if __name__ == "__main__":
         # Load the "shirt.png" image
         shirt_image = Image.open("shirt.png")
 
-        # Set the desired uplift value (change this to uplift or lower the shirt)
-        uplift_amount = 50
-
-        # Resize, crop, and overlay the images with the uplift amount
-        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image, uplift_amount)
+        # Resize, crop, and overlay the images with the desired positioning
+        overlay_shirt(resize_crop_image(input_image_path, shirt_image.size), output_image_path, shirt_image, x_offset=0, y_offset=-50)
         print("Image processing complete.")
     except FileNotFoundError:
         print("File Not Found :(")
@@ -71,6 +83,3 @@ if __name__ == "__main__":
         print(ve)
     except Exception as e:
         print("An error occurred:", e)
-
-
-
