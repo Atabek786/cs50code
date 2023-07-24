@@ -24,7 +24,7 @@ if __name__ == "__main__":
         sys.exit(1)
     elif not os.path.exists(sys.argv[1]):
         print("File doesn't exist")
-        sys.exit()
+        sys.exit(1)
     else:
         result = read_file(sys.argv[1])
         final_result = tabulate(result, headers="keys", tablefmt="grid")
