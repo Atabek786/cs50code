@@ -17,9 +17,12 @@ def read_file(file_path):
 def write_file(file):
     try:
         with open(file, 'w', newline='') as file:
-            fieldnames = ['first', 'last', 'house']
-            writer = csv.DictWriter(filewrite, fieldnames=fieldnames)
-
+            fieldnames = data[0].keys()
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(data)
+    except IOError:
+        print('Error writing to file')
 
 if __name__ == "__main__":
     if len(sys.argv)  < 4:
@@ -35,4 +38,9 @@ if __name__ == "__main__":
         print("File doesn't exist")
         sys.exit(1)
     else:
-        ...
+        before = read_file('before.csv')
+        for row in before:
+            row['first'] = row.pop('name', None)
+            row['last'] = row.pop('house', None)
+
+        write_file('after.csv', before)
