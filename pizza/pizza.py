@@ -27,5 +27,5 @@ if __name__ == "__main__":
         sys.exit()
     else:
         result = read_file(sys.argv[1])
-        final_result = tabulate(result)
+        final_result = tabulate(result, headers="keys", tablefmt="grid")
         print(f"{final_result}")
