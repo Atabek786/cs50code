@@ -36,7 +36,7 @@ if __name__ == "__main__":
         sys.exit(1)
     else:
         input_file = sys.argv[1]
-        output_file = 'after.csv'
+        output_file = 'after_long.csv'
         before = read_file(input_file)
         for row in before:
             full_name = row['name']
