@@ -12,8 +12,6 @@ def read_file(file_path):
     except FileNotFoundError:
         print("File not found")
     return data
-
-
 def write_file(file, data):
     try:
         with open(file, 'w', newline='') as file:
@@ -23,7 +21,6 @@ def write_file(file, data):
             writer.writerows(data)
     except IOError:
         print('Error writing to file')
-
 if __name__ == "__main__":
     if len(sys.argv)  < 3:
         print("Too few command-line arguments")
@@ -48,8 +45,6 @@ if __name__ == "__main__":
             row['first'] = first
             row['last'] = last
             row.pop('name', None)
-
-
         write_file(output_file, before)
 
     print(f"Data edited and saved to {output_file}")
