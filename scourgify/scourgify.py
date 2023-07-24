@@ -40,7 +40,9 @@ if __name__ == "__main__":
     else:
         before = read_file('before.csv')
         for row in before:
-            row['first'] = row.pop('name', None)
-            row['last'] = row.pop('house', None)
+            full_name = row['name']
+            last, first = full_name.split(', ')
+            row['first'] = first
+            row['last'] = last
 
         write_file('after.csv', before)
