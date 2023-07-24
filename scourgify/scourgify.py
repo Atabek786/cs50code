@@ -4,16 +4,19 @@ import csv
 
 def read_file(file_path):
     try:
-        with open(file_path, 'r', ) as file:
+        with open(file_path, 'r') as file:
             reader = csv.DictReader(file)
-            data = [row for row in reader]
-            return data
+            for row in reader:
+                name = row['name']
+                house = row['house']
+            return name, house
     except FileNotFoundError:
         print("File not found")
 
 def write_file(file):
     try:
-        with
+        with open(file, 'w', newline='') as filewrite:
+            
 
 if __name__ == "__main__":
     if len(sys.argv)  < 4:
