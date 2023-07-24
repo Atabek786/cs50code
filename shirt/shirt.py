@@ -5,7 +5,8 @@ from PIL import Image
 
 input_path = sys.argv[1]
 output_path = sys.argv[2]
-base_name, file_extension
+inputbase_name, inputfile_extension = os.path.splitext(input_path)
+outputbase_name, inputfile_extension = os.path.splitext(input_path)
 
 
 def editing_image(input_image, output_image):
