@@ -38,7 +38,9 @@ if __name__ == "__main__":
         print("Could not read "+ sys.argv[1])
         sys.exit(1)
     else:
-        before = read_file('before.csv')
+        input_file = sys.argv[1]
+        output_file = 'after.csv'
+        before = read_file(input_file)
         for row in before:
             full_name = row['name']
             house = row['house']
@@ -48,4 +50,6 @@ if __name__ == "__main__":
             row.pop('name', None)
 
 
-        write_file('after.csv', before)
+        write_file(output_file, before)
+
+    print(f"Data edited and saved to {output_file}")
