@@ -1,4 +1,4 @@
-from validator_collection import validators
+from validate_email import validate_email
 
 def main():
     result = validation(input("What's your email address?"))
@@ -8,10 +8,7 @@ def main():
         print("Invalid")
 
 def validation(s):
-    if validators.is_email(s):
-        return True
-    else:
-        return False
+    return validate_email(s)
 
 if __name__ == "__main__":
     main()
