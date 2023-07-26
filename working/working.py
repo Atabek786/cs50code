@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    ...
+    time = re.search(r"^$")
 
 
 ...
