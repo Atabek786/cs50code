@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    ums = re.search(r".+?um.+?", s, re.IGNORECASE)
+    ums = re.findall(r".+?um.+?", s, re.IGNORECASE)
 
 
 
