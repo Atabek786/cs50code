@@ -1,10 +1,16 @@
 import re
+from validator_collection import validators, checkers, errors
 
 def main():
     print(validation(input("What's your email address? ")))
 
-def validation():
-    valid = re.search(r"")
+def validation(s):
+    try:
+        email = validators.email(s)
+        if ValueError:
+            print("INVALID")
+        else:
+            print("Valid")
 
 if __name__ == "__main__":
     main()
