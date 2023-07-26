@@ -1,4 +1,4 @@
-from validator_collection import validators
+from validator_collection import validators,errors
 
 def main():
     email = input("What's your email address? ")
