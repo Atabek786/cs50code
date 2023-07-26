@@ -12,8 +12,8 @@ def test_correct():
 
 
 def test_incorrect():
-    assert count("Um, thanks for the album.") == 0
-    assert count("Um, thanks, um...") == 0
+    assert count("Um, thanks for the zoo.") == 0
+    assert count("Um, thanks, dum...") == 0
 
 def test_without():
     assert count(" thanks for the album.") == 0
