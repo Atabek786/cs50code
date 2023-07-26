@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    ums = re.findall(r'(^*\u\m*)', s, re.IGNORECASE)
+    ums = re.findall(r'(^*\u\m*$)', s, re.IGNORECASE)
 
 
 
