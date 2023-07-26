@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    pattern = re.escape("\bum\b")
+    pattern = r"\bum\b"
     match = re.findall(pattern, s, re.IGNORECASE)
 
     if match:
