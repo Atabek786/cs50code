@@ -9,7 +9,7 @@ def main():
 def convert(s):
 
     # Check if the time is in the 24-hour format (HH:MM)
-    if re.match(r"\b(?:2[0-3]|[01]?[0-9]):[0-5][0-9]\b", s):
+    if re.match(r"\b(?:2[0-3]|[01]?[0-9])+?:+?[0-5][0-9]\b", s):
         # Convert to 12-hour format (hh:mm AM/PM)
         time_obj = datetime.datetime.strptime(s, "%H:%M")
         return time_obj.strftime("%I:%M %p")
