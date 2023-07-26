@@ -5,7 +5,6 @@ def main():
     print(validation(input("What's your email address? ")))
 
 def validation(s):
-    try:
         email = validators.email(s)
         if ValueError:
             print("INVALID")
