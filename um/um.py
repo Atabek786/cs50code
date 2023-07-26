@@ -7,13 +7,13 @@ def main():
 
 
 def count(s):
-    pattern = re.escape("um")
+    pattern = re.escape("\bum\b")
     match = re.findall(pattern, s, re.IGNORECASE)
 
     if match:
         return len(match)
     else:
-        return None
+        return 0
 
 if __name__ == "__main__":
     main()
