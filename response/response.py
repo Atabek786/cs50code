@@ -8,7 +8,7 @@ def main():
         print("Invalid")
 
 def validation(s):
-    return validators.is_email(s)
+    return validators(s)
 
 if __name__ == "__main__":
     main()
