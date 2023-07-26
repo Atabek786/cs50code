@@ -7,13 +7,13 @@ def main():
 
 
 def count(s):
-    ums = re.search(r'(+(re.escape(um))+)', s, re.IGNORECASE)
+    pattern = re.escape("um")
+    match = re.findall(pattern, s, re.IGNORECASE)
 
-
-
-
-...
-
+    if match:
+        return len(match)
+    else:
+        return None
 
 if __name__ == "__main__":
     main()
