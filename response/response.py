@@ -1,4 +1,4 @@
-import re
+from validator_collection import validators
 
 def main():
     result = validation(input("What's your email address? "))
@@ -8,10 +8,7 @@ def main():
         print("Invalid")
 
 def validation(s):
-    if re.search(r"^\w+@(\w+\.)?\w+\.edu$", s, re.IGNORECASE):
-        return True
-    else:
-        return False
+    return validators.is_email(s)
 
 if __name__ == "__main__":
     main()
