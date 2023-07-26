@@ -1,4 +1,4 @@
-from validator_collection import validators, checkers, errors
+import re
 
 def main():
     print(validation(input("What's your email address? ")))
