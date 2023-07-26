@@ -1,14 +1,17 @@
-from validate_email import validate_email
+import re
 
 def main():
-    result = validation(input("What's your email address?"))
+    result = validation(input("What's your email address? "))
     if result:
         print("Valid")
     else:
         print("Invalid")
 
 def validation(s):
-    return validate_email(s)
+    if re.search(r"^\w+@(\w+\.)?\w+\.edu$", s, re.IGNORECASE):
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     main()
