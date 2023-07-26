@@ -8,19 +8,20 @@ def main():
 
 def convert(s):
 
+    # Check if the time is in the 12-hour format (hh:mm AM/PM)
+    if re.match(r"\b(1[0-2]|0?[1-9]):[0-5][0-9] [APap][Mm]\b", s):
+        # Convert to 24-hour format (HH:MM)
+        time_obj = datetime.datetime.strptime(s, "%I:%M %p")
+        return time_obj.strftime("%H:%M")
+
     # Check if the time is in the 24-hour format (HH:MM)
-    if re.match(r"\b(?:2[0-3]|[01]?[0-9])+?:+?[0-5][0-9]\b", s):
+    elif re.match(r"\b(?:2[0-3]|[01]?[0-9]):[0-5][0-9]\b", s):
         # Convert to 12-hour format (hh:mm AM/PM)
         time_obj = datetime.datetime.strptime(s, "%H:%M")
         return time_obj.strftime("%I:%M %p")
 
-    # Check if the time is in the 12-hour format (hh:mm AM/PM)
-    elif re.match(r"\b(1[0-2]|0?[1-9]):[0-5][0-9] [APap][Mm]\b", s):
-        # Convert to 24-hour format (HH:MM)
-        time_obj = datetime.datetime.strptime(s, "%I:%M %p")
-        return time_obj.strftime("%H:%M")
     else:
-        print("Format doesn't supported")
+        return "Format not supported"
 
 
 
