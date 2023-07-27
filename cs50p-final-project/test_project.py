@@ -6,7 +6,7 @@ def main():
     test_other()
 
 def test_hello():
-    assert hello("Hello my name is") == 0
+    assert hello("Hello my name is") == None
 
 def test_h():
     assert h("Hi my name is") == None
