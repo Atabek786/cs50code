@@ -29,18 +29,13 @@ def main():
 
 
 
-def hello(s):
-    s.strip().lower()
-    if s.startswith("hello"):
+def value(greeting):
+    greeting = greeting.strip().lower() 
+    if greeting.startswith("hello"):
         return 0
-
-def h(s):
-    s.strip().lower()
-    if s.startswith("h"):
+    elif greeting.startswith("h"):
         return 20
-def other(s):
-    s.strip().lower()
-    if not s.startswith("h"):
+    else:
         return 100
 
 if __name__ == "__main__":

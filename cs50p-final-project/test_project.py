@@ -1,18 +1,20 @@
-from project import hello, h, other
+from project import value
 
-def main():
-    test_hello()
-    test_h()
-    test_other()
+def test_uppercase():
+    assert value("      HELLO, I WANT TO TAKE 100 BUCKS") == 0
 
-def test_hello():
-    assert hello("Hello my name is") == None
 
-def test_h():
-    assert h("Hi my name is") == None
+def test_lowercase():
+    assert value("hello, i want to take 100 bucks") == 0
+
+
+def test_hey_uppcase():
+    assert value("HEY, I WANT TO TAKE 100 BUCKS") == 20
+
+
+def test_hey_lwrcase():
+    assert value("  hey, i want to take 100 bucks") == 20
+
 
 def test_other():
-    assert other("What's going on?") == 100
-
-if __name__ == "__main__":
-    main()
+    assert value("wassup, i want to take 100 bucks") == 100
