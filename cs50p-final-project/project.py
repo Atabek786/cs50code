@@ -1,9 +1,14 @@
-import subprocess
+import os
+import openai
 
-# Execute the "pip --version" command and print the output
-result = subprocess.run(['pip', '--version'], capture_output=True, text=True)
-print(result.stdout)
+userprompt = input("Type text that will transform into an image: ")
 
-# Execute the "bash --login -x" command and print the output
-result = subprocess.run(['bash', '--login', '-x'], capture_output=True, text=True)
-print(result.stdout)
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+response = openai.Image.create(
+    prompt=userprompt,
+    n=1
+    size="256x256"
+)
+
+print(response["data"][0]["url"])
