@@ -6,7 +6,7 @@ from pathlib import Path
 import openai
 
 DATA_DIR = Path.cwd() / "responses"
-SOURCE_FILE = DATA_DIR / "An ec-1667994848.json"
+SOURCE_FILE = DATA_DIR / "aesth-1690490183.json"
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
