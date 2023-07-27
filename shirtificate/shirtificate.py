@@ -25,4 +25,10 @@ name = input("Name: ")
 pdf = PDF()
 pdf.add_page()
 
+pdf.header()
+pdf.footer(name)
+
+pdf.output("shirtificate1.pdf")
+
+
 
