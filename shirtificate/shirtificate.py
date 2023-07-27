@@ -13,8 +13,8 @@ class PDF(FPDF):
         # Performing a line break:
         self.ln(20)
 
-    def footer(self, name):
-        # Position cursor at 1.5 cm from bottom:
+    def footer(self, name):  # Accept the 'name' parameter here
+        # Position cursor at 1.5 cm from the bottom:
         self.set_y(-15)
         # Setting font: helvetica italic 8
         self.set_font("helvetica", "I", 8)
@@ -25,10 +25,10 @@ name = input("Name: ")
 pdf = PDF()
 pdf.add_page()
 
+# Call the header method
 pdf.header()
+
+# Call the footer method and pass the 'name' variable
 pdf.footer(name)
 
-pdf.output("shirtificate1.pdf")
-
-
-
+pdf.output("certificate.png")
