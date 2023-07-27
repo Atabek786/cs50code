@@ -33,13 +33,12 @@ def hello(s):
     if s.startswith("hello"):
         return 0
 
-def h(s)
+def h(s):
     if s.startswith("h"):
         return 20
 def other(s):
     if not s.startswith("h"):
         return 100
-
 
 if __name__ == "__main__":
     main()
