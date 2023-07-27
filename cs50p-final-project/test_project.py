@@ -1,4 +1,5 @@
 from project import value, convert, gauge
+import pytest
 
 def test_uppercase():
     assert value("      HELLO, I WANT TO TAKE 100 BUCKS") == 0
