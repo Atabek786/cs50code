@@ -1,10 +1,5 @@
 from fpdf import FPDF
 
-name = input("Name: ")
-
-from fpdf import FPDF
-
-
 class PDF(FPDF):
     def header(self):
         # Rendering logo:
@@ -24,4 +19,8 @@ class PDF(FPDF):
         # Setting font: helvetica italic 8
         self.set_font("helvetica", "I", 8)
         # Printing page number:
-        self.cell(0, 10, f"Page {self.page_no()}/{{nb}}", align="C")
+        self.cell(0, 10, f"{name} took CS50", align="C")
+
+name = input("Name: ")
+
+
