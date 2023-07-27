@@ -3,7 +3,7 @@ from base64 import b64decode
 from pathlib import Path
 
 DATA_DIR = Path.cwd() / "responses"
-JSON_FILE = DATA_DIR / "old c-1690487989.json"
+JSON_FILE = DATA_DIR / "Turki-1690488960.json"
 IMAGE_DIR = Path.cwd() / "images" / JSON_FILE.stem
 
 IMAGE_DIR.mkdir(parents=True, exist_ok=True)
