@@ -27,7 +27,7 @@ def main():
 
 
 
-
+@
 
 
 
@@ -100,7 +100,7 @@ def gauge(percentage):
         return str(percentage) + "%"
 
 def shorten(word):
-    words = ['a', 'e', 'i', 'o', 'u']
+    words = ['A', 'E', 'I', 'O', 'U','a', 'e', 'i', 'o', 'u']
     for w in words:
         word = word.replace(w, '')
     return word
