@@ -30,13 +30,16 @@ def main():
 
 
 def hello(s):
+    s.strip().lower()
     if s.startswith("hello"):
         return 0
 
 def h(s):
+    s.strip().lower()
     if s.startswith("h"):
         return 20
 def other(s):
+    s.strip().lower()
     if not s.startswith("h"):
         return 100
 
