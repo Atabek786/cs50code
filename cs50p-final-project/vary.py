@@ -17,7 +17,7 @@ with open(SOURCE_FILE, mode="r", encoding="utf-8") as json_file:
 response = openai.Image.create_variation(
     image=image_data,
     n=3,
-    size="256x256",
+    size="512x512",
     response_format="b64_json",
 )
 
