@@ -9,6 +9,7 @@ response = openai.Image.create(
     prompt=userprompt,
     n=1
     size="256x256"
+    response_format="b64_json",
 )
 
-print(response["data"][0]["url"])
+print(response["data"][0]["b64_json"][:50])
