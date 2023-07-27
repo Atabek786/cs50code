@@ -13,7 +13,7 @@ class PDF(FPDF):
         # Performing a line break:
         self.ln(20)
 
-    def footer(self):
+    def footer(self, name):
         # Position cursor at 1.5 cm from bottom:
         self.set_y(-15)
         # Setting font: helvetica italic 8
@@ -22,5 +22,7 @@ class PDF(FPDF):
         self.cell(0, 10, f"{name} took CS50", align="C")
 
 name = input("Name: ")
+pdf = PDF()
+pdf.add_page()
 
 
