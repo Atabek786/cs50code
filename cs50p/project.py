@@ -2,7 +2,7 @@ import art
 
 def main():
     while True:
-        print("Hey, what do you wanna do today?")
+        print(art.text2art("What do you wanna do today?"), font="lean")
 
 
 
