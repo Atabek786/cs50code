@@ -1,18 +1,3 @@
-def main():
-    ...
+from polygon import RESTClient
 
-
-def function_1():
-    ...
-
-
-def function_2():
-    ...
-
-
-def function_n():
-    ...
-
-
-if __name__ == "__main__":
-    main()
+client = RESTClient(api_key="<API_KEY>")
