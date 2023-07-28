@@ -2,8 +2,8 @@ from pyfiglet import Figlet
 
 def main():
     figlet = Figlet
-    figlet.setFont(font="")
-    print("HEY")
+    figlet.setFont(font="lean")
+    print("Hey, what do you w")
     print("What do you wanna do today?")
 
 
