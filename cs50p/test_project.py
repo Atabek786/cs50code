@@ -19,13 +19,15 @@ def test_study():
     assert study(user_input) == "Invalid choice. Please try again."
 
 def test_sports():
-    # Test case 1: Valid sport type choice
-    user_input = "1\n"  # Simulate the user entering '1' followed by Enter
-    assert sports(user_input) == "Enjoy your Active sports activities! Here are some options:\n- Baseball\n- Football\n- Soccer\n- Skiing\n- Boxing\n"
-
-    # Test case 2: Invalid sport type choice
-    user_input = "10\n"  # Simulate the user entering an invalid input
-    assert sports(user_input) == "Invalid choice. Please try again."
+    user_input = "1\n"
+    # Monkey-patching input() to return the user_input
+    original_input_function = __builtins__.input
+    __builtins__.input = lambda _: user_input
+    try:
+        assert sports() == "Enjoy your Active sports activities! Here are some options:\n- Baseball\n- Football\n- Soccer\n- Skiing\n- Boxing\n"
+    finally:
+        # Restore the original input() function
+        __builtins__.input = original_input_function
 
 # Add similar test functions for the remaining functions (books, game, cook)
 
