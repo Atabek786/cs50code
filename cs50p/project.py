@@ -57,21 +57,22 @@ cook_list = {
     'arabic': ['Falafel', 'Baba ganoush', 'Hummus'],
 }
 def main():
-    while True:
-        print(art.text2art("What do you wanna do today?", font="ogre", chr_ignore=True))
-        option = options()
-        if option == 1:
-            study()
-        elif option == 2:
-            sports()
-        elif option == 3:
-            books()
-        elif option == 4:
-            game()
-        elif option == 5:
-            cook()
-        else:
-            continue
+    print(art.text2art("What do you wanna do today?", font="ogre", chr_ignore=True))
+    option = options()
+    if option == 1:
+        study()
+    elif option == 2:
+        sports()
+    elif option == 3:
+        books()
+    elif option == 4:
+        game()
+    elif option == 5:
+        cook()
+    else:
+        print("That's it for today, good luck!")
+
+
 
 def options():
     try:
