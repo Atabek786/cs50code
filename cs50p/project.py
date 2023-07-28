@@ -3,8 +3,24 @@ import random
 
 responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', 'Alright then!']
 
-studying = {
-    
+books = {
+    'horror': [
+        'The Shining',
+        'It',
+        'Dracula',
+        'Frankenstein',
+        'Bird Box',
+    ],
+    'fantasy': [
+        'The Hobbit',
+        'Harry Potter and the Sorcerer\'s Stone',
+        'The Name of the Wind',
+        'Mistborn: The Final Empire',
+        'The Way of Kings',
+    ],
+    'science fiction': [
+        ''
+    ]
 }
 
 
