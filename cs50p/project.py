@@ -1,7 +1,7 @@
 import art
 import random
 
-responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', '']
+responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', 'Alright then!']
 
 
 def main():
@@ -12,9 +12,11 @@ def main():
 
 def options():
     try:
-        n = input("P.S if you don't know what to do, press 1")
+        n = input("P.S if you don't know what to do, press 1 so that I could help you :)")
         if n != '1' or n != 1:
-            print("Oookay, good luck doing that")
+            print(random(responses))
+        else:
+            options = int(input("Select a thing to do today: \n 1 studying \n 2 doing sports \n 3 reading books \n 4 "))
 
 
 
