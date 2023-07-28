@@ -1,6 +1,8 @@
-
+from pyfiglet import Figlet
 
 def main():
+    figlet = Figlet
+    print("HEY")
     print("What do you wanna do today?")
 
 
