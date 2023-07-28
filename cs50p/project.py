@@ -3,12 +3,27 @@ import random
 
 responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', 'Alright then!']
 
+studying = {
+    []
+}
+
 
 def main():
     while True:
         print(art.text2art("What do you wanna do today?", font="ogre", chr_ignore=True))
         option = options()
-
+        if option == 1:
+            ...
+        elif option == 2:
+            ...
+        elif option == 3:
+            ...
+        elif option == 4:
+            ...
+        elif option == 5:
+            ...
+        else:
+            continue
 
 def options():
     try:
@@ -16,16 +31,29 @@ def options():
         if n != '1' or n != 1:
             print(random(responses))
         else:
-            options = int(input("Select a thing to do today: \n 1 studying \n 2 doing sports \n 3 reading books \n 4 "))
+            options = int(input("Select an activity to do today: \n 1 study \n 2 sports \n 3 books \n 4 game \n 5 cook\n Answer: "))
+            if options not in [1,2,3,4,5]:
+                raise Exception()
+            else:
+                return options
+    except (ValueError, Exception):
+        print("Please don't prompt weird symbols :(")
 
-
-
-def function_2():
+def study():
     ...
 
-
-def function_n():
+def sports():
     ...
+
+def books():
+    ...
+
+def game():
+    ...
+
+def cook():
+    ...
+
 
 
 if __name__ == "__main__":
