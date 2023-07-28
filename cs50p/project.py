@@ -1,8 +1,8 @@
 import art
 
 def main():
-    while True:
-        print(art.text2art("What do you wanna do today?"), font="lean")
+
+        print(art.text2art("What do you wanna do today?", font="lean", chr_ignore=True))
 
 
 
