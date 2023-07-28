@@ -1,5 +1,7 @@
+
+
 def main():
-    ...
+    print("What do you wanna do today?")
 
 
 def function_1():
