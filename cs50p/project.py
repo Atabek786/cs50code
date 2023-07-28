@@ -75,7 +75,7 @@ def main():
 
 def options():
     try:
-        n = input("P.S if you don't know what to do, press 1 so that I could help you :)")
+        n = input("P.S if you don't know what to do, press 1 so that I could help you :) | ")
         if n != '1':
             print(random.choice(responses))
         else:
@@ -101,18 +101,56 @@ def study():
         print("Invalid choice. Please try again.")
 
 def sports():
-    ...
+    print("Select a type of sport:")
+    for i, sport_type in enumerate(sport_list, 1):
+        print(f"{i}. {sport_type.capitalize()}")
+    choice = int(input("Enter the number of the sport type you want to do: "))
+    if 1 <= choice <= len(sport_list):
+        sport_type = list(sport_list.keys())[choice - 1]
+        print(f"Enjoy your {sport_type} activities! Here are some options:")
+        for sport in sport_list[sport_type]:
+            print(f"- {sport}")
+    else:
+        print("Invalid choice. Please try again.")
 
 def books():
-    ...
+    print("Select a genre:")
+    for i, genre in enumerate(book_list, 1):
+        print(f"{i}. {genre.capitalize()}")
+    choice = int(input("Enter the number of the genre you want to read: "))
+    if 1 <= choice <= len(book_list):
+        genre = list(book_list.keys())[choice - 1]
+        print(f"Happy reading! Here are some books in the {genre.capitalize()} genre:")
+        for book in book_list[genre]:
+            print(f"- {book}")
+    else:
+        print("Invalid choice. Please try again.")
 
 def game():
-    ...
+    print("Select a game genre:")
+    for i, genre in enumerate(game_list, 1):
+        print(f"{i}. {genre.capitalize()}")
+    choice = int(input("Enter the number of the game genre you want to play: "))
+    if 1 <= choice <= len(game_list):
+        genre = list(game_list.keys())[choice - 1]
+        print(f"Have fun gaming! Here are some {genre.capitalize()} games:")
+        for game in game_list[genre]:
+            print(f"- {game}")
+    else:
+        print("Invalid choice. Please try again.")
 
 def cook():
-    ...
-
-
-
+    print("Select a cuisine:")
+    for i, cuisine in enumerate(cook_list, 1):
+        print(f"{i}. {cuisine.capitalize()}")
+    choice = int(input("Enter the number of the cuisine you want to cook: "))
+    if 1 <= choice <= len(cook_list):
+        cuisine = list(cook_list.keys())[choice - 1]
+        print(f"Enjoy cooking some delicious {cuisine.capitalize()} dishes!")
+        print("Here are some popular dishes:")
+        for dish in cook_list[cuisine]:
+            print(f"- {dish}")
+    else:
+        print("Invalid choice. Please try again.")
 if __name__ == "__main__":
     main()
