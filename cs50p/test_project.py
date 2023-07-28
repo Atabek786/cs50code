@@ -1,32 +1,40 @@
-import unittest
-from project import study, sports, books, game, cook
+from project import options, study, sports, books, game, cook
 
-class TestProjectFunctions(unittest.TestCase):
+def test_options():
+    # Test case 1: User selects an activity
+    user_input = "1\n"  # Simulate the user entering '1' followed by Enter
+    assert options(user_input) == 1
 
-    def test_study(self):
-        # Test the study function
-        # Write test cases and use assert methods to check if the output is as expected.
-        self.assertEqual(study(), "Expected output for study function")
+    # Test case 2: User doesn't know what to do
+    user_input = "something\n"  # Simulate the user entering an invalid input
+    assert options(user_input) == 1
 
-    def test_sports(self):
-        # Test the sports function
-        # Write test cases and assert statements as needed
-        self.assertEqual(sports(), "Expected output for sports function")
+def test_study():
+    # Test case 1: Valid subject choice
+    user_input = "1\n"  # Simulate the user entering '1' followed by Enter
+    assert study(user_input) == "Great choice! Here are some topics in Math:\n- Algebra\n- Calculus\n- Geometry\n- Statistics\n"
 
-    def test_books(self):
-        # Test the books function
-        # Write test cases and assert statements as needed
-        self.assertEqual(books(), "Expected output for books function")
+    # Test case 2: Invalid subject choice
+    user_input = "10\n"  # Simulate the user entering an invalid input
+    assert study(user_input) == "Invalid choice. Please try again."
 
-    def test_game(self):
-        # Test the game function
-        # Write test cases and assert statements as needed
-        self.assertEqual(game(), "Expected output for game function")
+def test_sports():
+    # Test case 1: Valid sport type choice
+    user_input = "1\n"  # Simulate the user entering '1' followed by Enter
+    assert sports(user_input) == "Enjoy your Active sports activities! Here are some options:\n- Baseball\n- Football\n- Soccer\n- Skiing\n- Boxing\n"
 
-    def test_cook(self):
-        # Test the cook function
-        # Write test cases and assert statements as needed
-        self.assertEqual(cook(), "Expected output for cook function")
+    # Test case 2: Invalid sport type choice
+    user_input = "10\n"  # Simulate the user entering an invalid input
+    assert sports(user_input) == "Invalid choice. Please try again."
 
-if __name__ == '__main__':
-    unittest.main()
+# Add similar test functions for the remaining functions (books, game, cook)
+
+# Run all the test functions
+def run_tests():
+    test_options()
+    test_study()
+    test_sports()
+    # Call the remaining test functions here (books, game, cook)
+
+if __name__ == "__main__":
+    run_tests()
