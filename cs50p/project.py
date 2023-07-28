@@ -19,6 +19,12 @@ books = {
         'The Way of Kings',
     ],
     'science fiction': [
+        'The Blazing World and Other Writings by Margaret Cavendish (1666)',
+        'Frankenstein by Mary Wollstonecraft Shelley',
+        'The Time Machine by H.G. Wells (1895)',
+        'The War of the Worlds by H.G. Wells (1897)',
+    ],
+    'romance': [
         ''
     ]
 }
