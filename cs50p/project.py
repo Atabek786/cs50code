@@ -33,7 +33,8 @@ books = {
     ]
 }
 sports = {
-    ''
+    'active sports': ['baseball', 'football', 'soccer', 'skiing', 'boxing']
+    'passive sports': ['camping', 'hiking', 'walking', 'fishing', 'swimming']
 }
 
 games = {
