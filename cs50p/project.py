@@ -32,7 +32,12 @@ books = {
         'The Viscount Who Loved Me, by Julia Quinn (2000)',
     ]
 }
-
+sports = {
+    'soccer': ['5-a-side', '11-a-side', 'Futsal'],
+    'basketball': ['3x3', '5x5'],
+    'tennis': ['Singles', 'Doubles'],
+    'running': []
+}
 
 def main():
     while True:
