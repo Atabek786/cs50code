@@ -33,10 +33,14 @@ books = {
     ]
 }
 sports = {
-    'soccer': ['5-a-side', '11-a-side', 'Futsal'],
-    'basketball': ['3x3', '5x5'],
-    'tennis': ['Singles', 'Doubles'],
-    'running': []
+    ''
+}
+
+games = {
+    'action': ['Call of Duty', 'Assassin\'s Creed', 'GTA V', 'Red Dead Redemption'],
+    'adventure': ['The Legend of Zelda', 'Uncharted', 'Tomb Raider', 'God of War'],
+    'puzzle': ['Portal', 'Candy Crush', 'Tetris'],
+    # Add more game genres and titles as needed
 }
 
 def main():
