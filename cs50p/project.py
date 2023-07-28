@@ -4,7 +4,11 @@ import random
 responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', 'Alright then!']
 
 study_list = {
-    
+    'math': ['Algebra', 'Calculus', 'Geometry', 'Statistics'],
+    'geography': ['Continents', 'Countries', 'Capital Cities', 'Physical Features'],
+    'history': ['Ancient Civilizations', 'World Wars', 'Renaissance', 'Industrial Revolution'],
+    'biology': ['Cell Biology', 'Genetics', 'Ecology', 'Anatomy'],
+    'computer science': ['Programming', 'Data Structures', 'Algorithms', 'Web Development'],
 }
 book_list = {
     'horror': [
@@ -57,25 +61,25 @@ def main():
         print(art.text2art("What do you wanna do today?", font="ogre", chr_ignore=True))
         option = options()
         if option == 1:
-            ...
+            study()
         elif option == 2:
-            ...
+            sports()
         elif option == 3:
-            ...
+            books()
         elif option == 4:
-            ...
+            game()
         elif option == 5:
-            ...
+            cook()
         else:
             continue
 
 def options():
     try:
         n = input("P.S if you don't know what to do, press 1 so that I could help you :)")
-        if n != '1' or n != 1:
-            print(random(responses))
+        if n != '1':
+            print(random.choice(responses))
         else:
-            options = int(input("Select an activity to do today: \n 1 study \n 2 sports \n 3 books \n 4 game \n 5 cook\n Answer: "))
+            options = int(input("Select an activity to do today: \n 1 study \n 2 sport \n 3 read \n 4 game \n 5 cook\n Answer: "))
             if options not in [1,2,3,4,5]:
                 raise Exception()
             else:
@@ -84,7 +88,7 @@ def options():
         print("Please don't prompt weird symbols :(")
 
 def study():
-    ...
+
 
 def sports():
     ...
