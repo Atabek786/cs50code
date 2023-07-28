@@ -25,7 +25,11 @@ books = {
         'The War of the Worlds by H.G. Wells (1897)',
     ],
     'romance': [
-        ''
+        'Pride and Prejudice, by Jane Austen (1813)',
+        'Jane Eyre, by Charlotte Brontë (1847)',
+        'Shanna, by Kathleen E. Woodiwiss (1977)',
+        'Morning Glory, by Lavyrle Spencer (1993)',
+        'The Viscount Who Loved Me, by Julia Quinn (2000)',
     ]
 }
 
