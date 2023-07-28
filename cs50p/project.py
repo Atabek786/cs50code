@@ -3,7 +3,7 @@ from pyfiglet import Figlet
 def main():
     figlet = Figlet
     figlet.setFont(font="lean")
-    figlet(print("Hey, what do you wanna do today?"))
+    print("Hey, what do you wanna do today?")
 
 
 
