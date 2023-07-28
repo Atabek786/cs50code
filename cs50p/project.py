@@ -1,9 +1,8 @@
-from pyfiglet import Figlet
+import art
 
 def main():
-    figlet = Figlet
-    figlet.setFont(font="lean")
-    print("Hey, what do you wanna do today?")
+    while True:
+        print("Hey, what do you wanna do today?")
 
 
 
