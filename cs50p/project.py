@@ -2,6 +2,7 @@ from pyfiglet import Figlet
 
 def main():
     figlet = Figlet
+    figlet.setFont()
     print("HEY")
     print("What do you wanna do today?")
 
