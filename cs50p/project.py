@@ -3,7 +3,10 @@ import random
 
 responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', 'Alright then!']
 
-books = {
+study_list = {
+    
+}
+book_list = {
     'horror': [
         'The Shining',
         'It',
@@ -30,20 +33,25 @@ books = {
         'Shanna, by Kathleen E. Woodiwiss (1977)',
         'Morning Glory, by Lavyrle Spencer (1993)',
         'The Viscount Who Loved Me, by Julia Quinn (2000)',
-    ]
+    ],
 }
-sports = {
-    'active sports': ['baseball', 'football', 'soccer', 'skiing', 'boxing']
-    'passive sports': ['camping', 'hiking', 'walking', 'fishing', 'swimming']
+sport_list = {
+    'active sports': ['Baseball', 'Football', 'Soccer', 'Skiing', 'Boxing'],
+    'passive sports': ['Camping', 'Hiking', 'Walking', 'Fishing', 'Swimming'],
 }
-
-games = {
-    'action': ['Call of Duty', 'Assassin\'s Creed', 'GTA V', 'Red Dead Redemption'],
+game_list = {
+    'action': ['Call of Duty', "Assassin's Creed", 'GTA V', 'Red Dead Redemption'],
     'adventure': ['The Legend of Zelda', 'Uncharted', 'Tomb Raider', 'God of War'],
-    'puzzle': ['Portal', 'Candy Crush', 'Tetris'],
-    # Add more game genres and titles as needed
+    'puzzle': ['Portal', 'Candy Crush', 'Tetris', 'Portal 2'],
+    'horror': ['Outlast', 'Outlast 2', 'Amnesia', 'Resident Evil 2', 'Silent Hill']
 }
-
+cook_list = {
+    'italian': ['Pasta Carbonara', 'Margherita Pizza', 'Tiramisu', 'Lasagna'],
+    'indian': ['Chicken Tikka Masala', 'Palak Paneer', 'Biryani', 'Gulab Jamun'],
+    'mexican': ['Tacos', 'Enchiladas', 'Guacamole', 'Churros'],
+    'turkish': ['Şiş Kebap', 'Döner', 'Köfte', 'Manti'],
+    'arabic': ['Falafel', 'Baba ganoush', 'Hummus'],
+}
 def main():
     while True:
         print(art.text2art("What do you wanna do today?", font="ogre", chr_ignore=True))
