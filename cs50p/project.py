@@ -88,7 +88,17 @@ def options():
         print("Please don't prompt weird symbols :(")
 
 def study():
-
+    print("Select a subject to study:")
+    for i, subject in enumerate(study_list, 1):
+        print(f"{i}. {subject.capitalize()}")
+    choice = int(input("Enter the number of the subject you want to study: "))
+    if 1 <= choice <= len(study_list):
+        subject = list(study_list.keys())[choice - 1]
+        print(f"Great choice! Here are some topics in {subject.capitalize()}:")
+        for topic in study_list[subject]:
+            print(f"- {topic}")
+    else:
+        print("Invalid choice. Please try again.")
 
 def sports():
     ...
