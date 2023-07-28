@@ -4,7 +4,7 @@ import random
 responses = ['Oookay, good luck doing that ! ', 'Good choice, bye!', 'Gotchaaa', 'Alright then!']
 
 studying = {
-    []
+    
 }
 
 
