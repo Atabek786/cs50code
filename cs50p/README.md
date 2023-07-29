@@ -2,7 +2,7 @@
 #### Video Demo:
 #### Description:
 
-Have you ever found yourself unsure of what to do on a particular day? The Awesome Activity Suggestion Bot is here to rescue you from boredom! This bot presents a variety of activity options and provides suggestions based on your interests. Simply interact with the bot, make your choice, and it will offer you a selection of exciting activities to enjoy. This is my final project for CS50P
+Have you ever found yourself unsure of what to do on a particular day? The Activity Suggestion Bot is here to rescue you from boredom! This bot presents a variety of activity options and provides suggestions based on your interests. Simply interact with the bot, make your choice, and it will offer you a selection of exciting activities to enjoy. This is my final project for CS50P
 
 ## Features
 
@@ -13,7 +13,7 @@ Have you ever found yourself unsure of what to do on a particular day? The Aweso
 
 ## Getting Started
 
-To use the Awesome Activity Suggestion Bot, you'll need to have Python installed on your system. If you don't have Python installed, you can download it from the official website: [Python Downloads](https://www.python.org/downloads/)
+To use the Activity Suggestion Bot, you'll need to have Python installed on your system. If you don't have Python installed, you can download it from the official website: [Python Downloads](https://www.python.org/downloads/)
 
 1. Clone this repository
 2. Navigate to the project directory: cd cs50p
@@ -38,7 +38,7 @@ You are more the welcomed to improve my code :)
 
 ## License
 
-The Awesome Activity Suggestion Bot is licensed under the [MIT License](LICENSE). Feel free to modify and use the code as per the terms of the license.
+The Activity Suggestion Bot is licensed under the [MIT License](LICENSE). Feel free to modify and use the code as per the terms of the license.
 
 ---
 
