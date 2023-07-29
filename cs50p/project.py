@@ -20,7 +20,7 @@ book_list = {
     ],
     'fantasy': [
         'The Hobbit',
-        'Harry Potter and the Sorcerer\'s Stone',
+        "Harry Potter and the Sorcerer's Stone",
         'The Name of the Wind',
         'Mistborn: The Final Empire',
         'The Way of Kings',
